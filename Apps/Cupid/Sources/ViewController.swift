@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Cupid
 //
-//  Created by jcc on 2022/11/28.
+//  Created by  on 2022/11/28.
 //
 
 import UIKit

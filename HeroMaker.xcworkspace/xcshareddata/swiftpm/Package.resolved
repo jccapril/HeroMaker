@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "pinlayout",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/layoutBox/PinLayout.git",
+      "state" : {
+        "revision" : "75c88c5c374c7bc78a154ffdf963cd362f38258a",
+        "version" : "1.10.3"
+      }
+    },
+    {
+      "identity" : "urlroute",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jccapril/URLRoute",
+      "state" : {
+        "revision" : "176ed4b9ce10285a11e369e0c4f1e5cecf47e3d8",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}
