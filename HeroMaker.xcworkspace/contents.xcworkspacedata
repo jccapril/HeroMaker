@@ -11,26 +11,40 @@
    <Group
       location = "group:Packages"
       name = "Packages">
-      <FileRef
-         location = "group:Chain">
-      </FileRef>
-      <FileRef
-         location = "group:AppLifeCycle">
-      </FileRef>
-      <FileRef
-         location = "group:UILayout">
-      </FileRef>
-      <FileRef
-         location = "group:BaseUI">
-      </FileRef>
-      <FileRef
-         location = "group:UIRoute">
-      </FileRef>
-      <FileRef
-         location = "group:UIHUD">
-      </FileRef>
-      <FileRef
-         location = "group:UIToast">
-      </FileRef>
+      <Group
+         location = "group:Service"
+         name = "Service">
+         <FileRef
+            location = "group:ExtensionKit">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:UICore"
+         name = "UICore">
+         <FileRef
+            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/UIRefresh">
+         </FileRef>
+         <FileRef
+            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/Chain">
+         </FileRef>
+         <FileRef
+            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/AppLifeCycle">
+         </FileRef>
+         <FileRef
+            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/UILayout">
+         </FileRef>
+         <FileRef
+            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/BaseUI">
+         </FileRef>
+         <FileRef
+            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/UIRoute">
+         </FileRef>
+         <FileRef
+            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/UIHUD">
+         </FileRef>
+         <FileRef
+            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/UIToast">
+         </FileRef>
+      </Group>
    </Group>
 </Workspace>

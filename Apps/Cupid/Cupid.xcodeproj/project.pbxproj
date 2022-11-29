@@ -13,6 +13,8 @@
 		09416CA1293484FB00A05A89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09416C9F293484FB00A05A89 /* Main.storyboard */; };
 		09416CA3293484FC00A05A89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09416CA2293484FC00A05A89 /* Assets.xcassets */; };
 		09416CA6293484FC00A05A89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09416CA4293484FC00A05A89 /* LaunchScreen.storyboard */; };
+		094B80A72935F14900BA1650 /* ExtensionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 094B80A62935F14900BA1650 /* ExtensionKit */; };
+		0981A10D2935AA7700D5242E /* UIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 0981A10C2935AA7700D5242E /* UIRefresh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0981A10D2935AA7700D5242E /* UIRefresh in Frameworks */,
+				094B80A72935F14900BA1650 /* ExtensionKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +47,7 @@
 				09416CAD2934850D00A05A89 /* Sources */,
 				09416CAE2934851500A05A89 /* Resources */,
 				09416C97293484FB00A05A89 /* Products */,
+				0981A10B2935AA7700D5242E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +80,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		0981A10B2935AA7700D5242E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,6 +103,10 @@
 			dependencies = (
 			);
 			name = Cupid;
+			packageProductDependencies = (
+				0981A10C2935AA7700D5242E /* UIRefresh */,
+				094B80A62935F14900BA1650 /* ExtensionKit */,
+			);
 			productName = Cupid;
 			productReference = 09416C96293484FB00A05A89 /* Cupid.app */;
 			productType = "com.apple.product-type.application";
@@ -364,6 +380,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		094B80A62935F14900BA1650 /* ExtensionKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ExtensionKit;
+		};
+		0981A10C2935AA7700D5242E /* UIRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIRefresh;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09416C8E293484FB00A05A89 /* Project object */;
 }
