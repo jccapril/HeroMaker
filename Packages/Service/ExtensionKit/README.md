@@ -159,3 +159,48 @@ print(Flag.foo == 1) -> true
 print(Flag.bar == 1) -> false
 print(Flag.bar != 1) -> true
 ```
+---
+## String
+### String.Radix
+* 二进制/十进制/十六进制 插值
+```
+print("\(10, radix: .binary)")
+// Prints "1010"
+print("\(10, radix: .binary, prefix: true)")
+// Prints "ob1010"
+print("\(10, radix: .octal)")
+// Prints "12"
+print("\(10, radix: .decimal)")
+// Prints "10"
+print("\(10, radix: .hex)")
+// Prints "A"
+```
+* removingPrefix、removingSuffix 移除首部字符串、尾部字符串
+```
+let result = "bar001foo"
+print(result.removingPrefix("bar"))
+// Prints "001foo"
+print(result.removingSuffix("foo"))
+// Prints "bar001"
+```
+* safe index、range 安全模式取子字符串
+```
+let result = "bar001foo"
+print(result[safe: 0])
+// Prints Optional("b")
+print(result[safe: 10])
+// Prints nil
+print(result[safe: 0..<2])
+// Prints Optional("ba")
+print(result[safe: 0..<10])
+// Prints nil
+```
+* slice 字符串切片 slicing 返回一个新的字符串, slice 可变字符串返回自身
+```
+var result = "bar001foo"
+print(result.slicing(from: 1, length: 2))
+// Prints Optional("ar")
+result.slice(from: 1, length: 2)
+print(result)
+// Prints "ar"
+```
