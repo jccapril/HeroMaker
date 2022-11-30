@@ -17,7 +17,7 @@ protocol BaseRequestable: Requestable {
 
 extension BaseRequestable {
     var scheme: String { "https" }
-    var host: String { "www.baidu.com" }
+    var host: String { "djangoc.com" }
     var queryItems: [URLQueryItem]? { nil }
 
     public var url: String {
@@ -34,7 +34,10 @@ extension BaseRequestable {
     public var method: HTTPMethod { .GET }
 
     public var headers: HTTPHeaders {
-        return [:]
+        switch APICenter.token {
+        case .none: return [:]
+        case let .some(token): return [.authorization(bearerToken: token)]
+        }
     }
 
     public var body: [UInt8]? { nil }

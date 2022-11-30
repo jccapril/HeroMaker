@@ -10,14 +10,14 @@ import Foundation
 import KeyValueStore
 
 public extension APICenter {
-    private(set) static var apikey: Optional<String> = .none
+    private(set) static var token: Optional<String> = .none
 }
 
 extension APICenter {
-    static func bootstrapAPIKey() {
+    static func bootstrapToken() {
         DispatchQueue(label: "Bootstrap").sync {
             do {
-                apikey = try store.sync.get(key: key)
+                token = try store.sync.get(key: key)
             } catch {
                 logger.error("\(error)")
             }
@@ -26,8 +26,8 @@ extension APICenter {
 }
 
 private extension APICenter {
-    static let name = typeName + ".apikey"
-    static let key = "API_KEY"
+    static let name = typeName + ".token"
+    static let key = "TOKEN_KEY"
     static let store: Store = {
         do {
             let store = try container[name]()
@@ -39,23 +39,23 @@ private extension APICenter {
 }
 
 public extension APICenter {
-    static func setAPIKey(_ apikey: String) {
-        self.apikey = apikey
+    static func setToken(_ token: String) {
+        self.token = token
 
-        store.async.put(key: key, value: apikey) { result in
+        store.async.put(key: key, value: token) { result in
             switch result {
-            case .success: logger.info("set apikey \(apikey) success")
+            case .success: logger.info("set token \(token) success")
             case let .failure(error): logger.error("\(error)")
             }
         }
     }
 
-    static func resetAPIKey() {
-        apikey = .none
+    static func resetToken() {
+        token = .none
 
         store.async.delete(key: key) { result in
             switch result {
-            case .success: logger.info("reset apikey success")
+            case .success: logger.info("reset token success")
             case let .failure(error): logger.error("\(error)")
             }
         }
