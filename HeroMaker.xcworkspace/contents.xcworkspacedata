@@ -15,6 +15,27 @@
          location = "group:Service"
          name = "Service">
          <FileRef
+            location = "group:WeakDelegate">
+         </FileRef>
+         <FileRef
+            location = "group:AppModular">
+         </FileRef>
+         <FileRef
+            location = "group:Coder">
+         </FileRef>
+         <FileRef
+            location = "group:KeyValueStore">
+         </FileRef>
+         <FileRef
+            location = "group:Locks">
+         </FileRef>
+         <FileRef
+            location = "group:LoggerPool">
+         </FileRef>
+         <FileRef
+            location = "group:RestfulClient">
+         </FileRef>
+         <FileRef
             location = "group:ExtensionKit">
          </FileRef>
       </Group>

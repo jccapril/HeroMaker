@@ -13,9 +13,43 @@
 		09416CA1293484FB00A05A89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09416C9F293484FB00A05A89 /* Main.storyboard */; };
 		09416CA3293484FC00A05A89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09416CA2293484FC00A05A89 /* Assets.xcassets */; };
 		09416CA6293484FC00A05A89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09416CA4293484FC00A05A89 /* LaunchScreen.storyboard */; };
-		094B80A72935F14900BA1650 /* ExtensionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 094B80A62935F14900BA1650 /* ExtensionKit */; };
-		0981A10D2935AA7700D5242E /* UIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 0981A10C2935AA7700D5242E /* UIRefresh */; };
+		0973EA5429372B8400B96163 /* Center.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA122937287200B96163 /* Center.framework */; };
+		0973EA5529372B8400B96163 /* Center.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA122937287200B96163 /* Center.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0973EA5629372B8400B96163 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA3529372A2D00B96163 /* Service.framework */; };
+		0973EA5729372B8400B96163 /* Service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA3529372A2D00B96163 /* Service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0973EA112937287200B96163 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0973EA0D2937287200B96163 /* Center.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0973EA032937287200B96163;
+			remoteInfo = Center;
+		};
+		0973EA3429372A2D00B96163 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0973EA3029372A2D00B96163 /* Service.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0973EA2629372A2D00B96163;
+			remoteInfo = Service;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0973EA5829372B8400B96163 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0973EA5729372B8400B96163 /* Service.framework in Embed Frameworks */,
+				0973EA5529372B8400B96163 /* Center.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		09416C96293484FB00A05A89 /* Cupid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cupid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +60,8 @@
 		09416CA2293484FC00A05A89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09416CA5293484FC00A05A89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09416CA7293484FC00A05A89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0973EA0D2937287200B96163 /* Center.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Center.xcodeproj; path = Center/Center.xcodeproj; sourceTree = "<group>"; };
+		0973EA3029372A2D00B96163 /* Service.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Service.xcodeproj; path = Service/Service.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,8 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0981A10D2935AA7700D5242E /* UIRefresh in Frameworks */,
-				094B80A72935F14900BA1650 /* ExtensionKit in Frameworks */,
+				0973EA5629372B8400B96163 /* Service.framework in Frameworks */,
+				0973EA5429372B8400B96163 /* Center.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				09416CAD2934850D00A05A89 /* Sources */,
+				0973E9F82937282C00B96163 /* Modules */,
 				09416CAE2934851500A05A89 /* Resources */,
 				09416C97293484FB00A05A89 /* Products */,
 				0981A10B2935AA7700D5242E /* Frameworks */,
@@ -80,6 +117,31 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		0973E9F82937282C00B96163 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0973EA0D2937287200B96163 /* Center.xcodeproj */,
+				0973EA3029372A2D00B96163 /* Service.xcodeproj */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0973EA0E2937287200B96163 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0973EA122937287200B96163 /* Center.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0973EA3129372A2D00B96163 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0973EA3529372A2D00B96163 /* Service.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		0981A10B2935AA7700D5242E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +159,7 @@
 				09416C92293484FB00A05A89 /* Sources */,
 				09416C93293484FB00A05A89 /* Frameworks */,
 				09416C94293484FB00A05A89 /* Resources */,
+				0973EA5829372B8400B96163 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -104,8 +167,6 @@
 			);
 			name = Cupid;
 			packageProductDependencies = (
-				0981A10C2935AA7700D5242E /* UIRefresh */,
-				094B80A62935F14900BA1650 /* ExtensionKit */,
 			);
 			productName = Cupid;
 			productReference = 09416C96293484FB00A05A89 /* Cupid.app */;
@@ -137,12 +198,39 @@
 			mainGroup = 09416C8D293484FB00A05A89;
 			productRefGroup = 09416C97293484FB00A05A89 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0973EA0E2937287200B96163 /* Products */;
+					ProjectRef = 0973EA0D2937287200B96163 /* Center.xcodeproj */;
+				},
+				{
+					ProductGroup = 0973EA3129372A2D00B96163 /* Products */;
+					ProjectRef = 0973EA3029372A2D00B96163 /* Service.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				09416C95293484FB00A05A89 /* Cupid */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0973EA122937287200B96163 /* Center.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Center.framework;
+			remoteRef = 0973EA112937287200B96163 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0973EA3529372A2D00B96163 /* Service.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Service.framework;
+			remoteRef = 0973EA3429372A2D00B96163 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		09416C94293484FB00A05A89 /* Resources */ = {
@@ -309,8 +397,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -318,13 +407,15 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jcc.Cupid;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jcc.cupid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -336,8 +427,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -345,13 +437,15 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jcc.Cupid;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jcc.cupid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -380,17 +474,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		094B80A62935F14900BA1650 /* ExtensionKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ExtensionKit;
-		};
-		0981A10C2935AA7700D5242E /* UIRefresh */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UIRefresh;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09416C8E293484FB00A05A89 /* Project object */;
 }
