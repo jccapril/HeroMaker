@@ -1,3 +1,3 @@
 # AppLifeCycle
 
-A description of this package.
+App的生命周期监控

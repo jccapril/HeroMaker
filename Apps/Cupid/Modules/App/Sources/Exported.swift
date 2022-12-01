@@ -5,4 +5,5 @@
 //  Created by jcc on 2022/12/1.
 //
 
-import Foundation
+@_exported import AppBootstrap
+@_exported import AppTabBar

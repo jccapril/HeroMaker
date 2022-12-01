@@ -13,4 +13,4 @@
 @_exported import LoggerPool
 @_exported import WeakDelegate
 @_exported import RestfulClient
-
+@_exported import PropertyWrappers

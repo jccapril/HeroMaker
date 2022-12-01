@@ -1,0 +1,54 @@
+// Build Options
+
+ENABLE_BITCODE = NO
+
+// Deployment
+
+TARGETED_DEVICE_FAMILY = 1,2
+IPHONEOS_DEPLOYMENT_TARGET = 13.0
+
+// Info.plist Values
+
+INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES
+
+// Linking
+
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks
+
+// Localization
+
+SWIFT_EMIT_LOC_STRINGS = YES
+
+// Packaging
+
+GENERATE_INFOPLIST_FILE = YES
+INFOPLIST_FILE = Resources/Info.plist
+PRODUCT_BUNDLE_IDENTIFIER = top.jcc.ios.cupid
+PRODUCT_NAME = $(TARGET_NAME)
+PUBLIC_HEADERS_FOLDER_PATH =
+
+// Signing
+
+CODE_SIGN_IDENTITY =
+CODE_SIGN_STYLE = Manual
+DEVELOPMENT_TEAM =
+
+// Versioning
+
+CURRENT_PROJECT_VERSION = 1
+MARKETING_VERSION = 1.0.0
+VERSIONING_SYSTEM = apple-generic-hidden
+
+// Asset Catelog Compiler - Options
+
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+
+// Swift Compiler - Language
+
+SWIFT_VERSION = 5.0
+
+#include? "Cupid.override.xcconfig"

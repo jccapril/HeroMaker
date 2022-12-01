@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		09416C9A293484FB00A05A89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09416C99293484FB00A05A89 /* AppDelegate.swift */; };
 		09416C9C293484FB00A05A89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09416C9B293484FB00A05A89 /* SceneDelegate.swift */; };
-		09416C9E293484FB00A05A89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09416C9D293484FB00A05A89 /* ViewController.swift */; };
-		09416CA1293484FB00A05A89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09416C9F293484FB00A05A89 /* Main.storyboard */; };
 		09416CA3293484FC00A05A89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09416CA2293484FC00A05A89 /* Assets.xcassets */; };
 		09416CA6293484FC00A05A89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09416CA4293484FC00A05A89 /* LaunchScreen.storyboard */; };
 		0973EA5429372B8400B96163 /* Center.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA122937287200B96163 /* Center.framework */; };
@@ -75,8 +73,6 @@
 		09416C96293484FB00A05A89 /* Cupid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cupid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09416C99293484FB00A05A89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09416C9B293484FB00A05A89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		09416C9D293484FB00A05A89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		09416CA0293484FB00A05A89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09416CA2293484FC00A05A89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09416CA5293484FC00A05A89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09416CA7293484FC00A05A89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +80,7 @@
 		0973EA3029372A2D00B96163 /* Service.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Service.xcodeproj; path = Service/Service.xcodeproj; sourceTree = "<group>"; };
 		0973EAEE293873E800B96163 /* App.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = App.xcodeproj; path = App/App.xcodeproj; sourceTree = "<group>"; };
 		0973EB0A293873F700B96163 /* UICore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UICore.xcodeproj; path = UICore/UICore.xcodeproj; sourceTree = "<group>"; };
+		0973EB9029388ADD00B96163 /* Cupid.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Cupid.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +104,7 @@
 				09416CAD2934850D00A05A89 /* Sources */,
 				0973E9F82937282C00B96163 /* Modules */,
 				09416CAE2934851500A05A89 /* Resources */,
+				0973EB8B29388ABD00B96163 /* XCConfig */,
 				09416C97293484FB00A05A89 /* Products */,
 				0981A10B2935AA7700D5242E /* Frameworks */,
 			);
@@ -125,7 +123,6 @@
 			children = (
 				09416C99293484FB00A05A89 /* AppDelegate.swift */,
 				09416C9B293484FB00A05A89 /* SceneDelegate.swift */,
-				09416C9D293484FB00A05A89 /* ViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -133,7 +130,6 @@
 		09416CAE2934851500A05A89 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				09416C9F293484FB00A05A89 /* Main.storyboard */,
 				09416CA2293484FC00A05A89 /* Assets.xcassets */,
 				09416CA4293484FC00A05A89 /* LaunchScreen.storyboard */,
 				09416CA7293484FC00A05A89 /* Info.plist */,
@@ -182,6 +178,14 @@
 				0973EB0F293873F800B96163 /* UICore.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0973EB8B29388ABD00B96163 /* XCConfig */ = {
+			isa = PBXGroup;
+			children = (
+				0973EB9029388ADD00B96163 /* Cupid.xcconfig */,
+			);
+			path = XCConfig;
 			sourceTree = "<group>";
 		};
 		0981A10B2935AA7700D5242E /* Frameworks */ = {
@@ -303,7 +307,6 @@
 			files = (
 				09416CA6293484FC00A05A89 /* LaunchScreen.storyboard in Resources */,
 				09416CA3293484FC00A05A89 /* Assets.xcassets in Resources */,
-				09416CA1293484FB00A05A89 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09416C9E293484FB00A05A89 /* ViewController.swift in Sources */,
 				09416C9A293484FB00A05A89 /* AppDelegate.swift in Sources */,
 				09416C9C293484FB00A05A89 /* SceneDelegate.swift in Sources */,
 			);
@@ -323,14 +325,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		09416C9F293484FB00A05A89 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				09416CA0293484FB00A05A89 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		09416CA4293484FC00A05A89 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -458,6 +452,7 @@
 		};
 		09416CAB293484FC00A05A89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0973EB9029388ADD00B96163 /* Cupid.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -468,7 +463,6 @@
 				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -477,7 +471,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jcc.cupid;
+				PRODUCT_BUNDLE_IDENTIFIER = top.jcc.ios.cupid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -488,6 +482,7 @@
 		};
 		09416CAC293484FC00A05A89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0973EB9029388ADD00B96163 /* Cupid.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -498,7 +493,6 @@
 				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -507,7 +501,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jcc.cupid;
+				PRODUCT_BUNDLE_IDENTIFIER = top.jcc.ios.cupid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

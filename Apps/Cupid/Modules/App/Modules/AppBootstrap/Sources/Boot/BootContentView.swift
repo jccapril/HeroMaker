@@ -7,7 +7,7 @@
 
 import BaseUI
 import Foundation
-import UIExtensionsKit
+import UIExtensionKit
 import UIKit
 
 class BootContentView: View {

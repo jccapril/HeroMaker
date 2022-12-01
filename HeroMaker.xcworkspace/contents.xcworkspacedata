@@ -15,6 +15,9 @@
          location = "group:Service"
          name = "Service">
          <FileRef
+            location = "group:../UICore/PropertyWrappers">
+         </FileRef>
+         <FileRef
             location = "group:WeakDelegate">
          </FileRef>
          <FileRef
@@ -42,6 +45,9 @@
       <Group
          location = "group:UICore"
          name = "UICore">
+         <FileRef
+            location = "group:UIFeedBack">
+         </FileRef>
          <FileRef
             location = "group:UIExtensionKit">
          </FileRef>

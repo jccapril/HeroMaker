@@ -15,3 +15,4 @@
 @_exported import UIRoute
 @_exported import UIToast
 @_exported import UIExtensionKit
+@_exported import UIFeedBack

@@ -17,6 +17,7 @@
 		0973EA4B29372AC700B96163 /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EA4A29372AC700B96163 /* Exported.swift */; };
 		0973EA4D29372AE700B96163 /* ServiceModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EA4C29372AE700B96163 /* ServiceModule.swift */; };
 		0973EAA529372E3300B96163 /* WeakDelegate in Frameworks */ = {isa = PBXBuildFile; productRef = 0973EAA429372E3300B96163 /* WeakDelegate */; };
+		0973EB842938898500B96163 /* PropertyWrappers in Frameworks */ = {isa = PBXBuildFile; productRef = 0973EB832938898500B96163 /* PropertyWrappers */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 				0973EA4529372A9B00B96163 /* Locks in Frameworks */,
 				0973EA3D29372A8200B96163 /* AppModular in Frameworks */,
 				0973EA4129372A9000B96163 /* ExtensionKit in Frameworks */,
+				0973EB842938898500B96163 /* PropertyWrappers in Frameworks */,
 				0973EA4929372AA900B96163 /* RestfulClient in Frameworks */,
 				0973EAA529372E3300B96163 /* WeakDelegate in Frameworks */,
 			);
@@ -127,6 +129,7 @@
 				0973EA4629372AA100B96163 /* LoggerPool */,
 				0973EA4829372AA900B96163 /* RestfulClient */,
 				0973EAA429372E3300B96163 /* WeakDelegate */,
+				0973EB832938898500B96163 /* PropertyWrappers */,
 			);
 			productName = Service;
 			productReference = 0973EA2629372A2D00B96163 /* Service.framework */;
@@ -422,6 +425,10 @@
 		0973EAA429372E3300B96163 /* WeakDelegate */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WeakDelegate;
+		};
+		0973EB832938898500B96163 /* PropertyWrappers */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PropertyWrappers;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
