@@ -43,6 +43,9 @@
          location = "group:UICore"
          name = "UICore">
          <FileRef
+            location = "group:UIExtensionKit">
+         </FileRef>
+         <FileRef
             location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/UIRefresh">
          </FileRef>
          <FileRef
