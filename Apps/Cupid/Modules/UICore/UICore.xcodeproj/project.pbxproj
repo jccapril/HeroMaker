@@ -23,6 +23,7 @@
 		0973EBA02938954300B96163 /* UIFeedBack in Frameworks */ = {isa = PBXBuildFile; productRef = 0973EB9F2938954300B96163 /* UIFeedBack */; };
 		098BAEAA2939A67800702111 /* AsyncImageView in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEA92939A67800702111 /* AsyncImageView */; };
 		098BAEAC2939AAF300702111 /* UIWebKit in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEAB2939AAF300702111 /* UIWebKit */; };
+		098BAEE42939C61300702111 /* UIHierarchy in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEE32939C61300702111 /* UIHierarchy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,7 @@
 				0973EB242938747500B96163 /* Chain in Frameworks */,
 				0973EB2C2938748900B96163 /* UIRefresh in Frameworks */,
 				0973EB2E2938749900B96163 /* UIRoute in Frameworks */,
+				098BAEE42939C61300702111 /* UIHierarchy in Frameworks */,
 				0973EB32293874B200B96163 /* AppLifeCycle in Frameworks */,
 				0973EB30293874A300B96163 /* UIHUD in Frameworks */,
 				0973EBA02938954300B96163 /* UIFeedBack in Frameworks */,
@@ -159,6 +161,7 @@
 				0973EB9F2938954300B96163 /* UIFeedBack */,
 				098BAEA92939A67800702111 /* AsyncImageView */,
 				098BAEAB2939AAF300702111 /* UIWebKit */,
+				098BAEE32939C61300702111 /* UIHierarchy */,
 			);
 			productName = UICore;
 			productReference = 0973EB00293873F700B96163 /* UICore.framework */;
@@ -470,6 +473,10 @@
 		098BAEAB2939AAF300702111 /* UIWebKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UIWebKit;
+		};
+		098BAEE32939C61300702111 /* UIHierarchy */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIHierarchy;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

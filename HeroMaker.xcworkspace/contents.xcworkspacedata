@@ -52,6 +52,9 @@
          location = "group:UICore"
          name = "UICore">
          <FileRef
+            location = "group:../Service/UIHierarchy">
+         </FileRef>
+         <FileRef
             location = "group:../Service/UIWebKit">
          </FileRef>
          <FileRef
