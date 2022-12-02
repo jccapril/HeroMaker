@@ -42,6 +42,13 @@
 			remoteGlobalIDString = 098BAEB62939AB5100702111;
 			remoteInfo = AppWebBrowser;
 		};
+		098BAF46293A08A800702111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 098BAF42293A08A700702111 /* AppDiscovery.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 098BAF38293A08A700702111;
+			remoteInfo = AppDiscovery;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,6 +81,7 @@
 		0973EBB4293895E700B96163 /* AppTabBar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppTabBar.xcodeproj; path = AppTabBar/AppTabBar.xcodeproj; sourceTree = "<group>"; };
 		098BAEC02939AB5100702111 /* AppWebBrowser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppWebBrowser.xcodeproj; path = ../../../../../Packages/Service/AppWebBrowser/AppWebBrowser.xcodeproj; sourceTree = "<group>"; };
 		098BAEE12939AC3800702111 /* libAppWebBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAppWebBrowser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		098BAF42293A08A700702111 /* AppDiscovery.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppDiscovery.xcodeproj; path = AppDiscovery/AppDiscovery.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,7 @@
 		0973EB3C293875B800B96163 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				098BAF42293A08A700702111 /* AppDiscovery.xcodeproj */,
 				0973EB602938763A00B96163 /* AppBootstrap.xcodeproj */,
 				0973EBB4293895E700B96163 /* AppTabBar.xcodeproj */,
 				098BAEC02939AB5100702111 /* AppWebBrowser.xcodeproj */,
@@ -180,6 +189,14 @@
 			isa = PBXGroup;
 			children = (
 				098BAEFB2939D3D200702111 /* libAppWebBrowser.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		098BAF43293A08A700702111 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				098BAF47293A08A800702111 /* libAppDiscovery.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +265,10 @@
 					ProjectRef = 0973EB602938763A00B96163 /* AppBootstrap.xcodeproj */;
 				},
 				{
+					ProductGroup = 098BAF43293A08A700702111 /* Products */;
+					ProjectRef = 098BAF42293A08A700702111 /* AppDiscovery.xcodeproj */;
+				},
+				{
 					ProductGroup = 0973EBB5293895E700B96163 /* Products */;
 					ProjectRef = 0973EBB4293895E700B96163 /* AppTabBar.xcodeproj */;
 				},
@@ -283,6 +304,13 @@
 			fileType = archive.ar;
 			path = libAppWebBrowser.a;
 			remoteRef = 098BAEFA2939D3D200702111 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		098BAF47293A08A800702111 /* libAppDiscovery.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAppDiscovery.a;
+			remoteRef = 098BAF46293A08A800702111 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
