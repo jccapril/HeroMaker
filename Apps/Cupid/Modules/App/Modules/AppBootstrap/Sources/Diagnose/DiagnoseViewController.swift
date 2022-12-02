@@ -10,6 +10,7 @@ import Chain
 import ExtensionKit
 import Foundation
 import UILayout
+import UIRoute
 
 class DiagnoseViewController: ViewController {
     private lazy var contentView = DiagnoseContentView(frame: .zero)

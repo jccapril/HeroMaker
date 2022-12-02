@@ -15,6 +15,12 @@
          location = "group:Service"
          name = "Service">
          <FileRef
+            location = "group:Crypto">
+         </FileRef>
+         <FileRef
+            location = "group:ProxyServer">
+         </FileRef>
+         <FileRef
             location = "group:../UICore/PropertyWrappers">
          </FileRef>
          <FileRef
@@ -45,6 +51,12 @@
       <Group
          location = "group:UICore"
          name = "UICore">
+         <FileRef
+            location = "group:../Service/UIWebKit">
+         </FileRef>
+         <FileRef
+            location = "group:../Service/AsyncImageView">
+         </FileRef>
          <FileRef
             location = "group:UIFeedBack">
          </FileRef>

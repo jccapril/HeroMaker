@@ -66,7 +66,8 @@ private extension Application {
 
     @discardableResult
     static func registerRoute() -> Self.Type {
-        let routableList = AppTabBar.routableViewControllers
+        let routableList = AppTabBar.routableViewControllers +
+            AppWebBrowser.routableViewControllers
         routableList.forEach {
             Router.register(routeName: $0.routeName, factory: $0.initialize)
         }
@@ -97,7 +98,8 @@ private extension Application {
     @discardableResult
     static func enterUI() -> Self.Type {
         window.rootViewController = AppTabBar.appTabBarViewControllerType.init(viewControllers: [
-
+            AppBootstrap.diagnoseViewControllerType.init(),
+            AppBootstrap.diagnoseViewControllerType.init()
         ])
         return self
     }

@@ -21,6 +21,8 @@
 		0973EB32293874B200B96163 /* AppLifeCycle in Frameworks */ = {isa = PBXBuildFile; productRef = 0973EB31293874B200B96163 /* AppLifeCycle */; };
 		0973EB812938790F00B96163 /* UIExtensionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0973EB802938790F00B96163 /* UIExtensionKit */; };
 		0973EBA02938954300B96163 /* UIFeedBack in Frameworks */ = {isa = PBXBuildFile; productRef = 0973EB9F2938954300B96163 /* UIFeedBack */; };
+		098BAEAA2939A67800702111 /* AsyncImageView in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEA92939A67800702111 /* AsyncImageView */; };
+		098BAEAC2939AAF300702111 /* UIWebKit in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEAB2939AAF300702111 /* UIWebKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,9 +61,11 @@
 				0973EB32293874B200B96163 /* AppLifeCycle in Frameworks */,
 				0973EB30293874A300B96163 /* UIHUD in Frameworks */,
 				0973EBA02938954300B96163 /* UIFeedBack in Frameworks */,
+				098BAEAC2939AAF300702111 /* UIWebKit in Frameworks */,
 				0973EB262938747900B96163 /* BaseUI in Frameworks */,
 				0973EB2A2938748400B96163 /* UIToast in Frameworks */,
 				0973EB202938746E00B96163 /* Service.framework in Frameworks */,
+				098BAEAA2939A67800702111 /* AsyncImageView in Frameworks */,
 				0973EB812938790F00B96163 /* UIExtensionKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +157,8 @@
 				0973EB31293874B200B96163 /* AppLifeCycle */,
 				0973EB802938790F00B96163 /* UIExtensionKit */,
 				0973EB9F2938954300B96163 /* UIFeedBack */,
+				098BAEA92939A67800702111 /* AsyncImageView */,
+				098BAEAB2939AAF300702111 /* UIWebKit */,
 			);
 			productName = UICore;
 			productReference = 0973EB00293873F700B96163 /* UICore.framework */;
@@ -456,6 +462,14 @@
 		0973EB9F2938954300B96163 /* UIFeedBack */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UIFeedBack;
+		};
+		098BAEA92939A67800702111 /* AsyncImageView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AsyncImageView;
+		};
+		098BAEAB2939AAF300702111 /* UIWebKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIWebKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

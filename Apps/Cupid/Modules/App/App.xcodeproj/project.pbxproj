@@ -17,6 +17,7 @@
 		0973EB4B293875EC00B96163 /* UICore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EB45293875EC00B96163 /* UICore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0973EB822938887500B96163 /* libAppBootstrap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EB652938763A00B96163 /* libAppBootstrap.a */; };
 		0973EBCD2938968D00B96163 /* libAppTabBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EBBA293895E800B96163 /* libAppTabBar.a */; };
+		098BAEE22939AC3800702111 /* libAppWebBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 098BAEE12939AC3800702111 /* libAppWebBrowser.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		0973EB45293875EC00B96163 /* UICore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UICore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0973EB602938763A00B96163 /* AppBootstrap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppBootstrap.xcodeproj; path = AppBootstrap/AppBootstrap.xcodeproj; sourceTree = "<group>"; };
 		0973EBB4293895E700B96163 /* AppTabBar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppTabBar.xcodeproj; path = AppTabBar/AppTabBar.xcodeproj; sourceTree = "<group>"; };
+		098BAEC02939AB5100702111 /* AppWebBrowser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppWebBrowser.xcodeproj; path = ../../../../../Packages/Service/AppWebBrowser/AppWebBrowser.xcodeproj; sourceTree = "<group>"; };
+		098BAEE12939AC3800702111 /* libAppWebBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAppWebBrowser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0973EB48293875EC00B96163 /* Service.framework in Frameworks */,
+				098BAEE22939AC3800702111 /* libAppWebBrowser.a in Frameworks */,
 				0973EBCD2938968D00B96163 /* libAppTabBar.a in Frameworks */,
 				0973EB46293875EC00B96163 /* Center.framework in Frameworks */,
 				0973EB822938887500B96163 /* libAppBootstrap.a in Frameworks */,
@@ -122,8 +126,9 @@
 		0973EB3C293875B800B96163 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				0973EBB4293895E700B96163 /* AppTabBar.xcodeproj */,
 				0973EB602938763A00B96163 /* AppBootstrap.xcodeproj */,
+				0973EBB4293895E700B96163 /* AppTabBar.xcodeproj */,
+				098BAEC02939AB5100702111 /* AppWebBrowser.xcodeproj */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 		0973EB42293875EC00B96163 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				098BAEE12939AC3800702111 /* libAppWebBrowser.a */,
 				0973EB43293875EC00B96163 /* Center.framework */,
 				0973EB44293875EC00B96163 /* Service.framework */,
 				0973EB45293875EC00B96163 /* UICore.framework */,

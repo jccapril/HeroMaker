@@ -16,6 +16,7 @@ private extension CenterModule {
 public extension CenterModule {
     static func bootstrap() {
         APICenter.bootstrap()
+        WebServerCenter.bootstrap()
     }
 }
 

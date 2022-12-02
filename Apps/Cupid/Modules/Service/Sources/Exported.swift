@@ -6,6 +6,7 @@
 //
 
 @_exported import AppModular
+@_exported import Crypto
 @_exported import Coder
 @_exported import ExtensionKit
 @_exported import KeyValueStore
@@ -14,3 +15,4 @@
 @_exported import WeakDelegate
 @_exported import RestfulClient
 @_exported import PropertyWrappers
+@_exported import ProxyServer
