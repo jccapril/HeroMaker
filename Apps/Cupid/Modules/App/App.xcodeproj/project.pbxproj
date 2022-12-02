@@ -35,6 +35,13 @@
 			remoteGlobalIDString = 0973EBAA293895E700B96163;
 			remoteInfo = AppTabBar;
 		};
+		098BAEFA2939D3D200702111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 098BAEC02939AB5100702111 /* AppWebBrowser.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 098BAEB62939AB5100702111;
+			remoteInfo = AppWebBrowser;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -169,6 +176,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		098BAEF52939D3D200702111 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				098BAEFB2939D3D200702111 /* libAppWebBrowser.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -236,6 +251,10 @@
 					ProductGroup = 0973EBB5293895E700B96163 /* Products */;
 					ProjectRef = 0973EBB4293895E700B96163 /* AppTabBar.xcodeproj */;
 				},
+				{
+					ProductGroup = 098BAEF52939D3D200702111 /* Products */;
+					ProjectRef = 098BAEC02939AB5100702111 /* AppWebBrowser.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -257,6 +276,13 @@
 			fileType = archive.ar;
 			path = libAppTabBar.a;
 			remoteRef = 0973EBB9293895E800B96163 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		098BAEFB2939D3D200702111 /* libAppWebBrowser.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAppWebBrowser.a;
+			remoteRef = 098BAEFA2939D3D200702111 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
