@@ -15,6 +15,18 @@
          location = "group:Service"
          name = "Service">
          <FileRef
+            location = "group:SwiftAsyncKit">
+         </FileRef>
+         <FileRef
+            location = "group:SwiftKit">
+         </FileRef>
+         <FileRef
+            location = "group:GRPCClient">
+         </FileRef>
+         <FileRef
+            location = "group:ORM">
+         </FileRef>
+         <FileRef
             location = "group:Crypto">
          </FileRef>
          <FileRef
@@ -51,6 +63,9 @@
       <Group
          location = "group:UICore"
          name = "UICore">
+         <FileRef
+            location = "group:../Service/UICombine">
+         </FileRef>
          <FileRef
             location = "group:../Service/UIHierarchy">
          </FileRef>

@@ -24,6 +24,7 @@
 		098BAEAA2939A67800702111 /* AsyncImageView in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEA92939A67800702111 /* AsyncImageView */; };
 		098BAEAC2939AAF300702111 /* UIWebKit in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEAB2939AAF300702111 /* UIWebKit */; };
 		098BAEE42939C61300702111 /* UIHierarchy in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEE32939C61300702111 /* UIHierarchy */; };
+		098BAEE62939C71900702111 /* UICombine in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEE52939C71900702111 /* UICombine */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +67,7 @@
 				098BAEAC2939AAF300702111 /* UIWebKit in Frameworks */,
 				0973EB262938747900B96163 /* BaseUI in Frameworks */,
 				0973EB2A2938748400B96163 /* UIToast in Frameworks */,
+				098BAEE62939C71900702111 /* UICombine in Frameworks */,
 				0973EB202938746E00B96163 /* Service.framework in Frameworks */,
 				098BAEAA2939A67800702111 /* AsyncImageView in Frameworks */,
 				0973EB812938790F00B96163 /* UIExtensionKit in Frameworks */,
@@ -162,6 +164,7 @@
 				098BAEA92939A67800702111 /* AsyncImageView */,
 				098BAEAB2939AAF300702111 /* UIWebKit */,
 				098BAEE32939C61300702111 /* UIHierarchy */,
+				098BAEE52939C71900702111 /* UICombine */,
 			);
 			productName = UICore;
 			productReference = 0973EB00293873F700B96163 /* UICore.framework */;
@@ -477,6 +480,10 @@
 		098BAEE32939C61300702111 /* UIHierarchy */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UIHierarchy;
+		};
+		098BAEE52939C71900702111 /* UICombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UICombine;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

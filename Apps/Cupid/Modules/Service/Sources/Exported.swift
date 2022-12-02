@@ -16,3 +16,5 @@
 @_exported import RestfulClient
 @_exported import PropertyWrappers
 @_exported import ProxyServer
+@_exported import SwiftKit
+@_exported import SwiftAsyncKit

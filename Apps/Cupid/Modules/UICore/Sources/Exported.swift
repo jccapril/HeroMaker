@@ -18,3 +18,4 @@
 @_exported import UIExtensionKit
 @_exported import UIFeedBack
 @_exported import UIWebKit
+@_exported import UICombine
