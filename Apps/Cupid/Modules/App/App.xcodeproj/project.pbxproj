@@ -18,6 +18,7 @@
 		0973EB822938887500B96163 /* libAppBootstrap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EB652938763A00B96163 /* libAppBootstrap.a */; };
 		0973EBCD2938968D00B96163 /* libAppTabBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EBBA293895E800B96163 /* libAppTabBar.a */; };
 		098BAEE22939AC3800702111 /* libAppWebBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 098BAEE12939AC3800702111 /* libAppWebBrowser.a */; };
+		098BAF80293DBB8F00702111 /* libAppDiscovery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 098BAF47293A08A800702111 /* libAppDiscovery.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 				0973EB46293875EC00B96163 /* Center.framework in Frameworks */,
 				0973EB822938887500B96163 /* libAppBootstrap.a in Frameworks */,
 				0973EB4A293875EC00B96163 /* UICore.framework in Frameworks */,
+				098BAF80293DBB8F00702111 /* libAppDiscovery.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
