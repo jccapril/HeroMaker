@@ -11,7 +11,10 @@ import UICore
 import WeakDelegate
 
 class DiscoveryViewController: ViewController {
+    private lazy var subscriptions = Set<AnyCancellable>()
     private lazy var contentView = DiscoveryContentView()
+    private lazy var provider = DiscoveryProvider()
+    private lazy var viewModel = DiscoveryViewModel()
 }
 
 
@@ -20,6 +23,7 @@ extension DiscoveryViewController {
         super.viewDidLoad()
         setup()
         
+        loadData()
     }
 
     override open func viewWillLayoutSubviews() {
@@ -31,5 +35,11 @@ extension DiscoveryViewController {
 private extension DiscoveryViewController {
     func setup() {
         contentView.x.add(to: view)
+    }
+    
+    func loadData() {
+        let mock = provider.mock()
+        viewModel.update(list: mock)
+        contentView.reloadData(viewModel: self.viewModel)
     }
 }

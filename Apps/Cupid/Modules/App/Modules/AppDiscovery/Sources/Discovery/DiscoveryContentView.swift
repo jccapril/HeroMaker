@@ -12,27 +12,19 @@ import UIKit
 
 class DiscoveryContentView: View {
     
-    private lazy var viewA: View = .init(
-        frame: .zero
+    private lazy var collectionView: CollectionView = .init(
+        frame: .zero,
+        collectionViewLayout: DiscoveryCollectionViewLayout()
+            .x
+            .instance
     )
-        .x
-        .backgroundColor(.systemRed)
-        .instance
+    .x
+    .backgroundColor(.clear)
+    .register(DiscoveryCollectionViewCell.self, forCellWithReuseIdentifier: DiscoveryCollectionViewCell.cellID)
+    .delegate(self)
+    .instance
     
-    private lazy var viewB: View = .init(
-        frame: .zero
-    )
-        .x
-        .backgroundColor(.systemBlue)
-        .instance
-    
-    private lazy var viewC: View = .init(
-        frame: .zero
-    )
-        .x
-        .backgroundColor(.systemYellow)
-        .instance
-    
+    private lazy var dataSource = DiscoveryCollectionViewDataSource(collectionView: collectionView)
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -49,9 +41,7 @@ class DiscoveryContentView: View {
 private extension DiscoveryContentView {
     func setup() {
         backgroundColor = .systemWhite
-        viewA.x.add(to: self)
-        viewB.x.add(to: self)
-        viewC.x.add(to: self)
+        collectionView.x.add(to: self)
     }
 }
 
@@ -60,8 +50,26 @@ private extension DiscoveryContentView {
 extension DiscoveryContentView {
     override open func layoutSubviews() {
         super.layoutSubviews()
-        viewA.pin.top(20%).left(20%).size(CGSize(width: 200, height: 100))
-        viewB.pin.below(of: viewA, aligned: .left).margin(10, 200).size(CGSize(width: 100, height: 100))
-        viewC.pin.below(of: viewB, aligned: .right).margin(10, 200).size(CGSize(width: 150, height: 100))
+        collectionView.pin.all()
+    }
+}
+
+
+// MARK: - UICollectionViewDelegate
+
+extension DiscoveryContentView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+}
+
+// MARK: - Internal
+
+extension DiscoveryContentView {
+    func reloadData(viewModel: DiscoveryViewModel) {
+        var snapshot = NSDiffableDataSourceSnapshot<String, DiscoveryItemViewModel>()
+        snapshot.appendSections(["main"])
+        snapshot.appendItems(viewModel.wallpaperListViewModels)
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
 }

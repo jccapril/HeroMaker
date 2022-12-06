@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090912ED293F1BCD0068E6F0 /* DiscoveryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090912EC293F1BCD0068E6F0 /* DiscoveryProvider.swift */; };
+		090912EF293F21F60068E6F0 /* DiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090912EE293F21F60068E6F0 /* DiscoveryViewModel.swift */; };
+		090912F1293F3C930068E6F0 /* DiscoveryCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090912F0293F3C930068E6F0 /* DiscoveryCollectionViewLayout.swift */; };
+		090912F3293F3CB20068E6F0 /* DiscoveryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090912F2293F3CB20068E6F0 /* DiscoveryCollectionViewCell.swift */; };
+		090912F5293F3CD40068E6F0 /* DiscoveryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090912F4293F3CD40068E6F0 /* DiscoveryItemViewModel.swift */; };
+		090912F7293F3EF60068E6F0 /* DiscoveryCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090912F6293F3EF60068E6F0 /* DiscoveryCollectionViewDataSource.swift */; };
 		098BAF4E293A08E400702111 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 098BAF4D293A08E400702111 /* Service.framework */; };
 		098BAF50293A08E900702111 /* Center.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 098BAF4F293A08E900702111 /* Center.framework */; };
 		098BAF52293A08F100702111 /* UICore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 098BAF51293A08F100702111 /* UICore.framework */; };
@@ -30,6 +36,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		090912EC293F1BCD0068E6F0 /* DiscoveryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryProvider.swift; sourceTree = "<group>"; };
+		090912EE293F21F60068E6F0 /* DiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewModel.swift; sourceTree = "<group>"; };
+		090912F0293F3C930068E6F0 /* DiscoveryCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCollectionViewLayout.swift; sourceTree = "<group>"; };
+		090912F2293F3CB20068E6F0 /* DiscoveryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCollectionViewCell.swift; sourceTree = "<group>"; };
+		090912F4293F3CD40068E6F0 /* DiscoveryItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryItemViewModel.swift; sourceTree = "<group>"; };
+		090912F6293F3EF60068E6F0 /* DiscoveryCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		098BAF38293A08A700702111 /* libAppDiscovery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAppDiscovery.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		098BAF49293A08C600702111 /* AppDiscovery.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppDiscovery.xcconfig; sourceTree = "<group>"; };
 		098BAF4A293A08C600702111 /* AppDiscovery.Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppDiscovery.Debug.xcconfig; sourceTree = "<group>"; };
@@ -112,6 +124,12 @@
 				098BAF7B293DBACA00702111 /* DiscoveryNavigationController.swift */,
 				098BAF7D293DBADD00702111 /* DiscoveryViewController.swift */,
 				098BAF84293DBE6300702111 /* DiscoveryContentView.swift */,
+				090912EC293F1BCD0068E6F0 /* DiscoveryProvider.swift */,
+				090912EE293F21F60068E6F0 /* DiscoveryViewModel.swift */,
+				090912F4293F3CD40068E6F0 /* DiscoveryItemViewModel.swift */,
+				090912F0293F3C930068E6F0 /* DiscoveryCollectionViewLayout.swift */,
+				090912F6293F3EF60068E6F0 /* DiscoveryCollectionViewDataSource.swift */,
+				090912F2293F3CB20068E6F0 /* DiscoveryCollectionViewCell.swift */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -175,11 +193,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				090912F7293F3EF60068E6F0 /* DiscoveryCollectionViewDataSource.swift in Sources */,
 				098BAF57293A092D00702111 /* DiscoveryModule.swift in Sources */,
 				098BAF85293DBE6300702111 /* DiscoveryContentView.swift in Sources */,
+				090912EF293F21F60068E6F0 /* DiscoveryViewModel.swift in Sources */,
+				090912F1293F3C930068E6F0 /* DiscoveryCollectionViewLayout.swift in Sources */,
 				098BAF55293A090F00702111 /* Exported.swift in Sources */,
+				090912F3293F3CB20068E6F0 /* DiscoveryCollectionViewCell.swift in Sources */,
 				098BAF7C293DBACA00702111 /* DiscoveryNavigationController.swift in Sources */,
 				098BAF7E293DBADD00702111 /* DiscoveryViewController.swift in Sources */,
+				090912F5293F3CD40068E6F0 /* DiscoveryItemViewModel.swift in Sources */,
+				090912ED293F1BCD0068E6F0 /* DiscoveryProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
