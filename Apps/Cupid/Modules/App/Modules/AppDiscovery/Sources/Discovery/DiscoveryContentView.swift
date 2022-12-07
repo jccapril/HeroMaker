@@ -8,7 +8,7 @@
 import Service
 import UICore
 import UIKit
-
+import ExtensionKit
 
 class DiscoveryContentView: View {
     
@@ -21,6 +21,7 @@ class DiscoveryContentView: View {
     .x
     .backgroundColor(.clear)
     .register(DiscoveryCollectionViewCell.self, forCellWithReuseIdentifier: DiscoveryCollectionViewCell.cellID)
+    .register(DiscoveryCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DiscoveryCollectionViewHeader.cellID)
     .delegate(self)
     .instance
     
@@ -68,8 +69,13 @@ extension DiscoveryContentView: UICollectionViewDelegate {
 extension DiscoveryContentView {
     func reloadData(viewModel: DiscoveryViewModel) {
         var snapshot = NSDiffableDataSourceSnapshot<String, DiscoveryItemViewModel>()
-        snapshot.appendSections(["main"])
-        snapshot.appendItems(viewModel.wallpaperListViewModels)
-        dataSource.apply(snapshot, animatingDifferences: false)
+        snapshot.appendSections(["main", "sub"])
+        
+        let main = Array(viewModel.wallpaperListViewModels[0..<3]) as! [DiscoveryItemViewModel]
+        let sub = Array(viewModel.wallpaperListViewModels[3..<12]) as! [DiscoveryItemViewModel]
+       
+        snapshot.appendItems(main, toSection: "main")
+        snapshot.appendItems(sub, toSection: "sub")
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 }

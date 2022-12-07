@@ -10,6 +10,7 @@ import UIKit
 class DiscoveryCollectionViewDataSource: UICollectionViewDiffableDataSource<String, DiscoveryItemViewModel> {
     init(collectionView: UICollectionView) {
         super.init(collectionView: collectionView, cellProvider: Self.cellProvider)
+        self.supplementaryViewProvider = Self.supplementaryViewProvider
     }
 }
 
@@ -19,6 +20,12 @@ private extension DiscoveryCollectionViewDataSource {
             as? DiscoveryCollectionViewCell
         cell?.config(viewModel: itemIdentifier)
         return cell
+    }
+    
+    static func supplementaryViewProvider(collectionView: UICollectionView, elementKind: String, indexPath: IndexPath) -> UICollectionReusableView? {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: elementKind, withReuseIdentifier: DiscoveryCollectionViewHeader.cellID, for: indexPath) as? DiscoveryCollectionViewHeader
+        
+        return header
     }
 }
 
