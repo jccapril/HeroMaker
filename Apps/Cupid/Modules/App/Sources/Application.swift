@@ -101,10 +101,13 @@ private extension Application {
 
     @discardableResult
     static func enterUI() -> Self.Type {
-        window.rootViewController = AppTabBar.appTabBarViewControllerType.init(viewControllers: [
-            AppDiscovery.discoveryNavigationControllerType.init(),
-            AppDiscovery.discoveryNavigationControllerType.init(),
-        ])
+        
+        window.rootViewController = AppLogin.loginNavigationControllerType.init()
+        
+//        window.rootViewController = AppTabBar.appTabBarViewControllerType.init(viewControllers: [
+//            AppDiscovery.discoveryNavigationControllerType.init(),
+//            AppDiscovery.discoveryNavigationControllerType.init(),
+//        ])
         return self
     }
 }
