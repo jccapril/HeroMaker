@@ -8,4 +8,5 @@
 @_exported import AppBootstrap
 @_exported import AppTabBar
 @_exported import AppDiscovery
+@_exported import AppLogin
 @_exported import AppWebBrowser

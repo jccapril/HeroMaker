@@ -6,9 +6,7 @@
 //
 
 import CenterAPI
-import Foundation
 import UICore
-import WeakDelegate
 
 class DiscoveryViewController: ViewController {
     private lazy var subscriptions = Set<AnyCancellable>()
@@ -17,7 +15,7 @@ class DiscoveryViewController: ViewController {
     private lazy var viewModel = DiscoveryViewModel()
 }
 
-
+// MARK: - Override
 extension DiscoveryViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +30,7 @@ extension DiscoveryViewController {
     }
 }
 
+// MARK: - Private
 private extension DiscoveryViewController {
     func setup() {
         contentView.x.add(to: view)

@@ -66,12 +66,17 @@ private extension Application {
 
     @discardableResult
     static func registerRoute() -> Self.Type {
-        let routableList = AppTabBar.routableViewControllers + AppDiscovery.routableViewControllers + AppWebBrowser.routableViewControllers
+        let routableList = AppTabBar.routableViewControllers +
+            AppDiscovery.routableViewControllers +
+            AppLogin.routableViewControllers +
+            AppWebBrowser.routableViewControllers
         routableList.forEach {
             Router.register(routeName: $0.routeName, factory: $0.initialize)
         }
 
-        let actionList = AppTabBar.actions
+        let actionList = AppTabBar.actions +
+            AppDiscovery.actions +
+            AppLogin.actions
         actionList.forEach {
             Router.register(actName: $0.actName, action: $0.act)
         }

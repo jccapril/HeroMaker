@@ -5,7 +5,6 @@
 //  Created by jcc on 2022/12/5.
 //
 
-import Foundation
 import UICore
 
 class DiscoveryNavigationViewController: NavigationController {

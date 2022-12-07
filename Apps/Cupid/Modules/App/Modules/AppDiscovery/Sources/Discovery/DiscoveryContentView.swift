@@ -5,10 +5,8 @@
 //  Created by jcc on 2022/12/5.
 //
 
-import Service
 import UICore
 import UIKit
-import ExtensionKit
 
 class DiscoveryContentView: View {
     
