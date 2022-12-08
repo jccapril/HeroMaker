@@ -66,7 +66,7 @@ extension LoginViewController {
         let task = Task { @MainActor in
             do {
                 logger.debug("logining usernmae:\(username) password:\(password)")
-                try await provider.login(username: username, password: password)
+                try await provider.sign(username: username, password: password)
                 Toast.text("Success", config: ToastConfiguration(view: self.view)).show()
                 FeedbackGenerator.notification.shared.notificationOccurred(.success)
             } catch {

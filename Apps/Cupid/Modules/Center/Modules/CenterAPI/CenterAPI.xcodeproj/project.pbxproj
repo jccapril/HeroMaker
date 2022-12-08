@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0909133B29418FBD0068E6F0 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909133A29418FBD0068E6F0 /* UserInfo.swift */; };
+		0909133D2941918E0068E6F0 /* SignRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909133C2941918E0068E6F0 /* SignRequest.swift */; };
+		090913432941CCC60068E6F0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090913422941CCC60068E6F0 /* Response.swift */; };
 		0973EA8D29372CBA00B96163 /* APICenterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EA8C29372CBA00B96163 /* APICenterModule.swift */; };
 		0973EA9629372CFC00B96163 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA9529372CFC00B96163 /* Service.framework */; };
 		0973EA9D29372D6E00B96163 /* APICenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EA9C29372D6E00B96163 /* APICenter.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0909133A29418FBD0068E6F0 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		0909133C2941918E0068E6F0 /* SignRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignRequest.swift; sourceTree = "<group>"; };
+		090913422941CCC60068E6F0 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		0973EA7729372BE500B96163 /* libCenterAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCenterAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0973EA8929372C6700B96163 /* CenterAPI.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CenterAPI.xcconfig; sourceTree = "<group>"; };
 		0973EA8A29372C6700B96163 /* CenterAPI.Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CenterAPI.Debug.xcconfig; sourceTree = "<group>"; };
@@ -54,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		090913402941BF080068E6F0 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				090913422941CCC60068E6F0 /* Response.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		0973EA6E29372BE500B96163 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +92,7 @@
 				0973EA8C29372CBA00B96163 /* APICenterModule.swift */,
 				0973EA9729372D0D00B96163 /* APICenter */,
 				0973EA9829372D1600B96163 /* Requests */,
+				090913402941BF080068E6F0 /* Response */,
 				0973EA9929372D2400B96163 /* Models */,
 				0973EA9A29372D2B00B96163 /* Error */,
 				0973EA9B29372D3800B96163 /* TypeDefine */,
@@ -117,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				0973EAB829373AF200B96163 /* BaseRequestable.swift */,
+				0909133C2941918E0068E6F0 /* SignRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -124,6 +140,7 @@
 		0973EA9929372D2400B96163 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0909133A29418FBD0068E6F0 /* UserInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,10 +220,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0973EA8D29372CBA00B96163 /* APICenterModule.swift in Sources */,
+				0909133D2941918E0068E6F0 /* SignRequest.swift in Sources */,
 				0973EAB929373AF200B96163 /* BaseRequestable.swift in Sources */,
 				0973EAA129372D9B00B96163 /* APICenter.Token.swift in Sources */,
 				0973EA9F29372D8A00B96163 /* APICenter.API.swift in Sources */,
 				0973EABB29373B3D00B96163 /* HTTPError.swift in Sources */,
+				0909133B29418FBD0068E6F0 /* UserInfo.swift in Sources */,
+				090913432941CCC60068E6F0 /* Response.swift in Sources */,
 				0973EA9D29372D6E00B96163 /* APICenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

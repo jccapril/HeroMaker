@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0909133729418D680068E6F0 /* UserCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909133629418D680068E6F0 /* UserCenter.swift */; };
+		0909133929418F4F0068E6F0 /* UserCenter.Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909133829418F4F0068E6F0 /* UserCenter.Sign.swift */; };
+		0909133F2941AE900068E6F0 /* UserCenter.UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909133E2941AE900068E6F0 /* UserCenter.UserInfo.swift */; };
 		0973EA5A29372BAA00B96163 /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EA5929372BAA00B96163 /* Exported.swift */; };
 		0973EA9029372CD800B96163 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA8F29372CD800B96163 /* Service.framework */; };
 		0973EA9129372CD800B96163 /* Service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA8F29372CD800B96163 /* Service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -47,6 +50,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0909133629418D680068E6F0 /* UserCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenter.swift; sourceTree = "<group>"; };
+		0909133829418F4F0068E6F0 /* UserCenter.Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenter.Sign.swift; sourceTree = "<group>"; };
+		0909133E2941AE900068E6F0 /* UserCenter.UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenter.UserInfo.swift; sourceTree = "<group>"; };
 		0973EA032937287200B96163 /* Center.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Center.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0973EA16293728C400B96163 /* CenterAPI.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CenterAPI.xcconfig; sourceTree = "<group>"; };
 		0973EA17293728C400B96163 /* CenterAPI.Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CenterAPI.Debug.xcconfig; sourceTree = "<group>"; };
@@ -72,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0909133329418D480068E6F0 /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				0909133629418D680068E6F0 /* UserCenter.swift */,
+				0909133829418F4F0068E6F0 /* UserCenter.Sign.swift */,
+				0909133E2941AE900068E6F0 /* UserCenter.UserInfo.swift */,
+			);
+			path = UserCenter;
+			sourceTree = "<group>";
+		};
 		0973E9F92937287200B96163 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +112,7 @@
 			children = (
 				0973EA5929372BAA00B96163 /* Exported.swift */,
 				0973EAA629372F2300B96163 /* CenterModule.swift */,
+				0909133329418D480068E6F0 /* UserCenter */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -252,6 +269,9 @@
 			files = (
 				0973EAA729372F2300B96163 /* CenterModule.swift in Sources */,
 				0973EA5A29372BAA00B96163 /* Exported.swift in Sources */,
+				0909133F2941AE900068E6F0 /* UserCenter.UserInfo.swift in Sources */,
+				0909133729418D680068E6F0 /* UserCenter.swift in Sources */,
+				0909133929418F4F0068E6F0 /* UserCenter.Sign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

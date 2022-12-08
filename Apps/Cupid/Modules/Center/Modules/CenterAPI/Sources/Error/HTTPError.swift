@@ -23,3 +23,26 @@ extension HTTPError: CustomStringConvertible {
     }
 }
 
+public struct HTTPBizError: Error {
+    
+    
+    
+    public let code: Int
+    public let message: String
+    
+    init(code: Int, message: String) {
+        self.code = code
+        self.message = message
+    }
+}
+
+extension HTTPBizError: CustomStringConvertible {
+    public var description: String {
+        message
+    }
+}
+
+
+extension HTTPBizError {
+    static let `internal` = HTTPBizError(code: 10086, message: "内部错误")
+}

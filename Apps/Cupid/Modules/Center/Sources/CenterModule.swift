@@ -20,3 +20,6 @@ public extension CenterModule {
     }
 }
 
+typealias Module = CenterModule
+
+let logger =  Module.logger

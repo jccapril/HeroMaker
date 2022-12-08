@@ -11,19 +11,22 @@ import RestfulClient
 protocol BaseRequestable: Requestable {
     var scheme: String { get }
     var host: String { get }
+    var port: Int { get }
     var path: String { get }
     var queryItems: [URLQueryItem]? { get }
 }
 
 extension BaseRequestable {
-    var scheme: String { "https" }
-    var host: String { "djangoc.com" }
+    var scheme: String { "http" }
+    var host: String { "127.0.0.1" }
+    var port: Int { 8888 }
     var queryItems: [URLQueryItem]? { nil }
 
     public var url: String {
         var components = URLComponents()
         components.scheme = scheme
         components.host = host
+        components.port = port
         components.path = path
         components.queryItems = queryItems
 
