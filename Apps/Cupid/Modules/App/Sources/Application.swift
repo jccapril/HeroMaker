@@ -65,7 +65,7 @@ private extension Application {
         }
         
         // 注销
-        Center.enterAppCallback = {
+        CenterAPI.enterAppCallback = {
             DispatchQueue.main.async {
                 enterUI()
             }

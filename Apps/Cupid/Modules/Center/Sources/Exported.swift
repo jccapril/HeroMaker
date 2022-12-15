@@ -8,4 +8,4 @@
 @_exported import CenterAPI
 @_exported import CenterWebServer
 
-public var enterAppCallback: EnterAppCallback? = CenterAPI.enterAppCallback
+

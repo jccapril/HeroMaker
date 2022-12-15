@@ -7,8 +7,13 @@
 
 import UICore
 import UIKit
+import WeakDelegate
 
 class DiscoveryContentView: View {
+    
+    let headerRefreshDelegator = Delegator<Refresher, Void>()
+    let footerRefreshDelegator = Delegator<Refresher, Void>()
+    let didSelectedDelegator = Delegator<IndexPath, Void>()
     
     private lazy var collectionView: CollectionView = .init(
         frame: .zero,
@@ -21,6 +26,18 @@ class DiscoveryContentView: View {
     .register(DiscoveryCollectionViewCell.self, forCellWithReuseIdentifier: DiscoveryCollectionViewCell.cellID)
     .register(DiscoveryCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DiscoveryCollectionViewHeader.cellID)
     .delegate(self)
+    .topRefresher(
+        Refresher { [weak self] refresher in
+            guard let self = self else { return }
+            self.headerRefreshDelegator(refresher)
+        }
+    )
+    .bottomRefresher(
+        Refresher { [weak self] refresher in
+            guard let self = self else { return }
+            self.footerRefreshDelegator(refresher)
+        }
+    )
     .instance
     
     private lazy var dataSource = DiscoveryCollectionViewDataSource(collectionView: collectionView)

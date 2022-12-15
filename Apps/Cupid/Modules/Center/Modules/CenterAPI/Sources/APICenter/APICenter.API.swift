@@ -14,20 +14,32 @@ extension APICenter {
 }
 
 extension APICenter {
-    static func execute<T: Codable>(_ request: BaseRequestable) async throws -> T? {
+    static func execute<T: Codable>(_ request: BaseRequestable) async throws -> T {
  
         guard let response = try? await client.execute(request: request) else {
             throw HTTPBizError.internal
         }
+        if response.headers.contains(name: "new-token") {
+            guard let token = response.headers.first(name: "new-token") else {
+                resetToken()
+                throw HTTPBizError.internal
+            }
+            setToken(token)
+            logger.info("set new token:\(token)")
+        }
         guard let result: Response<T> = try? JSONCoder.decode(data: response.body) else {
             throw HTTPBizError.internal
         }
-        if response.status == HTTPResponseStatus.unauthorized {
-            resetToken()
+        guard response.status == HTTPResponseStatus.ok else {
+            if response.status == HTTPResponseStatus.unauthorized {
+                resetToken()
+            }
+            throw HTTPBizError(code: result.errorCode, message: result.message)
         }
-        guard response.status == HTTPResponseStatus.ok else { throw HTTPBizError(code: result.errorCode, message: result.message) }
-        
-        return result.data
+        guard let data = result.data else {
+            throw HTTPBizError.internal
+        }
+        return data
      
     }
 }
@@ -36,11 +48,16 @@ public extension APICenter {
     
     static func auth(mobile: String, password: String) async throws -> TokenInfo {
         let request = MobilePasswordAuthRequest(mobile: mobile, password: password)
-        guard let tokenInfo: TokenInfo = try await execute(request) else {
-            throw HTTPBizError.internal
-        }
+        let tokenInfo: TokenInfo = try await execute(request)
         setToken(tokenInfo.accessToken)
         return tokenInfo
     }
+    
+    static func getUserInfo() async throws -> UserInfo {
+        let request = UserInfoRequest()
+        let userInfo: UserInfo = try await execute(request)
+        return userInfo
+    }
+    
 }
 
