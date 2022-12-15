@@ -1,5 +1,5 @@
 //
-//  UserInfo.swift
+//  TokenInfo.swift
 //  CenterAPI
 //
 //  Created by jcc on 2022/12/8.

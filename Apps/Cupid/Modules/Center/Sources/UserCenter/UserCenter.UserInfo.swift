@@ -26,15 +26,6 @@ private extension UserCenter {
 
 public extension UserCenter {
     
-    func setToken(_ token: String) {
-        APICenter.setToken(token)
-        enterAppCallback?()
-    }
-    
-    func resetToken() {
-        APICenter.resetToken()
-        enterAppCallback?()
-    }
-    
+
     
 }

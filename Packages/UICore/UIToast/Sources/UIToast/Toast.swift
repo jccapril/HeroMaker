@@ -9,6 +9,23 @@ public class Toast {
 
     private let config: ToastConfiguration
 
+    
+    private lazy var topWindow: UIWindow? = {
+        if #available(iOS 13.0, *) {
+            let keyWindowScene = UIApplication.shared.connectedScenes
+                .filter { $0.activationState == .foregroundActive }
+                .compactMap { $0 as? UIWindowScene }
+                .first
+            guard let windowScene = keyWindowScene else { return nil }
+            let window = UIWindow(windowScene: windowScene)
+            window.windowLevel = .alert
+            window.isUserInteractionEnabled = false
+            return window
+        }
+
+        return nil
+    }()
+    
     public required init(view: Toastable, config: ToastConfiguration) {
         self.config = config
         self.view = view
@@ -40,6 +57,8 @@ private extension Toast {
 
         return nil
     }
+    
+
 }
 
 public extension Toast {
@@ -60,15 +79,18 @@ public extension Toast {
 }
 
 public extension Toast {
-    func show(after delay: TimeInterval = 0) {
-        config.view?.addSubview(view) ?? topController()?.view.addSubview(view)
+    func show(after delay: TimeInterval = 0, completion: (() -> Void)? = nil) {
+        
+        config.view?.addSubview(view) ?? topWindow?.addSubview(view) ?? topController()?.view.addSubview(view)
+        
+        topWindow?.makeKeyAndVisible()
         view.createView(for: self)
 
         UIView.animate(withDuration: config.animationTime, delay: delay, options: [.curveEaseOut, .allowUserInteraction]) {
             self.view.transform = .identity
         } completion: { [self] _ in
             if config.autoHide {
-                close(after: config.displayTime)
+                close(after: config.displayTime, completion: completion)
             }
         }
     }
@@ -78,6 +100,7 @@ public extension Toast {
             self.view.transform = self.initialTransform
         }, completion: { _ in
             self.view.removeFromSuperview()
+            self.topWindow?.resignKey()
             completion?()
         })
     }

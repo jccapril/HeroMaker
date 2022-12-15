@@ -64,7 +64,15 @@ private extension Application {
             logger.error("\(error)")
         }
         
-        CenterAPI.enterAppCallback = {
+        // 注销
+        Center.enterAppCallback = {
+            DispatchQueue.main.async {
+                enterUI()
+            }
+        }
+        
+        // 登录
+        AppLogin.enterAppCallback = {
             DispatchQueue.main.async {
                 enterUI()
             }
@@ -109,7 +117,6 @@ private extension Application {
 
     @discardableResult
     static func enterUI() -> Self.Type {
-
         if(APICenter.token.isNilOrEmpty) {
             window.rootViewController = AppLogin.loginNavigationControllerType.init()
         }else {
@@ -118,7 +125,6 @@ private extension Application {
                 AppDiscovery.discoveryNavigationControllerType.init(),
             ])
         }
-        
         return self
     }
     

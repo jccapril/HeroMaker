@@ -14,3 +14,7 @@ public let loginNavigationControllerType: NavigationController.Type = LoginNavig
 public let routableViewControllers: [Routable.Type] = []
 
 public let actions: [Actable.Type] = []
+
+
+public typealias EnterAppCallback = () -> Void
+public var enterAppCallback: EnterAppCallback?

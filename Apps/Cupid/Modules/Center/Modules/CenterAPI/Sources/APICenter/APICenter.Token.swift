@@ -41,7 +41,6 @@ private extension APICenter {
 public extension APICenter {
     static func setToken(_ token: String) {
         self.token = token
-        enterAppCallback?()
         store.async.put(key: key, value: token) { result in
             switch result {
             case .success: logger.info("set token \(token) success")

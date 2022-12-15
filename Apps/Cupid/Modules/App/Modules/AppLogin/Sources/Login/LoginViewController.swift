@@ -68,6 +68,7 @@ extension LoginViewController {
                 logger.debug("logining usernmae:\(username) password:\(password)")
                 try await provider.sign(mobile: username, password: password)
                 Toast.text("Success").show()
+                enterAppCallback?()
                 FeedbackGenerator.notification.shared.notificationOccurred(.success)
             } catch {
                 Toast.text("Error", subtitle: "\(error)").show()
