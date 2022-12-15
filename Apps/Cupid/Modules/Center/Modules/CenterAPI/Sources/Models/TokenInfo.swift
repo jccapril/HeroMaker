@@ -9,7 +9,7 @@ import Coder
 import DataConvert
 import Foundation
 
-public struct UserInfo: Codable {
+public struct TokenInfo: Codable {
     public let accessToken: String
     public let expiresIn: Int
     enum CodingKeys: String, CodingKey {
@@ -19,7 +19,7 @@ public struct UserInfo: Codable {
 }
 
 
-extension UserInfo: DataConvertible {
+extension TokenInfo: DataConvertible {
     public func toData() throws -> Data {
         try JSONCoder.encode(object: self)
     }

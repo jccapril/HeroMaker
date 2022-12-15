@@ -13,7 +13,7 @@ public extension UserCenter {
 }
 
 public extension UserCenter.Sign {
-    static func auth(username: String, password: String) async throws -> UserInfo {
-        try await APICenter.auth(username: username, password: password)
+    static func auth(mobile: String, password: String) async throws -> TokenInfo {
+        try await APICenter.auth(mobile: mobile, password: password)
     }
 }

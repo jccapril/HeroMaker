@@ -25,8 +25,6 @@ extension HTTPError: CustomStringConvertible {
 
 public struct HTTPBizError: Error {
     
-    
-    
     public let code: Int
     public let message: String
     
@@ -44,5 +42,5 @@ extension HTTPBizError: CustomStringConvertible {
 
 
 extension HTTPBizError {
-    static let `internal` = HTTPBizError(code: 10086, message: "内部错误")
+    static let `internal` = HTTPBizError(code: 10001, message: "内部错误")
 }

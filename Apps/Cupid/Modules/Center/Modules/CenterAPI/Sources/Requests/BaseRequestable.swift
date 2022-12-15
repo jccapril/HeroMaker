@@ -18,7 +18,7 @@ protocol BaseRequestable: Requestable {
 
 extension BaseRequestable {
     var scheme: String { "http" }
-    var host: String { "127.0.0.1" }
+    var host: String { "10.10.241.18" }
     var port: Int { 8888 }
     var queryItems: [URLQueryItem]? { nil }
 

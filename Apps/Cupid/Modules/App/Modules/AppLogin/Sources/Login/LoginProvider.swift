@@ -13,8 +13,7 @@ class LoginProvider: Provider {}
 
 
 extension LoginProvider {
-    func sign(username: String, password: String) async throws -> UserInfo {
-        let userInfo = try await APICenter.auth(username: username, password: password)
-        return userInfo
+    func sign(mobile: String, password: String) async throws -> TokenInfo {
+        try await APICenter.auth(mobile: mobile, password: password)
     }
 }

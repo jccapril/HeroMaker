@@ -64,46 +64,46 @@
          location = "group:UICore"
          name = "UICore">
          <FileRef
-            location = "group:../Service/UICombine">
+            location = "group:AppLifeCycle">
          </FileRef>
          <FileRef
-            location = "group:../Service/UIHierarchy">
+            location = "group:AsyncImageView">
          </FileRef>
          <FileRef
-            location = "group:../Service/UIWebKit">
+            location = "group:BaseUI">
          </FileRef>
          <FileRef
-            location = "group:../Service/AsyncImageView">
+            location = "group:Chain">
+         </FileRef>
+         <FileRef
+            location = "group:UICombine">
+         </FileRef>
+         <FileRef
+            location = "group:UIHierarchy">
+         </FileRef>
+         <FileRef
+            location = "group:UIHUD">
+         </FileRef>
+         <FileRef
+            location = "group:UILayout">
+         </FileRef>
+         <FileRef
+            location = "group:UIRefresh">
+         </FileRef>
+         <FileRef
+            location = "group:UIRoute">
+         </FileRef>
+         <FileRef
+            location = "group:UIToast">
+         </FileRef>
+         <FileRef
+            location = "group:UIWebKit">
          </FileRef>
          <FileRef
             location = "group:UIFeedBack">
          </FileRef>
          <FileRef
             location = "group:UIExtensionKit">
-         </FileRef>
-         <FileRef
-            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/UIRefresh">
-         </FileRef>
-         <FileRef
-            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/Chain">
-         </FileRef>
-         <FileRef
-            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/AppLifeCycle">
-         </FileRef>
-         <FileRef
-            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/UILayout">
-         </FileRef>
-         <FileRef
-            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/BaseUI">
-         </FileRef>
-         <FileRef
-            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/UIRoute">
-         </FileRef>
-         <FileRef
-            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/UIHUD">
-         </FileRef>
-         <FileRef
-            location = "group:/Users/leaf/Desktop/Favorite/Client/iOS/HeroMaker/Packages/UICore/UIToast">
          </FileRef>
       </Group>
    </Group>
