@@ -22,7 +22,11 @@ extension APICenter {
         guard let result: Response<T> = try? JSONCoder.decode(data: response.body) else {
             throw HTTPBizError.internal
         }
-        guard result.errorCode == 0 else { throw HTTPBizError(code: result.errorCode, message: result.message) }
+        if response.status == HTTPResponseStatus.unauthorized {
+            resetToken()
+        }
+        guard response.status == HTTPResponseStatus.ok else { throw HTTPBizError(code: result.errorCode, message: result.message) }
+        
         return result.data
      
     }
@@ -35,6 +39,7 @@ public extension APICenter {
         guard let tokenInfo: TokenInfo = try await execute(request) else {
             throw HTTPBizError.internal
         }
+        setToken(tokenInfo.accessToken)
         return tokenInfo
     }
 }

@@ -41,7 +41,7 @@ private extension APICenter {
 public extension APICenter {
     static func setToken(_ token: String) {
         self.token = token
-
+        enterAppCallback?()
         store.async.put(key: key, value: token) { result in
             switch result {
             case .success: logger.info("set token \(token) success")
@@ -52,7 +52,7 @@ public extension APICenter {
 
     static func resetToken() {
         token = .none
-
+        enterAppCallback?()
         store.async.delete(key: key) { result in
             switch result {
             case .success: logger.info("reset token success")

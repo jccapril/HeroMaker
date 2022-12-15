@@ -51,13 +51,13 @@ extension LoginViewController {
     func loginButtonAction(username: String?, password: String?) {
         
         guard let username = username, !username.isEmpty else {
-            Toast.text("Error", subtitle: "用户名不能为空", config: ToastConfiguration(view: self.view)).show()
+            Toast.text("Error", subtitle: "用户名不能为空").show()
             FeedbackGenerator.notification.shared.notificationOccurred(.error)
             return
         }
 
         guard let password = password, !password.isEmpty else {
-            Toast.text("Error", subtitle: "密码不能为空", config: ToastConfiguration(view: self.view)).show()
+            Toast.text("Error", subtitle: "密码不能为空").show()
             FeedbackGenerator.notification.shared.notificationOccurred(.error)
             return
         }
@@ -67,10 +67,10 @@ extension LoginViewController {
             do {
                 logger.debug("logining usernmae:\(username) password:\(password)")
                 try await provider.sign(mobile: username, password: password)
-                Toast.text("Success", config: ToastConfiguration(view: self.view)).show()
+                Toast.text("Success").show()
                 FeedbackGenerator.notification.shared.notificationOccurred(.success)
             } catch {
-                Toast.text("Error", subtitle: "\(error)", config: ToastConfiguration(view: self.view)).show()
+                Toast.text("Error", subtitle: "\(error)").show()
                 FeedbackGenerator.notification.shared.notificationOccurred(.error)
                 logger.error("\(error)")
             }

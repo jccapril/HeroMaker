@@ -9,6 +9,7 @@ import Foundation
 import Service
 import UICore
 import UIKit
+import Center
 
 public enum Application {}
 
@@ -62,6 +63,13 @@ private extension Application {
         case let .failure(error):
             logger.error("\(error)")
         }
+        
+        CenterAPI.enterAppCallback = {
+            DispatchQueue.main.async {
+                enterUI()
+            }
+        }
+        
     }
 
     @discardableResult
@@ -101,13 +109,18 @@ private extension Application {
 
     @discardableResult
     static func enterUI() -> Self.Type {
+
+        if(APICenter.token.isNilOrEmpty) {
+            window.rootViewController = AppLogin.loginNavigationControllerType.init()
+        }else {
+            window.rootViewController = AppTabBar.appTabBarViewControllerType.init(viewControllers: [
+                AppDiscovery.discoveryNavigationControllerType.init(),
+                AppDiscovery.discoveryNavigationControllerType.init(),
+            ])
+        }
         
-        window.rootViewController = AppLogin.loginNavigationControllerType.init()
-        
-//        window.rootViewController = AppTabBar.appTabBarViewControllerType.init(viewControllers: [
-//            AppDiscovery.discoveryNavigationControllerType.init(),
-//            AppDiscovery.discoveryNavigationControllerType.init(),
-//        ])
         return self
     }
+    
+    
 }
