@@ -1,22 +1,24 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  AppLogin
 //
-//  Created by jcc on 2022/12/7.
+//  Created by jcc on 2022/12/16.
 //
 
 import CenterAPI
 import UICore
 import WeakDelegate
+import Service
 
-class LoginViewController: ViewController {
-    private lazy var contentView = LoginContentView()
-    private lazy var provider = LoginProvider()
-    private var loginTask: Task<Void, Never>? = .none
+class RegisterViewController: ViewController {
+    private lazy var contentView = RegisterContentView()
+    private lazy var provider = RegisterProvider()
+    private var registerTask: Task<Void, Never>? = .none
 }
 
+
 // MARK: - Override
-extension LoginViewController {
+extension RegisterViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -31,7 +33,7 @@ extension LoginViewController {
 
 // MARK: - Private
 
-private extension LoginViewController {
+private extension RegisterViewController {
     func setup() {
         setupNavigationBar()
         contentView.x.add(to: view)
@@ -39,16 +41,12 @@ private extension LoginViewController {
     }
     
     func setupNavigationBar() {
-        title = "登录"
+        title = "注册"
     }
     
     func bind() {
-        contentView.loginButtonDelegator.delegate(on: self) {
-            $0.loginButtonAction(mobile: $1.0, password: $1.1)
-        }
-        
-        contentView.registerButtonDelegator.delegate(on: self) {_,_ in
-            Router.push(to: "RegisterViewController")
+        contentView.registerButtonDelegator.delegate(on: self) {
+            $0.registerButtonAction(name: $1.0, mobile: $1.1, password: $1.2)
         }
     }
 }
@@ -56,9 +54,15 @@ private extension LoginViewController {
 
 // MARK: - Internal
 
-extension LoginViewController {
+extension RegisterViewController {
     
-    func loginButtonAction(mobile: String?, password: String?) {
+    func registerButtonAction(name: String?, mobile: String?, password: String?) {
+        
+        guard let name = name, !name.isEmpty else {
+            Toast.text("Error", subtitle: "用户名不能为空").show()
+            FeedbackGenerator.notification.shared.notificationOccurred(.error)
+            return
+        }
         
         guard let mobile = mobile, !mobile.isEmpty else {
             Toast.text("Error", subtitle: "手机号不能为空").show()
@@ -72,11 +76,11 @@ extension LoginViewController {
             return
         }
 
-        loginTask.run { $0.cancel() }
+        registerTask.run { $0.cancel() }
         let task = Task { @MainActor in
             do {
-                logger.debug("logining mobile:\(mobile) password:\(password)")
-                try await provider.login(mobile:mobile, password: password)
+                logger.debug("registering nmae:\(name) mobile:\(mobile) password:\(password)")
+                try await provider.register(name:  name, mobile: mobile, password: password)
                 Toast.text("Success").show()
                 enterAppCallback?()
                 FeedbackGenerator.notification.shared.notificationOccurred(.success)
@@ -86,6 +90,17 @@ extension LoginViewController {
                 logger.error("\(error)")
             }
         }
-        loginTask = task
+        registerTask = task
     }
 }
+
+extension RegisterViewController: TypeNameable {}
+
+extension RegisterViewController: Routable {
+    class func initialize(url: URLConvertible, values: [String: Any], context: Any?) -> UIViewController? {
+        return RegisterViewController()
+    }
+
+    static let routeName: String = typeName
+}
+

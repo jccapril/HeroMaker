@@ -14,7 +14,7 @@ class LoginProvider: Provider {}
 
 extension LoginProvider {
     @discardableResult
-    func sign(mobile: String, password: String) async throws -> TokenInfo {
+    func login(mobile: String, password: String) async throws -> TokenInfo {
         try await APICenter.auth(mobile: mobile, password: password)
     }
 }

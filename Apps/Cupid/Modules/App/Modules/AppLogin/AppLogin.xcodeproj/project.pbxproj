@@ -16,6 +16,9 @@
 		0909132C29406F990068E6F0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909132B29406F990068E6F0 /* LoginViewController.swift */; };
 		0909132E29406FA90068E6F0 /* LoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909132D29406FA90068E6F0 /* LoginContentView.swift */; };
 		09091330294087670068E6F0 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909132F294087670068E6F0 /* LoginProvider.swift */; };
+		0955CBAE294C6C270025FE8F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CBAD294C6C260025FE8F /* RegisterViewController.swift */; };
+		0955CBB0294C6C320025FE8F /* RegisterContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CBAF294C6C320025FE8F /* RegisterContentView.swift */; };
+		0955CBB2294C6C3E0025FE8F /* RegisterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CBB1294C6C3E0025FE8F /* RegisterProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +47,9 @@
 		0909132B29406F990068E6F0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0909132D29406FA90068E6F0 /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
 		0909132F294087670068E6F0 /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
+		0955CBAD294C6C260025FE8F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0955CBAF294C6C320025FE8F /* RegisterContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContentView.swift; sourceTree = "<group>"; };
+		0955CBB1294C6C3E0025FE8F /* RegisterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 			children = (
 				0909132329406A270068E6F0 /* Exported.swift */,
 				0909132529406A330068E6F0 /* LoginModule.swift */,
+				0955CBAC294C6C010025FE8F /* Register */,
 				0909132829406F3D0068E6F0 /* Login */,
 			);
 			path = Sources;
@@ -117,6 +124,16 @@
 				0909132F294087670068E6F0 /* LoginProvider.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		0955CBAC294C6C010025FE8F /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				0955CBAD294C6C260025FE8F /* RegisterViewController.swift */,
+				0955CBAF294C6C320025FE8F /* RegisterContentView.swift */,
+				0955CBB1294C6C3E0025FE8F /* RegisterProvider.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,10 +197,13 @@
 			files = (
 				0909132C29406F990068E6F0 /* LoginViewController.swift in Sources */,
 				0909132429406A270068E6F0 /* Exported.swift in Sources */,
+				0955CBAE294C6C270025FE8F /* RegisterViewController.swift in Sources */,
 				0909132A29406F6B0068E6F0 /* LoginNavigationViewController.swift in Sources */,
 				0909132E29406FA90068E6F0 /* LoginContentView.swift in Sources */,
 				09091330294087670068E6F0 /* LoginProvider.swift in Sources */,
 				0909132629406A330068E6F0 /* LoginModule.swift in Sources */,
+				0955CBB2294C6C3E0025FE8F /* RegisterProvider.swift in Sources */,
+				0955CBB0294C6C320025FE8F /* RegisterContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

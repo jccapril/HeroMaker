@@ -1,8 +1,8 @@
 //
-//  LoginContentView.swift
+//  RegisterContentView.swift
 //  AppLogin
 //
-//  Created by jcc on 2022/12/7.
+//  Created by jcc on 2022/12/16.
 //
 
 import UICore
@@ -10,11 +10,17 @@ import UIKit
 import UICombine
 import WeakDelegate
 
-class LoginContentView: View {
-    
+class RegisterContentView: View {
     private lazy var subscriptions = Set<AnyCancellable>()
-    private(set) lazy var loginButtonDelegator = Delegator<(String?, String?), Void>()
-    private(set) lazy var registerButtonDelegator = Delegator<Void, Void>()
+    private(set) lazy var registerButtonDelegator = Delegator<(String?, String?, String?), Void>()
+    
+    
+    private lazy var usernameTextField = UITextField(frame: .zero)
+        .x
+        .placeholder("请输入用户名")
+        .textColor(.systemBlack)
+        .borderStyle(.roundedRect)
+        .instance
     
     private lazy var mobileTextField = UITextField(frame: .zero)
         .x
@@ -30,18 +36,11 @@ class LoginContentView: View {
         .borderStyle(.roundedRect)
         .instance
     
-    private lazy var loginButton = UIButton(type: .custom)
-        .x
-        .setTitle("登录", for: .normal)
-        .setTitleColor(.systemBlack, for: .normal)
-        .instance
-    
     private lazy var registerButton = UIButton(type: .custom)
         .x
-        .setTitle("没有账号，去注册", for: .normal)
+        .setTitle("立即注册", for: .normal)
         .setTitleColor(.systemBlack, for: .normal)
         .instance
-    
     
     
     override init(frame: CGRect = .zero) {
@@ -57,39 +56,32 @@ class LoginContentView: View {
 
 // MARK: - Private
 
-private extension LoginContentView {
+private extension RegisterContentView {
     func setup() {
         backgroundColor = .systemWhite
+        usernameTextField.x.add(to: self)
         mobileTextField.x.add(to: self)
         passwordTextField.x.add(to: self)
-        loginButton.x.add(to: self)
         registerButton.x.add(to: self)
-        
-        loginButton.tapPublisher.receive(on: DispatchQueue.main).sink { [weak self] in
-            guard let self = self else { return }
-            self.loginButtonDelegator((self.mobileTextField.text, self.passwordTextField.text))
-        }
-        .store(in: &subscriptions)
-        
+
         registerButton.tapPublisher.receive(on: DispatchQueue.main).sink { [weak self] in
             guard let self = self else { return }
-            self.registerButtonDelegator()
+            self.registerButtonDelegator((self.usernameTextField.text, self.mobileTextField.text, self.passwordTextField.text))
         }
         .store(in: &subscriptions)
-        
     }
 }
 
 
 // MARK: - Override
 
-extension LoginContentView {
+extension RegisterContentView {
     override open func layoutSubviews() {
         super.layoutSubviews()
         
-        mobileTextField.pin.top(50).left(50).right(50).height(50)
+        usernameTextField.pin.top(50).left(50).right(50).height(50)
+        mobileTextField.pin.below(of: usernameTextField).marginTop(10).left(50).right(50).height(50)
         passwordTextField.pin.below(of: mobileTextField).marginTop(10).left(50).right(50).height(50)
-        loginButton.pin.below(of: passwordTextField, aligned: .center).marginTop(10).sizeToFit()
-        registerButton.pin.below(of: loginButton, aligned: .center).marginTop(10).sizeToFit()
+        registerButton.pin.below(of: passwordTextField, aligned: .center).marginTop(10).sizeToFit()
     }
 }

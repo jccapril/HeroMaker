@@ -42,7 +42,7 @@ extension HTTPBizError: CustomStringConvertible {
 
 
 extension HTTPBizError {
-    static let `internal` = HTTPBizError(code: 10001, message: "内部错误: connect error")
-    static let  parse = HTTPBizError(code: 10002, message: "内部错误: parse error")
-    static let  token = HTTPBizError(code: 10003, message: "内部错误: token error")
+    static let serve = HTTPBizError(code: 10001, message: "内部错误: serve connect error")
+    static let parse = HTTPBizError(code: 10002, message: "内部错误: data parse error")
+    static let token = HTTPBizError(code: 10003, message: "内部错误: set token error")
 }
