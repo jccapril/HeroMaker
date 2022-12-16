@@ -69,7 +69,8 @@ private extension DiscoveryViewController {
         let task = Task { @MainActor in
             do {
                 logger.debug("getting user info")
-                try await provider.loadUserInfo()
+                let userInfo = try await provider.loadUserInfo()
+                logger.debug("get user info:\(userInfo.createdAt)")
             } catch {
                 Toast.text("Error", subtitle: "\(error)").show()
                 logger.error("\(error)")
@@ -81,8 +82,9 @@ private extension DiscoveryViewController {
     func loadData(isRefresh: Bool) async {
         do {
             let userInfo = try await provider.loadUserInfo()
-            logger.debug("get user info:\(userInfo)")
-            
+            logger.debug("get user info:\(userInfo.createdAt)")
+            let data = try userInfo.toData()
+            logger.debug("get user info:\(data)")
         } catch {
             Toast.text("Error", subtitle: "\(error)").show()
             logger.error("\(error)")

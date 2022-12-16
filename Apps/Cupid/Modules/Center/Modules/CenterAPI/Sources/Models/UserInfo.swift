@@ -13,8 +13,12 @@ public struct UserInfo: Codable {
     public let id: Int
     public let name: String
     public let mobile: String
-    public let createdAt: String
-    public let updatedAt: String
+    
+    @DateStringCoding
+    public var createdAt: Date
+    
+    @DateStringCoding
+    public var updatedAt: Date
 
     enum CodingKeys: String, CodingKey {
         case id = "id"

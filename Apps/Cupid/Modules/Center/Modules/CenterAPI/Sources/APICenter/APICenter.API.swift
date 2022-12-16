@@ -22,13 +22,12 @@ extension APICenter {
         if response.headers.contains(name: "new-token") {
             guard let token = response.headers.first(name: "new-token") else {
                 resetToken()
-                throw HTTPBizError.internal
+                throw HTTPBizError.token
             }
             setToken(token)
-            logger.info("set new token:\(token)")
         }
-        guard let result: Response<T> = try? JSONCoder.decode(data: response.body) else {
-            throw HTTPBizError.internal
+        guard let result = try? Response<T>.init(data: response.body) else {
+            throw HTTPBizError.parse
         }
         guard response.status == HTTPResponseStatus.ok else {
             if response.status == HTTPResponseStatus.unauthorized {
