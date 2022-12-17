@@ -109,6 +109,7 @@ public extension Box where T: UILabel {
         return subject.x
     }
 
+    @available(iOS 14.0, *)
     @discardableResult
     func lineBreakStrategy(_ lineBreakStrategy: NSParagraphStyle.LineBreakStrategy) -> Box {
         subject.lineBreakStrategy = lineBreakStrategy

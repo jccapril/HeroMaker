@@ -4,6 +4,7 @@
 
 import Foundation
 import UIKit
+import SFSafeSymbols
 
 open class ViewController: UIViewController {
     open private(set) var isFirstLoad: Bool = true
@@ -105,7 +106,7 @@ extension ViewController {
     @objc
     open var backBarButtonItemImage: UIImage? {
         if #available(iOS 13.0, *) {
-            return UIImage(systemName: "arrow.left")
+            return UIImage(systemSymbol: .chevronLeft)
         }
         return nil
     }

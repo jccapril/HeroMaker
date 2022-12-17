@@ -8,9 +8,13 @@ let package = Package(
     products: [
         .library(name: "BaseUI", targets: ["BaseUI"]),
     ],
-
+    dependencies: [
+        .package(url: "https://github.com/SFSafeSymbols/SFSafeSymbols.git", from: "4.0.0")
+    ],
     targets: [
-        .target(name: "BaseUI"),
+        .target(name: "BaseUI", dependencies: [
+            .product(name: "SFSafeSymbols", package: "SFSafeSymbols"),
+        ]),
         .testTarget(
             name: "BaseUITests",
             dependencies: ["BaseUI"]),
