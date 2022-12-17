@@ -9,4 +9,5 @@
 @_exported import AppTabBar
 @_exported import AppDiscovery
 @_exported import AppLogin
+@_exported import AppBind
 @_exported import AppWebBrowser

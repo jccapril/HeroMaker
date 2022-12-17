@@ -8,6 +8,7 @@
 import CenterAPI
 import UICore
 import WeakDelegate
+import Service
 
 class LoginViewController: ViewController {
     private lazy var contentView = LoginContentView()
@@ -88,4 +89,15 @@ extension LoginViewController {
         }
         loginTask = task
     }
+}
+
+
+extension LoginViewController: TypeNameable {}
+
+extension LoginViewController: Routable {
+    class func initialize(url: URLConvertible, values: [String: Any], context: Any?) -> UIViewController? {
+        return LoginViewController()
+    }
+
+    static let routeName: String = typeName
 }

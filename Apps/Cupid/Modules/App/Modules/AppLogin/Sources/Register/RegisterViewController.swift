@@ -46,7 +46,7 @@ private extension RegisterViewController {
     
     func bind() {
         contentView.registerButtonDelegator.delegate(on: self) {
-            $0.registerButtonAction(name: $1.0, mobile: $1.1, password: $1.2)
+            $0.registerButtonAction(name: $1.0, mobile: $1.1, password: $1.2, confirmPassword: $1.3)
         }
     }
 }
@@ -56,26 +56,38 @@ private extension RegisterViewController {
 
 extension RegisterViewController {
     
-    func registerButtonAction(name: String?, mobile: String?, password: String?) {
+    func registerButtonAction(name: String?, mobile: String?, password: String?, confirmPassword: String?) {
         
         guard let name = name, !name.isEmpty else {
-            Toast.text("Error", subtitle: "用户名不能为空").show()
+            Toast.text("Error", subtitle: "请输入用户名").show()
             FeedbackGenerator.notification.shared.notificationOccurred(.error)
             return
         }
         
         guard let mobile = mobile, !mobile.isEmpty else {
-            Toast.text("Error", subtitle: "手机号不能为空").show()
+            Toast.text("Error", subtitle: "请输入手机号").show()
             FeedbackGenerator.notification.shared.notificationOccurred(.error)
             return
         }
 
         guard let password = password, !password.isEmpty else {
-            Toast.text("Error", subtitle: "密码不能为空").show()
+            Toast.text("Error", subtitle: "请输入密码").show()
+            FeedbackGenerator.notification.shared.notificationOccurred(.error)
+            return
+        }
+        
+        guard let confirmPassword = confirmPassword, !confirmPassword.isEmpty else {
+            Toast.text("Error", subtitle: "请再次输入密码").show()
             FeedbackGenerator.notification.shared.notificationOccurred(.error)
             return
         }
 
+        if password != confirmPassword {
+            Toast.text("Error", subtitle: "两次密码输入不一致").show()
+            FeedbackGenerator.notification.shared.notificationOccurred(.error)
+            return
+        }
+        
         registerTask.run { $0.cancel() }
         let task = Task { @MainActor in
             do {

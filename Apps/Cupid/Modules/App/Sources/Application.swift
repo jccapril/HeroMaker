@@ -85,6 +85,7 @@ private extension Application {
         let routableList = AppTabBar.routableViewControllers +
             AppDiscovery.routableViewControllers +
             AppLogin.routableViewControllers +
+            AppBind.routableViewControllers +
             AppWebBrowser.routableViewControllers
         routableList.forEach {
             Router.register(routeName: $0.routeName, factory: $0.initialize)
@@ -92,6 +93,7 @@ private extension Application {
 
         let actionList = AppTabBar.actions +
             AppDiscovery.actions +
+            AppBind.actions +
             AppLogin.actions
         actionList.forEach {
             Router.register(actName: $0.actName, action: $0.act)
