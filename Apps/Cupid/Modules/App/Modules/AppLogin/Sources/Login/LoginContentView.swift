@@ -19,6 +19,7 @@ class LoginContentView: View {
     private lazy var mobileTextField = UITextField(frame: .zero)
         .x
         .placeholder("请输入手机号")
+        .keyboardType(.numberPad)
         .textColor(.systemBlack)
         .borderStyle(.roundedRect)
         .instance
@@ -26,6 +27,7 @@ class LoginContentView: View {
     private lazy var passwordTextField = UITextField(frame: .zero)
         .x
         .placeholder("请输入密码")
+        .isSecureTextEntry(true)
         .textColor(.systemBlack)
         .borderStyle(.roundedRect)
         .instance

@@ -62,13 +62,13 @@ extension LoginViewController {
     func loginButtonAction(mobile: String?, password: String?) {
         
         guard let mobile = mobile, !mobile.isEmpty else {
-            Toast.text("Error", subtitle: "手机号不能为空").show()
+            Toast.text("Error", subtitle: "请输入手机号").show()
             FeedbackGenerator.notification.shared.notificationOccurred(.error)
             return
         }
 
         guard let password = password, !password.isEmpty else {
-            Toast.text("Error", subtitle: "密码不能为空").show()
+            Toast.text("Error", subtitle: "请输入密码").show()
             FeedbackGenerator.notification.shared.notificationOccurred(.error)
             return
         }
