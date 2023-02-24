@@ -10,28 +10,28 @@
 		0909133729418D680068E6F0 /* UserCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909133629418D680068E6F0 /* UserCenter.swift */; };
 		0909133929418F4F0068E6F0 /* UserCenter.Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909133829418F4F0068E6F0 /* UserCenter.Sign.swift */; };
 		0909133F2941AE900068E6F0 /* UserCenter.UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909133E2941AE900068E6F0 /* UserCenter.UserInfo.swift */; };
+		09095BE52988E1C00026C382 /* libCenterWebServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09095BE42988E1A20026C382 /* libCenterWebServer.a */; };
 		0973EA5A29372BAA00B96163 /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EA5929372BAA00B96163 /* Exported.swift */; };
 		0973EA9029372CD800B96163 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA8F29372CD800B96163 /* Service.framework */; };
 		0973EA9129372CD800B96163 /* Service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA8F29372CD800B96163 /* Service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0973EA9329372CDD00B96163 /* libCenterAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA8629372BE600B96163 /* libCenterAPI.a */; };
 		0973EAA729372F2300B96163 /* CenterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EAA629372F2300B96163 /* CenterModule.swift */; };
-		098BAE9E2939A10A00702111 /* libCenterWebServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 098BAE952939A0A200702111 /* libCenterWebServer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		09095BE32988E1A20026C382 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09095BDF2988E1A20026C382 /* CenterWebServer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 098BAE852939A0A100702111;
+			remoteInfo = CenterWebServer;
+		};
 		0973EA8529372BE600B96163 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0973EA8129372BE500B96163 /* CenterAPI.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0973EA7729372BE500B96163;
 			remoteInfo = CenterAPI;
-		};
-		098BAE942939A0A200702111 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 098BAE8F2939A0A200702111 /* CenterWebServer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 098BAE852939A0A100702111;
-			remoteInfo = CenterWebServer;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,6 +53,7 @@
 		0909133629418D680068E6F0 /* UserCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenter.swift; sourceTree = "<group>"; };
 		0909133829418F4F0068E6F0 /* UserCenter.Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenter.Sign.swift; sourceTree = "<group>"; };
 		0909133E2941AE900068E6F0 /* UserCenter.UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenter.UserInfo.swift; sourceTree = "<group>"; };
+		09095BDF2988E1A20026C382 /* CenterWebServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CenterWebServer.xcodeproj; path = CenterWebServer/CenterWebServer.xcodeproj; sourceTree = "<group>"; };
 		0973EA032937287200B96163 /* Center.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Center.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0973EA16293728C400B96163 /* CenterAPI.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CenterAPI.xcconfig; sourceTree = "<group>"; };
 		0973EA17293728C400B96163 /* CenterAPI.Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CenterAPI.Debug.xcconfig; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		0973EA8129372BE500B96163 /* CenterAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CenterAPI.xcodeproj; path = CenterAPI/CenterAPI.xcodeproj; sourceTree = "<group>"; };
 		0973EA8F29372CD800B96163 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0973EAA629372F2300B96163 /* CenterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterModule.swift; sourceTree = "<group>"; };
-		098BAE8F2939A0A200702111 /* CenterWebServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CenterWebServer.xcodeproj; path = ../../../../../Packages/Service/CenterWebServer/CenterWebServer.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 			files = (
 				0973EA9029372CD800B96163 /* Service.framework in Frameworks */,
 				0973EA9329372CDD00B96163 /* libCenterAPI.a in Frameworks */,
-				098BAE9E2939A10A00702111 /* libCenterWebServer.a in Frameworks */,
+				09095BE52988E1C00026C382 /* libCenterWebServer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +86,14 @@
 				0909133E2941AE900068E6F0 /* UserCenter.UserInfo.swift */,
 			);
 			path = UserCenter;
+			sourceTree = "<group>";
+		};
+		09095BE02988E1A20026C382 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09095BE42988E1A20026C382 /* libCenterWebServer.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		0973E9F92937287200B96163 = {
@@ -120,7 +128,7 @@
 		0973EA14293728A000B96163 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				098BAE8F2939A0A200702111 /* CenterWebServer.xcodeproj */,
+				09095BDF2988E1A20026C382 /* CenterWebServer.xcodeproj */,
 				0973EA8129372BE500B96163 /* CenterAPI.xcodeproj */,
 			);
 			path = Modules;
@@ -150,14 +158,6 @@
 				0973EA8F29372CD800B96163 /* Service.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		098BAE902939A0A200702111 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				098BAE952939A0A200702111 /* libCenterWebServer.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +224,8 @@
 					ProjectRef = 0973EA8129372BE500B96163 /* CenterAPI.xcodeproj */;
 				},
 				{
-					ProductGroup = 098BAE902939A0A200702111 /* Products */;
-					ProjectRef = 098BAE8F2939A0A200702111 /* CenterWebServer.xcodeproj */;
+					ProductGroup = 09095BE02988E1A20026C382 /* Products */;
+					ProjectRef = 09095BDF2988E1A20026C382 /* CenterWebServer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -236,18 +236,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		09095BE42988E1A20026C382 /* libCenterWebServer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCenterWebServer.a;
+			remoteRef = 09095BE32988E1A20026C382 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		0973EA8629372BE600B96163 /* libCenterAPI.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libCenterAPI.a;
 			remoteRef = 0973EA8529372BE600B96163 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		098BAE952939A0A200702111 /* libCenterWebServer.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libCenterWebServer.a;
-			remoteRef = 098BAE942939A0A200702111 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

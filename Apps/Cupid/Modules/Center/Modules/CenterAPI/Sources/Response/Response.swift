@@ -16,7 +16,7 @@ public struct Response<T: Codable>: Codable  {
     let message: String
     
     enum CodingKeys: String, CodingKey {
-        case errorCode = "error_code"
+        case errorCode = "code"
         case data
         case message
     }
@@ -32,3 +32,5 @@ extension Response: DataConvertible {
         self = try JSONCoder.decode(data: data)
     }
 }
+
+

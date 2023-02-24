@@ -14,7 +14,7 @@ extension APICenter {
 }
 
 extension APICenter {
-    static func execute<T: Codable>(_ request: BaseRequestable) async throws -> T {
+    static func execute<T: Codable>(_ request: BaseRequestable) async throws -> T? {
         guard let response = try? await client.execute(request: request) else {
             throw HTTPBizError.serve
         }
@@ -28,16 +28,20 @@ extension APICenter {
         guard let result = try? Response<T>.init(data: response.body) else {
             throw HTTPBizError.parse
         }
+        
         guard response.status == HTTPResponseStatus.ok else {
-            if response.status == HTTPResponseStatus.unauthorized {
+            throw HTTPBizError(code: result.errorCode, message: result.message)
+        }
+        guard result.errorCode == 0  else {
+            // jwt 错误
+            if result.errorCode/10000 == 103 {
                 resetToken()
             }
             throw HTTPBizError(code: result.errorCode, message: result.message)
         }
-        guard let data = result.data else {
-            throw HTTPBizError.parse
-        }
-        return data
+        
+        
+        return result.data
      
     }
 }
@@ -46,7 +50,9 @@ public extension APICenter {
     
     static func auth(mobile: String, password: String) async throws -> TokenInfo {
         let request = MobilePasswordAuthRequest(mobile: mobile, password: password)
-        let tokenInfo: TokenInfo = try await execute(request)
+        guard let tokenInfo: TokenInfo = try await execute(request) else {
+            throw HTTPBizError.parse
+        }
         setToken(tokenInfo.accessToken)
         return tokenInfo
     }
@@ -54,17 +60,38 @@ public extension APICenter {
     
     static func register(name: String, mobile: String, password: String) async throws -> TokenInfo {
         let request = RegisterRequest(name: name, mobile: mobile, password: password)
-        let tokenInfo: TokenInfo = try await execute(request)
+        guard let tokenInfo: TokenInfo = try await execute(request) else{
+            throw HTTPBizError.parse
+        }
         setToken(tokenInfo.accessToken)
         return tokenInfo
     }
     
     static func getUserInfo() async throws -> UserInfo {
         let request = UserInfoRequest()
-        let userInfo: UserInfo = try await execute(request)
+        guard let userInfo: UserInfo = try await execute(request) else{
+            throw HTTPBizError.parse
+        }
         return userInfo
     }
     
+    // 发送验证码
+    static func requestMobileSMSCode(mobile: String) async throws -> Bool {
+        let request = MobileSMSCodeRequest(mobile: mobile)
+        let _: NullResponse? = try await execute(request)
+        return true
+    }
+    
+    
+    // 登录/注册
+    static func loginOrRegister(mobile: String, code: String) async throws -> TokenInfo {
+        let request = MobileSMSCodeAuthRequest(mobile: mobile, code: code)
+        guard let tokenInfo: TokenInfo = try await execute(request) else{
+            throw HTTPBizError.parse
+        }
+        setToken(tokenInfo.accessToken)
+        return tokenInfo
+    }
     
     
 }

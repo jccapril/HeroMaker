@@ -14,6 +14,8 @@ public let loginNavigationControllerType: NavigationController.Type = LoginNavig
 public let routableViewControllers: [Routable.Type] = [
     LoginViewController.self,
     RegisterViewController.self,
+    MobileViewController.self,
+    CodeViewController.self,
 ]
 
 public let actions: [Actable.Type] = []

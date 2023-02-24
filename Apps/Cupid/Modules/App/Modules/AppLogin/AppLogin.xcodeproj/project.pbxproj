@@ -19,6 +19,12 @@
 		0955CBAE294C6C270025FE8F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CBAD294C6C260025FE8F /* RegisterViewController.swift */; };
 		0955CBB0294C6C320025FE8F /* RegisterContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CBAF294C6C320025FE8F /* RegisterContentView.swift */; };
 		0955CBB2294C6C3E0025FE8F /* RegisterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CBB1294C6C3E0025FE8F /* RegisterProvider.swift */; };
+		09F67B8229A88CE9004550FF /* MobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67B8129A88CE9004550FF /* MobileViewController.swift */; };
+		09F67B8429A88CFB004550FF /* MobileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67B8329A88CFB004550FF /* MobileContentView.swift */; };
+		09F67B8629A88F88004550FF /* MobileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67B8529A88F88004550FF /* MobileProvider.swift */; };
+		09F67B8F29A8AB77004550FF /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67B8E29A8AB77004550FF /* CodeViewController.swift */; };
+		09F67B9129A8AB81004550FF /* CodeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67B9029A8AB81004550FF /* CodeContentView.swift */; };
+		09F67B9529A8B639004550FF /* CodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67B9429A8B639004550FF /* CodeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +56,12 @@
 		0955CBAD294C6C260025FE8F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0955CBAF294C6C320025FE8F /* RegisterContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContentView.swift; sourceTree = "<group>"; };
 		0955CBB1294C6C3E0025FE8F /* RegisterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProvider.swift; sourceTree = "<group>"; };
+		09F67B8129A88CE9004550FF /* MobileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileViewController.swift; sourceTree = "<group>"; };
+		09F67B8329A88CFB004550FF /* MobileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileContentView.swift; sourceTree = "<group>"; };
+		09F67B8529A88F88004550FF /* MobileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileProvider.swift; sourceTree = "<group>"; };
+		09F67B8E29A8AB77004550FF /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		09F67B9029A8AB81004550FF /* CodeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContentView.swift; sourceTree = "<group>"; };
+		09F67B9429A8B639004550FF /* CodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +112,7 @@
 				0909132329406A270068E6F0 /* Exported.swift */,
 				0909132529406A330068E6F0 /* LoginModule.swift */,
 				0955CBAC294C6C010025FE8F /* Register */,
+				09F67B8029A88C9E004550FF /* Mobile */,
 				0909132829406F3D0068E6F0 /* Login */,
 			);
 			path = Sources;
@@ -134,6 +147,19 @@
 				0955CBB1294C6C3E0025FE8F /* RegisterProvider.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		09F67B8029A88C9E004550FF /* Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				09F67B8529A88F88004550FF /* MobileProvider.swift */,
+				09F67B8129A88CE9004550FF /* MobileViewController.swift */,
+				09F67B8329A88CFB004550FF /* MobileContentView.swift */,
+				09F67B8E29A8AB77004550FF /* CodeViewController.swift */,
+				09F67B9029A8AB81004550FF /* CodeContentView.swift */,
+				09F67B9429A8B639004550FF /* CodeViewModel.swift */,
+			);
+			path = Mobile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,15 +221,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F67B8229A88CE9004550FF /* MobileViewController.swift in Sources */,
 				0909132C29406F990068E6F0 /* LoginViewController.swift in Sources */,
 				0909132429406A270068E6F0 /* Exported.swift in Sources */,
+				09F67B9529A8B639004550FF /* CodeViewModel.swift in Sources */,
+				09F67B9129A8AB81004550FF /* CodeContentView.swift in Sources */,
 				0955CBAE294C6C270025FE8F /* RegisterViewController.swift in Sources */,
 				0909132A29406F6B0068E6F0 /* LoginNavigationViewController.swift in Sources */,
 				0909132E29406FA90068E6F0 /* LoginContentView.swift in Sources */,
+				09F67B8629A88F88004550FF /* MobileProvider.swift in Sources */,
 				09091330294087670068E6F0 /* LoginProvider.swift in Sources */,
+				09F67B8F29A8AB77004550FF /* CodeViewController.swift in Sources */,
 				0909132629406A330068E6F0 /* LoginModule.swift in Sources */,
 				0955CBB2294C6C3E0025FE8F /* RegisterProvider.swift in Sources */,
 				0955CBB0294C6C320025FE8F /* RegisterContentView.swift in Sources */,
+				09F67B8429A88CFB004550FF /* MobileContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

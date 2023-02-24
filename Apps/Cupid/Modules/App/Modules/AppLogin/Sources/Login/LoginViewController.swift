@@ -40,16 +40,19 @@ private extension LoginViewController {
     }
     
     func setupNavigationBar() {
-        title = "登录"
+//        title = "登录"
     }
     
     func bind() {
-        contentView.loginButtonDelegator.delegate(on: self) {
-            $0.loginButtonAction(mobile: $1.0, password: $1.1)
-        }
-        
-        contentView.registerButtonDelegator.delegate(on: self) {_,_ in
-            Router.push(to: "RegisterViewController")
+//        contentView.loginButtonDelegator.delegate(on: self) {
+//            $0.loginButtonAction(mobile: $1.0, password: $1.1)
+//        }
+//
+//        contentView.registerButtonDelegator.delegate(on: self) {_,_ in
+//            Router.push(to: "RegisterViewController")
+//        }
+        contentView.mobileLoginButtonDelegator.delegate(on: self) { _,_ in
+            Router.push(to: "MobileViewController")
         }
     }
 }
