@@ -10,6 +10,7 @@ import UIRoute
 
 
 public let loginNavigationControllerType: NavigationController.Type = LoginNavigationViewController.self
+public let registerNavigationControllerType: NavigationController.Type = RegisterNavigationController.self
 
 public let routableViewControllers: [Routable.Type] = [
     LoginViewController.self,

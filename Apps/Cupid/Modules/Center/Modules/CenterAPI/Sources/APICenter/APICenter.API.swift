@@ -25,6 +25,7 @@ extension APICenter {
             }
             setToken(token)
         }
+        
         guard let result = try? Response<T>.init(data: response.body) else {
             throw HTTPBizError.parse
         }
@@ -76,10 +77,9 @@ public extension APICenter {
     }
     
     // 发送验证码
-    static func requestMobileSMSCode(mobile: String) async throws -> Bool {
+    static func requestMobileSMSCode(mobile: String) async throws {
         let request = MobileSMSCodeRequest(mobile: mobile)
         let _: NullResponse? = try await execute(request)
-        return true
     }
     
     

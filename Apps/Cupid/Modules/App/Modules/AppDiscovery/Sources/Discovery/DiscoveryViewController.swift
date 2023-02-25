@@ -70,7 +70,7 @@ private extension DiscoveryViewController {
             do {
                 logger.debug("getting user info")
                 let userInfo = try await provider.loadUserInfo()
-                logger.debug("get user info:\(userInfo.createdAt)")
+
             } catch {
                 Toast.text("Error", subtitle: "\(error)").show()
                 logger.error("\(error)")
@@ -82,7 +82,6 @@ private extension DiscoveryViewController {
     func loadData(isRefresh: Bool) async {
         do {
             let userInfo = try await provider.loadUserInfo()
-            logger.debug("get user info:\(userInfo.createdAt)")
             let data = try userInfo.toData()
             logger.debug("get user info:\(data)")
         } catch {

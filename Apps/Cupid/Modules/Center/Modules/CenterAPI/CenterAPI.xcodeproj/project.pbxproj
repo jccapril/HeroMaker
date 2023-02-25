@@ -77,7 +77,6 @@
 		090913402941BF080068E6F0 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				0973EA9929372D2400B96163 /* Models */,
 				090913422941CCC60068E6F0 /* Response.swift */,
 			);
 			path = Response;
@@ -108,6 +107,7 @@
 				0973EA8C29372CBA00B96163 /* APICenterModule.swift */,
 				0973EA9729372D0D00B96163 /* APICenter */,
 				0973EA9829372D1600B96163 /* Requests */,
+				0973EA9929372D2400B96163 /* Models */,
 				090913402941BF080068E6F0 /* Response */,
 				0973EA9A29372D2B00B96163 /* Error */,
 				0973EA9B29372D3800B96163 /* TypeDefine */,

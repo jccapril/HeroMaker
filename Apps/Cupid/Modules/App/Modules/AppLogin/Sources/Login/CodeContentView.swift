@@ -14,6 +14,7 @@ class CodeContentView: View {
     private lazy var subscriptions = Set<AnyCancellable>()
     
     private(set) lazy var loginButtonDelegator = Delegator<String?, Void>()
+    private(set) lazy var resendButtonDelegator = Delegator<Void, Void>()
     
     private lazy var largeTitleLabel = UILabel(frame: .zero)
         .x
@@ -29,20 +30,16 @@ class CodeContentView: View {
         .text("短信已发送至xxxxxxxxxxxxxxxxxxx")
         .instance
     
-    private lazy var codeTextfield = UITextField(frame: .zero)
-        .x
-        .placeholder("请输入验证码")
-        .returnKeyType(.done)
-        .keyboardType(.numberPad)
-        .delegate(self)
-        .textColor(.systemBlack)
-        .borderStyle(.roundedRect)
-        .instance
     
-    private lazy var loginButton = UIButton(type: .custom)
+    lazy var codeView: VerifyCodeView = {
+        let codeView = VerifyCodeView(inputTextNum: 6)
+        return codeView
+    }()
+    
+    private lazy var resendButton = UIButton(type: .custom)
         .x
         .corners(radius: 25)
-        .setTitle("登录", for: .normal)
+        .setTitle("重新获取", for: .normal)
         .setTitleColor(.systemWhite, for: .normal)
         .setBackgroundImage(UIImage(color: LoginModule.color(name: "Primary")), for: .normal)
         .instance
@@ -76,14 +73,19 @@ private extension CodeContentView {
         // add subview
         largeTitleLabel.x.add(to: self)
         mobileLabel.x.add(to: self)
-        codeTextfield.x.add(to: self)
-        loginButton.x.add(to: self)
+        codeView.x.add(to: self)
+        resendButton.x.add(to: self)
         
-        loginButton.tapPublisher.receive(on: DispatchQueue.main).sink { [weak self] in
+        codeView.textFiled.becomeFirstResponder()
+        codeView.inputFinish = {
+            self.loginButtonDelegator($0)
+        }
+        resendButton.tapPublisher.receive(on: DispatchQueue.main).sink { [weak self] in
             guard let self = self else { return }
-            self.loginButtonDelegator(self.codeTextfield.text)
+            self.resendButtonDelegator()
         }
         .store(in: &subscriptions)
+
     }
     
     func layout() {
@@ -91,21 +93,14 @@ private extension CodeContentView {
         largeTitleLabel.pin.top(20).left(20).sizeToFit()
         
         mobileLabel.pin.below(of: largeTitleLabel).marginTop(10).left(20).sizeToFit()
+    
+        codeView.pin.below(of: mobileLabel).marginTop(20).left(10).right(10).height(
+            50)
         
-        codeTextfield.pin.below(of: mobileLabel).marginTop(20).left(50).right(50).height(50)
-        
-        loginButton.pin.below(of: codeTextfield, aligned: .center).height(50).width(150).marginTop(80)
+        resendButton.pin.below(of: codeView, aligned: .center).height(50).width(150).marginTop(80)
     }
 }
 
-extension CodeContentView: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        loginButtonDelegator(textField.text)
-        return true
-    }
-    
-}
 
 
 extension CodeContentView {

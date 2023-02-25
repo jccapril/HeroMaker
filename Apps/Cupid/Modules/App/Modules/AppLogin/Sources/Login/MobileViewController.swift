@@ -12,8 +12,8 @@ import Service
 
 class MobileViewController: ViewController {
     private lazy var contentView = MobileContentView()
-    private lazy var provider = MobileProvider()
-    private var task: Task<Void, Never>? = .none
+    private lazy var provider = LoginProvider()
+    private var sendSMStask: Task<Void, Never>? = .none
 }
 
 
@@ -64,8 +64,8 @@ extension MobileViewController {
             return
         }
         
-        task.run { $0.cancel() }
-        let rtask = Task { @MainActor in
+        sendSMStask.run { $0.cancel() }
+        let task = Task { @MainActor in
             do {
                 logger.debug("send sms code with mobile:\(mobile)")
                 try await provider.requestSMSCode(mobile: mobile)
@@ -78,7 +78,7 @@ extension MobileViewController {
                 logger.error("\(error)")
             }
         }
-        task = rtask
+        sendSMStask = task
     }
     
 }

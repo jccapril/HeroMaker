@@ -13,8 +13,9 @@ import Service
 class CodeViewController: ViewController {
     private let viewModel: CodeViewModel
     private lazy var contentView = CodeContentView()
-    private lazy var provider = MobileProvider()
-    private var task: Task<Void, Never>? = .none
+    private lazy var provider = LoginProvider()
+    private var loginTask: Task<Void, Never>? = .none
+    private var smsTask: Task<Void, Never>? = .none
     
     init(mobile: String) {
         viewModel = CodeViewModel(mobile: mobile)
@@ -63,6 +64,10 @@ private extension CodeViewController {
         contentView.loginButtonDelegator.delegate(on: self) {
             $0.loginButtonAction(mobile: $0.viewModel.mobile, code: $1)
         }
+        
+        contentView.resendButtonDelegator.delegate(on: self) { vc,_ in
+            vc.resendButtonAction(mobile: vc.viewModel.mobile)
+        }
     }
 }
 
@@ -71,20 +76,15 @@ private extension CodeViewController {
 
 extension CodeViewController {
     
-    func loginButtonAction(mobile: String?, code: String?) {
-        guard let mobile = mobile, !mobile.isEmpty else {
-            Toast.text("Error", subtitle: "请输入手机号").show()
-            FeedbackGenerator.notification.shared.notificationOccurred(.error)
-            return
-        }
+    func loginButtonAction(mobile: String, code: String?) {
         guard let code = code, !code.isEmpty else {
             Toast.text("Error", subtitle: "请输入验证码").show()
             FeedbackGenerator.notification.shared.notificationOccurred(.error)
             return
         }
         
-        task.run { $0.cancel() }
-        let rtask = Task { @MainActor in
+        loginTask.run { $0.cancel() }
+        let task = Task { @MainActor in
             do {
                 logger.debug("login with mobile:\(mobile) code:\(code)")
                 try await provider.login(mobile: mobile, code: code)
@@ -97,7 +97,24 @@ extension CodeViewController {
                 logger.error("\(error)")
             }
         }
-        task = rtask
+        loginTask = task
+    }
+    
+    func resendButtonAction(mobile: String) {
+        smsTask.run { $0.cancel() }
+        let task = Task { @MainActor in
+            do {
+                logger.debug("send sms with mobile:\(mobile)")
+                try await provider.requestSMSCode(mobile: mobile)
+                Toast.text("验证码已发送").show()
+                FeedbackGenerator.notification.shared.notificationOccurred(.success)
+            } catch {
+                Toast.text("Error", subtitle: "\(error)").show()
+                FeedbackGenerator.notification.shared.notificationOccurred(.error)
+                logger.error("\(error)")
+            }
+        }
+        smsTask = task
     }
     
 }

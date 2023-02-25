@@ -1,8 +1,8 @@
 //
-//  LoginProvider.swift
+//  MobileProvider.swift
 //  AppLogin
 //
-//  Created by jcc on 2022/12/7.
+//  Created by jcc on 2023/2/24.
 //
 
 import Center
@@ -13,8 +13,14 @@ class LoginProvider: Provider {}
 
 
 extension LoginProvider {
-    @discardableResult
-    func login(mobile: String, password: String) async throws -> TokenInfo {
-        try await APICenter.auth(mobile: mobile, password: password)
+
+    func requestSMSCode(mobile: String) async throws {
+        try await UserCenter.Sign.sendSMSCode(mobile: mobile)
+    }
+    
+    func login(mobile: String, code: String) async throws {
+        try await UserCenter.Sign.auth(mobile: mobile, code: code)
     }
 }
+
+

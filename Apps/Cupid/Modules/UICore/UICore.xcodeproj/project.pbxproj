@@ -25,6 +25,9 @@
 		098BAEAC2939AAF300702111 /* UIWebKit in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEAB2939AAF300702111 /* UIWebKit */; };
 		098BAEE42939C61300702111 /* UIHierarchy in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEE32939C61300702111 /* UIHierarchy */; };
 		098BAEE62939C71900702111 /* UICombine in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEE52939C71900702111 /* UICombine */; };
+		09F67BC229A9BE3B004550FF /* VerifyCodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67BBF29A9BE3A004550FF /* VerifyCodeTextView.swift */; };
+		09F67BC329A9BE3B004550FF /* VerifyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67BC029A9BE3A004550FF /* VerifyCodeView.swift */; };
+		09F67BC429A9BE3B004550FF /* VerifyCodeNumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67BC129A9BE3B004550FF /* VerifyCodeNumView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +52,9 @@
 		0973EB192938744800B96163 /* Exported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exported.swift; sourceTree = "<group>"; };
 		0973EB1C2938745C00B96163 /* UICoreModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICoreModule.swift; sourceTree = "<group>"; };
 		0973EB1F2938746E00B96163 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09F67BBF29A9BE3A004550FF /* VerifyCodeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeTextView.swift; sourceTree = "<group>"; };
+		09F67BC029A9BE3A004550FF /* VerifyCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeView.swift; sourceTree = "<group>"; };
+		09F67BC129A9BE3B004550FF /* VerifyCodeNumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeNumView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 			children = (
 				0973EB192938744800B96163 /* Exported.swift */,
 				0973EB1C2938745C00B96163 /* UICoreModule.swift */,
+				09F67BC529A9DBB1004550FF /* VerifyCodeView */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -120,6 +127,16 @@
 				0973EB1F2938746E00B96163 /* Service.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09F67BC529A9DBB1004550FF /* VerifyCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				09F67BC129A9BE3B004550FF /* VerifyCodeNumView.swift */,
+				09F67BBF29A9BE3A004550FF /* VerifyCodeTextView.swift */,
+				09F67BC029A9BE3A004550FF /* VerifyCodeView.swift */,
+			);
+			path = VerifyCodeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0973EB1D2938745C00B96163 /* UICoreModule.swift in Sources */,
+				09F67BC229A9BE3B004550FF /* VerifyCodeTextView.swift in Sources */,
+				09F67BC429A9BE3B004550FF /* VerifyCodeNumView.swift in Sources */,
+				09F67BC329A9BE3B004550FF /* VerifyCodeView.swift in Sources */,
 				0973EB1A2938744800B96163 /* Exported.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

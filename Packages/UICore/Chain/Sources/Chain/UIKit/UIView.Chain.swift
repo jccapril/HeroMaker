@@ -7,6 +7,14 @@ import UIKit
 
 public extension Box where T: UIView {
     @discardableResult
+    func border(width: CGFloat, color: UIColor) -> Box {
+        subject.layoutIfNeeded()
+        subject.layer.borderWidth = width
+        subject.layer.borderColor = color.cgColor
+        return subject.x
+    }
+    
+    @discardableResult
     func corners(_ corners: UIRectCorner = .allCorners, radius: CGFloat, isReset: Bool = false) -> Box {
         subject.layoutIfNeeded()
 

@@ -22,7 +22,11 @@ class MobileContentView: View {
         .keyboardType(.numberPad)
         .delegate(self)
         .textColor(.systemBlack)
-        .borderStyle(.roundedRect)
+        .corners(radius: 18)
+        .clearButtonMode(.whileEditing)
+        .leftViewMode(.always)
+        .leftView(UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 50)))
+        .border(width: 2, color: LoginModule.color(name: "TextField.Border"))
         .instance
     
     private lazy var sendSMSButton = UIButton(type: .custom)
@@ -51,12 +55,18 @@ private extension MobileContentView {
         // add subview
         mobileTextfield.x.add(to: self)
         sendSMSButton.x.add(to: self)
+
         
         sendSMSButton.tapPublisher.receive(on: DispatchQueue.main).sink { [weak self] in
             guard let self = self else { return }
             self.sendSMSButtonDelegator(self.mobileTextfield.text)
         }
         .store(in: &subscriptions)
+    }
+    
+    func layout() {
+        mobileTextfield.pin.top(20).left(30).right(30).height(50)
+        sendSMSButton.pin.below(of: mobileTextfield, aligned: .center).height(50).width(150).marginTop(80)
     }
 }
 
@@ -77,8 +87,7 @@ extension MobileContentView {
         super.layoutSubviews()
         
         // pinlayout
-        mobileTextfield.pin.top(20).left(50).right(50).height(50)
-        sendSMSButton.pin.below(of: mobileTextfield, aligned: .center).height(50).width(150).marginTop(80)
+        layout()
     }
 }
 

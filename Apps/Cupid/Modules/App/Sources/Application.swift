@@ -120,14 +120,21 @@ private extension Application {
     @discardableResult
     static func enterUI() -> Self.Type {
         window.rootViewController = AppLogin.loginNavigationControllerType.init()
-//        if(APICenter.token.isNilOrEmpty) {
-//            window.rootViewController = AppLogin.loginNavigationControllerType.init()
-//        }else {
-//            window.rootViewController = AppTabBar.appTabBarViewControllerType.init(viewControllers: [
-//                AppDiscovery.discoveryNavigationControllerType.init(),
-//                AppDiscovery.discoveryNavigationControllerType.init(),
-//            ])
-//        }
+        if(UserCenter.token.isNilOrEmpty) {
+            window.rootViewController = AppLogin.loginNavigationControllerType.init()
+        }else {
+            
+            if(UserCenter.userInfo?.step == nil || UserCenter.userInfo?.step == 0) {
+                window.rootViewController = AppLogin.registerNavigationControllerType.init()
+            }else {
+                window.rootViewController = AppTabBar.appTabBarViewControllerType.init(viewControllers: [
+                    AppDiscovery.discoveryNavigationControllerType.init(),
+                    AppDiscovery.discoveryNavigationControllerType.init(),
+                ])
+            }
+            
+           
+        }
         return self
     }
     
