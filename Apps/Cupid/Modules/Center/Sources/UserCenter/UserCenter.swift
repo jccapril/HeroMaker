@@ -32,6 +32,7 @@ extension UserCenter {
 extension UserCenter {
     static func bootstrap() {
         bootstrapUserInfo()
+        bootstrapCoupleInfo()
     }
 }
 

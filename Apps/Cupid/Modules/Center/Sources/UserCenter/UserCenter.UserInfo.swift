@@ -21,11 +21,21 @@ private extension UserCenter {
     }()
 }
 
-extension UserCenter {
+ extension UserCenter {
     static func bootstrapUserInfo() {
         DispatchQueue(label: "Bootstrap").sync {
             do {
                 userInfo = try store.sync.get()
+            } catch {
+                logger.error("\(error)")
+            }
+        }
+    }
+    
+    static func bootstrapCoupleInfo() {
+        DispatchQueue(label: "Bootstrap").sync {
+            do {
+                coupleInfo = try store.sync.get()
             } catch {
                 logger.error("\(error)")
             }
@@ -41,6 +51,14 @@ public extension UserCenter {
         (!Self.token.isNilOrEmpty) && (Self.userInfo != nil)
     }
     
+    
+    static var isFinishUserInfo: Bool  {
+        !((UserCenter.userInfo?.step == nil) || (UserCenter.userInfo?.step == 0))
+    }
+    
+    static var hasCouple: Bool {
+        coupleInfo != nil
+    }
     
     static var token: String?  {
         APICenter.token
@@ -63,6 +81,22 @@ public extension UserCenter {
         }
     }
     
+    private(set) static var coupleInfo: CoupleInfo?
+    {
+        didSet {
+            do {
+                switch coupleInfo {
+                case .none:
+                    try store.sync.delete(key: CoupleInfo.key)
+                case .some(let coupleInfo):
+                    try store.sync.put(storableObject: coupleInfo)
+                }
+            } catch {
+                logger.error("\(error)")
+            }
+        }
+    }
+    
     
 }
 
@@ -74,22 +108,40 @@ extension UserCenter {
     static func updateUserInfo(userInfo: UserInfo?) {
         self.userInfo = userInfo
     }
+    
+    static func updateCoupleInfo(coupleInfo: CoupleInfo?) {
+        self.coupleInfo = coupleInfo
+    }
 }
 
 
 public extension UserCenter {
     @discardableResult
-    static func getUserInfo() async throws -> UserInfo {
+    static func getUserInfo() async throws -> UserInfo? {
         let userInfo = try await APICenter.getUserInfo()
         updateUserInfo(userInfo: userInfo)
         return userInfo
     }
     
     @discardableResult
-    static func updateUserInfo(name: String? = nil, gender: Int? = nil, birthday: String? = nil, avatar: String? = nil) async throws -> UserInfo {
+    static func updateUserInfo(name: String? = nil, gender: Int? = nil, birthday: String? = nil, avatar: String? = nil) async throws -> UserInfo? {
         let userInfo = try await APICenter.updateUserInfo(name: name, gender: gender, birthday: birthday, avatar: avatar)
         updateUserInfo(userInfo: userInfo)
         return userInfo
     }
+    
+    @discardableResult
+    static func getCoupleInfo() async throws -> CoupleInfo? {
+        let coupleInfo = try await APICenter.getCoupleInfo()
+        updateCoupleInfo(coupleInfo: coupleInfo)
+        return coupleInfo
+    }
+    
+    static func bootstrap() async throws {
+        try await getUserInfo()
+        try await getCoupleInfo()
+    }
 }
+
+
 

@@ -22,9 +22,7 @@ public extension UserCenter.Sign {
         // 登录一下接口获取Token
         let tokenInfo = try await APICenter.loginOrRegister(mobile: mobile, code: code)
         UserCenter.updateToken(token: tokenInfo.accessToken)
-        // 获取用户信息
-        let userInfo = try await UserCenter.getUserInfo()
-        UserCenter.updateUserInfo(userInfo: userInfo)
+        try await UserCenter.bootstrap()
     }
     
 }

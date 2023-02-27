@@ -15,7 +15,7 @@ class RegisterProvider: Provider {}
 extension RegisterProvider {
 
     @discardableResult
-    func updateUserInfo(name: String, gender: Int) async throws -> UserInfo{
+    func updateUserInfo(name: String, gender: Int) async throws -> UserInfo?{
         try await UserCenter.updateUserInfo(name: name, gender: gender)
     }
 }

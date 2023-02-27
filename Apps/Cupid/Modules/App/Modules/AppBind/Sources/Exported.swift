@@ -8,7 +8,7 @@
 import BaseUI
 import UIRoute
 
-public let loginNavigationControllerType: NavigationController.Type = BindNavigationController.self
+public let bindNavigationControllerType: NavigationController.Type = BindNavigationController.self
 
 public let routableViewControllers: [Routable.Type] = [
     BindViewController.self,

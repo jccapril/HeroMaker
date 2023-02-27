@@ -10,6 +10,8 @@ import Chain
 import ExtensionKit
 import Foundation
 import UILayout
+import Center
+import UICore
 
 class BootViewController: ViewController {
     private lazy var contentView = BootContentView(frame: .zero)
@@ -49,9 +51,23 @@ private extension BootViewController {
     func bootstrap() {
         bootQueue.async {
             let result = Module.boot()
-            DispatchQueue.main.async {
-                Module.bootComplete.run { $0(result) }
+            if UserCenter.isLogined {
+                Task { @MainActor in
+                    do {
+                        try await UserCenter.bootstrap()
+                    }catch {
+                        Toast.text("Error", subtitle: "\(error)").show()
+                        FeedbackGenerator.notification.shared.notificationOccurred(.error)
+                        logger.error("\(error)")
+                    }
+                    Module.bootComplete.run { $0(result) }
+                }
+            }else {
+                DispatchQueue.main.async {
+                    Module.bootComplete.run { $0(result) }
+                }
             }
+            
         }
     }
 }

@@ -82,7 +82,7 @@ private extension DiscoveryViewController {
     func loadData(isRefresh: Bool) async {
         do {
             let userInfo = try await provider.loadUserInfo()
-            let data = try userInfo.toData()
+            let data = try userInfo?.toData()
             logger.debug("get user info:\(data)")
         } catch {
             Toast.text("Error", subtitle: "\(error)").show()

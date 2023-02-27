@@ -56,30 +56,11 @@ extension APICenter {
 
 public extension APICenter {
     
-    // 获取用户信息
-    static func getUserInfo() async throws -> UserInfo {
-        let request = UserInfoRequest()
-        guard let userInfo: UserInfo = try await execute(request) else{
-            throw HTTPBizError.parse
-        }
-        return userInfo
-    }
-    
-    // 更新用户信息
-    static func updateUserInfo(name: String? = nil, gender: Int? = nil, birthday: String? = nil, avatar: String? = nil) async throws -> UserInfo {
-        let request = UpdateUserInfoRequest(name: name, gender: gender, birthday: birthday, avatar: avatar)
-        guard let userInfo: UserInfo = try await execute(request) else {
-            throw HTTPBizError.parse
-        }
-        return userInfo
-    }
-    
     // 发送验证码
     static func requestMobileSMSCode(mobile: String) async throws {
         let request = MobileSMSCodeRequest(mobile: mobile)
         let _: NullResponse? = try await execute(request)
     }
-    
     
     // 登录/注册
     static func loginOrRegister(mobile: String, code: String) async throws -> TokenInfo {
@@ -91,6 +72,23 @@ public extension APICenter {
         return tokenInfo
     }
     
+    // 获取用户信息
+    static func getUserInfo() async throws -> UserInfo? {
+        let request = UserInfoRequest()
+        return try await execute(request)
+    }
+    
+    // 更新用户信息
+    static func updateUserInfo(name: String? = nil, gender: Int? = nil, birthday: String? = nil, avatar: String? = nil) async throws -> UserInfo? {
+        let request = UpdateUserInfoRequest(name: name, gender: gender, birthday: birthday, avatar: avatar)
+        return try await execute(request)
+    }
+    
+    // 获取情侣信息
+    static func getCoupleInfo() async throws -> CoupleInfo? {
+        let request = CoupleInfoRequest()
+        return try await execute(request)
+    }
     
 }
 

@@ -123,16 +123,19 @@ private extension Application {
             window.rootViewController = AppLogin.loginNavigationControllerType.init()
         }else {
             
-            if(UserCenter.userInfo?.step == nil || UserCenter.userInfo?.step == 0) {
-                window.rootViewController = AppLogin.registerNavigationControllerType.init()
+            if(UserCenter.isFinishUserInfo) {
+                if(UserCenter.hasCouple) {
+                    window.rootViewController = AppTabBar.appTabBarViewControllerType.init(viewControllers: [
+                        AppDiscovery.discoveryNavigationControllerType.init(),
+                        AppDiscovery.discoveryNavigationControllerType.init(),
+                    ])
+                }else {
+                    window.rootViewController =  AppBind.bindNavigationControllerType.init()
+                }
             }else {
-                window.rootViewController = AppTabBar.appTabBarViewControllerType.init(viewControllers: [
-                    AppDiscovery.discoveryNavigationControllerType.init(),
-                    AppDiscovery.discoveryNavigationControllerType.init(),
-                ])
+                window.rootViewController = AppLogin.registerNavigationControllerType.init()
             }
             
-           
         }
         return self
     }
