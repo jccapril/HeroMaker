@@ -11,16 +11,13 @@ import Foundation
 public struct DateStringCoding: Codable {
     public var wrappedValue: Date?
     
-    public init(wrappedValue: Date?) {
-      self.wrappedValue = wrappedValue
+    public init(wrappedValue: Date?){
+        self.wrappedValue = wrappedValue
     }
     
     public init(from decoder: Decoder) throws {
-        
         let container = try decoder.singleValueContainer()
-        guard let dateString = try? container.decode(String.self) else {
-            return
-        }
+        let dateString = try container.decode(String.self)
         guard let date = Self.dateFormatter.date(from: dateString) else {
             let dateFormat = String(describing: Self.dateFormatter.dateFormat)
             throw DecodingError.dataCorruptedError(in: container, debugDescription:

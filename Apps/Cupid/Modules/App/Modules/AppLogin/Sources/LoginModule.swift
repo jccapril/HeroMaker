@@ -7,6 +7,7 @@
 
 import AppModular
 import LoggerPool
+import UIKit
 
 class LoginModule: Modular {}
 

@@ -21,32 +21,34 @@ private extension UserCenter {
     }()
 }
 
-
-public extension UserCenter {
-    
-    private(set) static var token: String? = {
-        APICenter.token
-    }() {
-        didSet {
-            switch token {
-            case .none:
-                APICenter.resetToken()
-            case .some(let token):
-                APICenter.setToken(token)
+extension UserCenter {
+    static func bootstrapUserInfo() {
+        DispatchQueue(label: "Bootstrap").sync {
+            do {
+                userInfo = try store.sync.get()
+            } catch {
+                logger.error("\(error)")
             }
         }
     }
+}
+
+
+
+public extension UserCenter {
+    
+    static var isLogined: Bool  {
+        (!Self.token.isNilOrEmpty) && (Self.userInfo != nil)
+    }
     
     
-    private(set) static var userInfo: UserInfo? = {
-        do {
-            guard let userInfo: UserInfo = try store.sync.get() else { return nil }
-            return userInfo
-        } catch {
-            logger.error("\(error)")
-            return nil
-        }
-    }() {
+    static var token: String?  {
+        APICenter.token
+    }
+    
+    
+    private(set) static var userInfo: UserInfo? 
+    {
         didSet {
             do {
                 switch userInfo {
@@ -66,7 +68,7 @@ public extension UserCenter {
 
 extension UserCenter {
     static func updateToken(token: String) {
-        self.token = token
+        APICenter.setToken(token)
     }
     
     static func updateUserInfo(userInfo: UserInfo?) {
@@ -79,6 +81,13 @@ public extension UserCenter {
     @discardableResult
     static func getUserInfo() async throws -> UserInfo {
         let userInfo = try await APICenter.getUserInfo()
+        updateUserInfo(userInfo: userInfo)
+        return userInfo
+    }
+    
+    @discardableResult
+    static func updateUserInfo(name: String? = nil, gender: Int? = nil, birthday: String? = nil, avatar: String? = nil) async throws -> UserInfo {
+        let userInfo = try await APICenter.updateUserInfo(name: name, gender: gender, birthday: birthday, avatar: avatar)
         updateUserInfo(userInfo: userInfo)
         return userInfo
     }

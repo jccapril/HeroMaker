@@ -25,6 +25,10 @@
 		09F67B9129A8AB81004550FF /* CodeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67B9029A8AB81004550FF /* CodeContentView.swift */; };
 		09F67B9529A8B639004550FF /* CodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67B9429A8B639004550FF /* CodeViewModel.swift */; };
 		09F67BD529AA14B2004550FF /* RegisterNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67BD429AA14B1004550FF /* RegisterNavigationController.swift */; };
+		09F67BD729AC4847004550FF /* NameEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67BD629AC4847004550FF /* NameEditView.swift */; };
+		09F67BD929AC4C97004550FF /* GenderEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67BD829AC4C97004550FF /* GenderEditView.swift */; };
+		09F67BE929AC7B7E004550FF /* BirthdayEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67BE829AC7B7E004550FF /* BirthdayEditView.swift */; };
+		09F67BEB29AC8A7B004550FF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67BEA29AC8A7B004550FF /* RegisterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +66,10 @@
 		09F67B9029A8AB81004550FF /* CodeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContentView.swift; sourceTree = "<group>"; };
 		09F67B9429A8B639004550FF /* CodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewModel.swift; sourceTree = "<group>"; };
 		09F67BD429AA14B1004550FF /* RegisterNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNavigationController.swift; sourceTree = "<group>"; };
+		09F67BD629AC4847004550FF /* NameEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditView.swift; sourceTree = "<group>"; };
+		09F67BD829AC4C97004550FF /* GenderEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderEditView.swift; sourceTree = "<group>"; };
+		09F67BE829AC7B7E004550FF /* BirthdayEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayEditView.swift; sourceTree = "<group>"; };
+		09F67BEA29AC8A7B004550FF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +158,10 @@
 				0955CBAD294C6C260025FE8F /* RegisterViewController.swift */,
 				0955CBAF294C6C320025FE8F /* RegisterContentView.swift */,
 				0955CBB1294C6C3E0025FE8F /* RegisterProvider.swift */,
+				09F67BD629AC4847004550FF /* NameEditView.swift */,
+				09F67BD829AC4C97004550FF /* GenderEditView.swift */,
+				09F67BE829AC7B7E004550FF /* BirthdayEditView.swift */,
+				09F67BEA29AC8A7B004550FF /* RegisterViewModel.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -221,13 +233,17 @@
 				0955CBAE294C6C270025FE8F /* RegisterViewController.swift in Sources */,
 				0909132A29406F6B0068E6F0 /* LoginNavigationViewController.swift in Sources */,
 				0909132E29406FA90068E6F0 /* LoginContentView.swift in Sources */,
+				09F67BEB29AC8A7B004550FF /* RegisterViewModel.swift in Sources */,
 				09F67B8629A88F88004550FF /* LoginProvider.swift in Sources */,
+				09F67BE929AC7B7E004550FF /* BirthdayEditView.swift in Sources */,
 				09F67BD529AA14B2004550FF /* RegisterNavigationController.swift in Sources */,
 				09F67B8F29A8AB77004550FF /* CodeViewController.swift in Sources */,
 				0909132629406A330068E6F0 /* LoginModule.swift in Sources */,
 				0955CBB2294C6C3E0025FE8F /* RegisterProvider.swift in Sources */,
 				0955CBB0294C6C320025FE8F /* RegisterContentView.swift in Sources */,
 				09F67B8429A88CFB004550FF /* MobileContentView.swift in Sources */,
+				09F67BD929AC4C97004550FF /* GenderEditView.swift in Sources */,
+				09F67BD729AC4847004550FF /* NameEditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

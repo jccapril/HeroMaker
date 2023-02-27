@@ -13,9 +13,10 @@ class RegisterProvider: Provider {}
 
 
 extension RegisterProvider {
+
     @discardableResult
-    func register(name: String, mobile: String, password: String) async throws -> TokenInfo {
-        try await APICenter.register(name: name, mobile: mobile, password: password)
+    func updateUserInfo(name: String, gender: Int) async throws -> UserInfo{
+        try await UserCenter.updateUserInfo(name: name, gender: gender)
     }
 }
 

@@ -9,11 +9,13 @@ import CenterAPI
 import UICore
 import WeakDelegate
 import Service
+import Center
 
 class RegisterViewController: ViewController {
     private lazy var contentView = RegisterContentView()
+    private lazy var viewModel = RegisterViewModel(name: UserCenter.userInfo?.name, gender: UserCenter.userInfo?.gender)
     private lazy var provider = RegisterProvider()
-    private var registerTask: Task<Void, Never>? = .none
+    private var updateTask: Task<Void, Never>? = .none
 }
 
 
@@ -27,7 +29,7 @@ extension RegisterViewController {
 
     override open func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        contentView.pin.all(view.pin.safeArea)
+        layout()
     }
 }
 
@@ -40,14 +42,32 @@ private extension RegisterViewController {
         bind()
     }
     
+    func layout() {
+        contentView.pin.all(view.pin.safeArea)
+    }
+    
     func setupNavigationBar() {
-        title = "注册"
+        title = "完善信息"
     }
     
     func bind() {
-        contentView.registerButtonDelegator.delegate(on: self) {
-            $0.registerButtonAction(name: $1.0, mobile: $1.1, password: $1.2, confirmPassword: $1.3)
+        
+        contentView.update(vm: viewModel)
+        
+        contentView.finishDelegator.delegate(on: self) {
+            $0.finishAction(name: $0.viewModel.name, gender: $0.viewModel.gender)
+            $1
         }
+        
+        contentView.nameChangeDelegator.delegate(on: self) {
+            $0.viewModel.name = $1
+        }
+    
+        contentView.genderChangeDelegator.delegate(on: self) {
+            $0.viewModel.gender = $1
+        }
+        
+        
     }
 }
 
@@ -56,54 +76,34 @@ private extension RegisterViewController {
 
 extension RegisterViewController {
     
-    func registerButtonAction(name: String?, mobile: String?, password: String?, confirmPassword: String?) {
-        
+    func finishAction(name: String?, gender: Int?) {
         guard let name = name, !name.isEmpty else {
-            Toast.text("Error", subtitle: "请输入用户名").show()
+            Toast.text("Error", subtitle: "请输入昵称").show()
+            FeedbackGenerator.notification.shared.notificationOccurred(.error)
+            return
+        }
+        guard let gender = gender, gender != 0 else {
+            Toast.text("Error", subtitle: "请选择昵称").show()
             FeedbackGenerator.notification.shared.notificationOccurred(.error)
             return
         }
         
-        guard let mobile = mobile, !mobile.isEmpty else {
-            Toast.text("Error", subtitle: "请输入手机号").show()
-            FeedbackGenerator.notification.shared.notificationOccurred(.error)
-            return
-        }
-
-        guard let password = password, !password.isEmpty else {
-            Toast.text("Error", subtitle: "请输入密码").show()
-            FeedbackGenerator.notification.shared.notificationOccurred(.error)
-            return
-        }
-        
-        guard let confirmPassword = confirmPassword, !confirmPassword.isEmpty else {
-            Toast.text("Error", subtitle: "请再次输入密码").show()
-            FeedbackGenerator.notification.shared.notificationOccurred(.error)
-            return
-        }
-
-        if password != confirmPassword {
-            Toast.text("Error", subtitle: "两次密码输入不一致").show()
-            FeedbackGenerator.notification.shared.notificationOccurred(.error)
-            return
-        }
-        
-        registerTask.run { $0.cancel() }
+        updateTask.run { $0.cancel() }
         let task = Task { @MainActor in
             do {
-                logger.debug("registering nmae:\(name) mobile:\(mobile) password:\(password)")
-                try await provider.register(name:  name, mobile: mobile, password: password)
-                Toast.text("Success").show()
-                enterAppCallback?()
+                try await provider.updateUserInfo(name: name, gender: gender)
+                Toast.text("修改成功").show()
                 FeedbackGenerator.notification.shared.notificationOccurred(.success)
+                enterAppCallback?()
             } catch {
                 Toast.text("Error", subtitle: "\(error)").show()
                 FeedbackGenerator.notification.shared.notificationOccurred(.error)
                 logger.error("\(error)")
             }
         }
-        registerTask = task
+        updateTask = task
     }
+    
 }
 
 extension RegisterViewController: TypeNameable {}

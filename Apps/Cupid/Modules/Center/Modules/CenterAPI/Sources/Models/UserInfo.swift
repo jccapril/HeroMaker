@@ -17,9 +17,17 @@ public struct UserInfo: Codable, Storable {
     public let name: String?
     public let gender: Int?
     public let step: Int?
-    @DateStringCoding
-    public var birthday: Date?
+    
+//    @DateStringCoding
+    public var birthday: String?
 
+    
+    public var getBirthday: Date? {
+        guard let birthday = birthday else {
+            return nil
+        }
+        return Self.dateFormatter.date(from: birthday)
+    }
 
 //    enum CodingKeys: String, CodingKey {
 //        case guid = "guid"
@@ -27,9 +35,17 @@ public struct UserInfo: Codable, Storable {
 //        case mobile = "mobile"
 //        case gender = "gender"
 //        case step = "step"
-//        case createdAt = "created_at"
-//        case updatedAt = "updated_at"
+//        case birthday = "birthday"
 //    }
+
+    private static let dateFormatter: DateFormatter = Self.createDateFormatter()
+    private static func createDateFormatter() -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        formatter.timeZone   = TimeZone(secondsFromGMT: 8)
+        formatter.locale     = Locale(identifier: "zh_Hans_CN")
+        return formatter
+    }
 }
 
 

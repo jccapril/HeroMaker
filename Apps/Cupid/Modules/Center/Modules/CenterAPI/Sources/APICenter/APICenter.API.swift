@@ -26,10 +26,17 @@ extension APICenter {
             setToken(token)
         }
         
+//        
+//        do {
+//            try Response<T>.init(data: response.body)
+//        }catch(let err) {
+//            logger.error("\(err)")
+//        }
+    
         guard let result = try? Response<T>.init(data: response.body) else {
             throw HTTPBizError.parse
         }
-        
+
         guard response.status == HTTPResponseStatus.ok else {
             throw HTTPBizError(code: result.errorCode, message: result.message)
         }
@@ -49,28 +56,19 @@ extension APICenter {
 
 public extension APICenter {
     
-    static func auth(mobile: String, password: String) async throws -> TokenInfo {
-        let request = MobilePasswordAuthRequest(mobile: mobile, password: password)
-        guard let tokenInfo: TokenInfo = try await execute(request) else {
-            throw HTTPBizError.parse
-        }
-        setToken(tokenInfo.accessToken)
-        return tokenInfo
-    }
-    
-    
-    static func register(name: String, mobile: String, password: String) async throws -> TokenInfo {
-        let request = RegisterRequest(name: name, mobile: mobile, password: password)
-        guard let tokenInfo: TokenInfo = try await execute(request) else{
-            throw HTTPBizError.parse
-        }
-        setToken(tokenInfo.accessToken)
-        return tokenInfo
-    }
-    
+    // 获取用户信息
     static func getUserInfo() async throws -> UserInfo {
         let request = UserInfoRequest()
         guard let userInfo: UserInfo = try await execute(request) else{
+            throw HTTPBizError.parse
+        }
+        return userInfo
+    }
+    
+    // 更新用户信息
+    static func updateUserInfo(name: String? = nil, gender: Int? = nil, birthday: String? = nil, avatar: String? = nil) async throws -> UserInfo {
+        let request = UpdateUserInfoRequest(name: name, gender: gender, birthday: birthday, avatar: avatar)
+        guard let userInfo: UserInfo = try await execute(request) else {
             throw HTTPBizError.parse
         }
         return userInfo

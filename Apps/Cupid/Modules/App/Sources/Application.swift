@@ -119,8 +119,7 @@ private extension Application {
 
     @discardableResult
     static func enterUI() -> Self.Type {
-        window.rootViewController = AppLogin.loginNavigationControllerType.init()
-        if(UserCenter.token.isNilOrEmpty) {
+        if(!UserCenter.isLogined) {
             window.rootViewController = AppLogin.loginNavigationControllerType.init()
         }else {
             
