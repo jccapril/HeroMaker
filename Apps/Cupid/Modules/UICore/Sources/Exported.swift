@@ -19,3 +19,4 @@
 @_exported import UIFeedBack
 @_exported import UIWebKit
 @_exported import UICombine
+@_exported import UIDialog

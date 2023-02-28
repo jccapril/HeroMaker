@@ -17,6 +17,7 @@ public struct UserInfo: Codable, Storable {
     public let name: String?
     public let gender: Int?
     public let step: Int?
+    public let avatar: String?
     
 //    @DateStringCoding
     public var birthday: String?

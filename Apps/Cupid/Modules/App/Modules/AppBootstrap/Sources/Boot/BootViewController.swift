@@ -15,6 +15,7 @@ import UICore
 
 class BootViewController: ViewController {
     private lazy var contentView = BootContentView(frame: .zero)
+    private lazy var provider = BootProvider()
     private lazy var bootQueue = DispatchQueue(label: Module.typeName)
 
     init() {
@@ -49,12 +50,13 @@ private extension BootViewController {
     }
 
     func bootstrap() {
-        bootQueue.async {
+        bootQueue.async { [weak self] in
+            guard let self = self else { return }
             let result = Module.boot()
             if UserCenter.isLogined {
                 Task { @MainActor in
                     do {
-                        try await UserCenter.bootstrap()
+                        try await self.provider.bootstrap()
                     }catch {
                         Toast.text("Error", subtitle: "\(error)").show()
                         FeedbackGenerator.notification.shared.notificationOccurred(.error)

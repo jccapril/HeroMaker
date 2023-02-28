@@ -12,6 +12,12 @@ public extension Box where T: UIControl {
         subject.addTarget(target, action: action, for: controlEvents)
         return subject.x
     }
+    
+    @discardableResult
+    func isEnabled(_ isEnabled: Bool) -> Box {
+        subject.isEnabled = isEnabled
+        return subject.x
+    }
 }
 
 #endif

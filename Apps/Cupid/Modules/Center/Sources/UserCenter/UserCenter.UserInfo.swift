@@ -118,21 +118,21 @@ extension UserCenter {
 public extension UserCenter {
     @discardableResult
     static func getUserInfo() async throws -> UserInfo? {
-        let userInfo = try await APICenter.getUserInfo()
+        let userInfo = try await APICenter.User.getUserInfo()
         updateUserInfo(userInfo: userInfo)
         return userInfo
     }
     
     @discardableResult
     static func updateUserInfo(name: String? = nil, gender: Int? = nil, birthday: String? = nil, avatar: String? = nil) async throws -> UserInfo? {
-        let userInfo = try await APICenter.updateUserInfo(name: name, gender: gender, birthday: birthday, avatar: avatar)
+        let userInfo = try await APICenter.User.updateUserInfo(name: name, gender: gender, birthday: birthday, avatar: avatar)
         updateUserInfo(userInfo: userInfo)
         return userInfo
     }
     
     @discardableResult
     static func getCoupleInfo() async throws -> CoupleInfo? {
-        let coupleInfo = try await APICenter.getCoupleInfo()
+        let coupleInfo = try await APICenter.Couple.getCoupleInfo()
         updateCoupleInfo(coupleInfo: coupleInfo)
         return coupleInfo
     }

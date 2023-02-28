@@ -64,6 +64,15 @@
       }
     },
     {
+      "identity" : "dynamicblurview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/KyoheiG3/DynamicBlurView.git",
+      "state" : {
+        "revision" : "d69b09d70a689dc7b8ea6aa6de3e63f9e6c545ce",
+        "version" : "5.0.5"
+      }
+    },
+    {
       "identity" : "grpc-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/grpc/grpc-swift.git",
@@ -106,6 +115,15 @@
       "state" : {
         "revision" : "75c88c5c374c7bc78a154ffdf963cd362f38258a",
         "version" : "1.10.3"
+      }
+    },
+    {
+      "identity" : "popupdialog",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Orderella/PopupDialog.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "d41ac7c7fa7b940c355490281ea8b2fc39c8f599"
       }
     },
     {

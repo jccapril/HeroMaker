@@ -15,3 +15,6 @@ public let routableViewControllers: [Routable.Type] = [
 ]
 
 public let actions: [Actable.Type] = []
+
+public typealias EnterAppCallback = () -> Void
+public var enterAppCallback: EnterAppCallback?

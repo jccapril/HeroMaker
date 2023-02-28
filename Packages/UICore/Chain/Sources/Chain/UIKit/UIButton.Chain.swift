@@ -6,11 +6,20 @@
 import UIKit
 
 public extension Box where T: UIButton {
+    
+    @discardableResult
+    func font(_ font: UIFont) -> Box {
+        subject.titleLabel?.font = font
+        return subject.x
+    }
+    
     @discardableResult
     func setTitle(_ title: String?, for state: UIControl.State) -> Box {
         subject.setTitle(title, for: state)
         return subject.x
     }
+    
+  
 
     @discardableResult
     func setTitleColor(_ color: UIColor?, for state: UIControl.State) -> Box {

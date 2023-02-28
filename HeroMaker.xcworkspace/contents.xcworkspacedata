@@ -64,6 +64,9 @@
          location = "group:UICore"
          name = "UICore">
          <FileRef
+            location = "group:UIDialog">
+         </FileRef>
+         <FileRef
             location = "group:AppLifeCycle">
          </FileRef>
          <FileRef

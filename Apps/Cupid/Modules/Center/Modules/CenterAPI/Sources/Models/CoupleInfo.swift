@@ -12,9 +12,9 @@ import KeyValueStore
 
 public struct CoupleInfo: Codable, Storable {
     public static let key: String = "CoupleINFO_KEY"
-    public let name: String
-    public let status: Int
-    public let partner: UserInfo
+    public let name: String?
+    public let status: Int?
+    public let partner: UserInfo?
 }
 
 

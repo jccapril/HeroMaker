@@ -25,6 +25,6 @@ extension DiscoveryProvider {
     
     @discardableResult
     func loadUserInfo() async throws -> UserInfo? {
-        try await APICenter.getUserInfo()
+        try await APICenter.User.getUserInfo()
     }
 }

@@ -16,6 +16,7 @@
 		0973EB7B2938778800B96163 /* BootContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EB7A2938778800B96163 /* BootContentView.swift */; };
 		0973EB7D2938779300B96163 /* DiagnoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EB7C2938779300B96163 /* DiagnoseViewController.swift */; };
 		0973EB7F2938779D00B96163 /* DiagnoseContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EB7E2938779D00B96163 /* DiagnoseContentView.swift */; };
+		09D0D50929AD957C0097C6F4 /* BootProdiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0D50829AD957C0097C6F4 /* BootProdiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,7 @@
 		0973EB7A2938778800B96163 /* BootContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootContentView.swift; sourceTree = "<group>"; };
 		0973EB7C2938779300B96163 /* DiagnoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnoseViewController.swift; sourceTree = "<group>"; };
 		0973EB7E2938779D00B96163 /* DiagnoseContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnoseContentView.swift; sourceTree = "<group>"; };
+		09D0D50829AD957C0097C6F4 /* BootProdiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootProdiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				0973EB782938777F00B96163 /* BootViewController.swift */,
 				0973EB7A2938778800B96163 /* BootContentView.swift */,
+				09D0D50829AD957C0097C6F4 /* BootProdiver.swift */,
 			);
 			path = Boot;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				0973EB7F2938779D00B96163 /* DiagnoseContentView.swift in Sources */,
 				0973EB75293876A600B96163 /* BootstrapModule.swift in Sources */,
+				09D0D50929AD957C0097C6F4 /* BootProdiver.swift in Sources */,
 				0973EB7D2938779300B96163 /* DiagnoseViewController.swift in Sources */,
 				0973EB6C2938768800B96163 /* Exported.swift in Sources */,
 				0973EB7B2938778800B96163 /* BootContentView.swift in Sources */,

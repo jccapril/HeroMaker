@@ -16,10 +16,12 @@
 		0973EA8D29372CBA00B96163 /* APICenterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EA8C29372CBA00B96163 /* APICenterModule.swift */; };
 		0973EA9629372CFC00B96163 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA9529372CFC00B96163 /* Service.framework */; };
 		0973EA9D29372D6E00B96163 /* APICenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EA9C29372D6E00B96163 /* APICenter.swift */; };
-		0973EA9F29372D8A00B96163 /* APICenter.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EA9E29372D8A00B96163 /* APICenter.API.swift */; };
 		0973EAA129372D9B00B96163 /* APICenter.Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EAA029372D9B00B96163 /* APICenter.Token.swift */; };
 		0973EAB929373AF200B96163 /* BaseRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EAB829373AF200B96163 /* BaseRequestable.swift */; };
 		0973EABB29373B3D00B96163 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EABA29373B3D00B96163 /* HTTPError.swift */; };
+		09D0D50B29AD97A70097C6F4 /* APICenter.User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0D50A29AD97A70097C6F4 /* APICenter.User.swift */; };
+		09D0D50D29AD97C10097C6F4 /* APICenter.Couple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0D50C29AD97C10097C6F4 /* APICenter.Couple.swift */; };
+		09D0D50F29AD98310097C6F4 /* APICenter.Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0D50E29AD98310097C6F4 /* APICenter.Login.swift */; };
 		09F67B8C29A89E90004550FF /* NullResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67B8B29A89E90004550FF /* NullResponse.swift */; };
 		09F67B9329A8AD2D004550FF /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67B9229A8AD2D004550FF /* LoginRequest.swift */; };
 		09F67BED29ACC674004550FF /* CoupleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67BEC29ACC674004550FF /* CoupleInfo.swift */; };
@@ -52,10 +54,12 @@
 		0973EA8C29372CBA00B96163 /* APICenterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenterModule.swift; sourceTree = "<group>"; };
 		0973EA9529372CFC00B96163 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0973EA9C29372D6E00B96163 /* APICenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenter.swift; sourceTree = "<group>"; };
-		0973EA9E29372D8A00B96163 /* APICenter.API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenter.API.swift; sourceTree = "<group>"; };
 		0973EAA029372D9B00B96163 /* APICenter.Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenter.Token.swift; sourceTree = "<group>"; };
 		0973EAB829373AF200B96163 /* BaseRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestable.swift; sourceTree = "<group>"; };
 		0973EABA29373B3D00B96163 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		09D0D50A29AD97A70097C6F4 /* APICenter.User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenter.User.swift; sourceTree = "<group>"; };
+		09D0D50C29AD97C10097C6F4 /* APICenter.Couple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenter.Couple.swift; sourceTree = "<group>"; };
+		09D0D50E29AD98310097C6F4 /* APICenter.Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenter.Login.swift; sourceTree = "<group>"; };
 		09F67B8B29A89E90004550FF /* NullResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullResponse.swift; sourceTree = "<group>"; };
 		09F67B9229A8AD2D004550FF /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		09F67BEC29ACC674004550FF /* CoupleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleInfo.swift; sourceTree = "<group>"; };
@@ -137,8 +141,10 @@
 			isa = PBXGroup;
 			children = (
 				0973EA9C29372D6E00B96163 /* APICenter.swift */,
-				0973EA9E29372D8A00B96163 /* APICenter.API.swift */,
 				0973EAA029372D9B00B96163 /* APICenter.Token.swift */,
+				09D0D50A29AD97A70097C6F4 /* APICenter.User.swift */,
+				09D0D50C29AD97C10097C6F4 /* APICenter.Couple.swift */,
+				09D0D50E29AD98310097C6F4 /* APICenter.Login.swift */,
 			);
 			path = APICenter;
 			sourceTree = "<group>";
@@ -248,11 +254,13 @@
 				0973EAB929373AF200B96163 /* BaseRequestable.swift in Sources */,
 				09F67B8C29A89E90004550FF /* NullResponse.swift in Sources */,
 				0973EAA129372D9B00B96163 /* APICenter.Token.swift in Sources */,
-				0973EA9F29372D8A00B96163 /* APICenter.API.swift in Sources */,
 				0973EABB29373B3D00B96163 /* HTTPError.swift in Sources */,
+				09D0D50D29AD97C10097C6F4 /* APICenter.Couple.swift in Sources */,
 				0955CBA9294C205E0025FE8F /* Coder.Date.swift in Sources */,
 				0909133B29418FBD0068E6F0 /* TokenInfo.swift in Sources */,
 				090913432941CCC60068E6F0 /* Response.swift in Sources */,
+				09D0D50B29AD97A70097C6F4 /* APICenter.User.swift in Sources */,
+				09D0D50F29AD98310097C6F4 /* APICenter.Login.swift in Sources */,
 				0955CB98294B11CF0025FE8F /* UserInfo.swift in Sources */,
 				0973EA9D29372D6E00B96163 /* APICenter.swift in Sources */,
 				09F67BEF29ACC6F4004550FF /* CoupleInfoRequest.swift in Sources */,

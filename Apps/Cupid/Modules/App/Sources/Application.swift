@@ -77,6 +77,12 @@ private extension Application {
                 enterUI()
             }
         }
+        // 绑定
+        AppBind.enterAppCallback = {
+            DispatchQueue.main.async {
+                enterUI()
+            }
+        }
         
     }
 
