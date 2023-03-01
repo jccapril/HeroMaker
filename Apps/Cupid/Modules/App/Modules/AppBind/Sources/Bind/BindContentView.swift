@@ -184,7 +184,7 @@ fileprivate class BindInnerContainerView: View {
     
     lazy var avatarView1 = UIButton(type: .custom)
         .x
-        .setBackgroundImage(UIImage(color: BindModule.color(name: "Avatar.Unbind")), for: .normal)
+        .setBackgroundImage(UIImage(color: BindModule.color(name: "Avatar.Default")), for: .normal)
         .setTitle("待绑定", for: .normal)
         .font(.systemFont(ofSize: 14))
         .setTitleColor(UIColor(hex: 0xB4B4B4), for: .normal)
@@ -193,7 +193,7 @@ fileprivate class BindInnerContainerView: View {
     
     lazy var avatarView2 = UIButton(type: .custom)
         .x
-        .setBackgroundImage(UIImage(color: BindModule.color(name: "Avatar.Unbind")), for: .normal)
+        .setBackgroundImage(UIImage(color: BindModule.color(name: "Avatar.Default")), for: .normal)
         .setTitle("待绑定", for: .normal)
         .font(.systemFont(ofSize: 14))
         .setTitleColor(UIColor(hex: 0xB4B4B4), for: .normal)

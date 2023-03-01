@@ -11,9 +11,8 @@ import WeakDelegate
 import Service
 
 class SettingViewController: ViewController {
-//    private lazy var contentView = <#ContentView#>()
-//    private lazy var provider = <#Provider#>()
-//    private var task: Task<Void, Never>? = .none
+    private lazy var viewModel = SettingViewModel()
+    private lazy var contentView = SettingContentView()
 }
 
 
@@ -36,10 +35,14 @@ extension SettingViewController {
 
 private extension SettingViewController {
     func setup() {
-        
+        view.backgroundColor = .systemGray6
+        contentView.x.add(to: view)
+        Task { @MainActor in
+            contentView.reloadData(viewModel: viewModel)
+        }
     }
     func layout() {
-        
+        contentView.pin.all(view.pin.safeArea)
     }
     
     func setupNavigationBar() {
@@ -47,7 +50,14 @@ private extension SettingViewController {
     }
     
     func bind() {
-        
+        contentView.didSelectedItemDelegator.delegate(on: self) { _, indexPath in
+            switch (indexPath.section, indexPath.row) {
+            
+            default:
+                logger.debug("section:\(indexPath.section), row:\(indexPath.row)")
+                return
+            }
+        }
     }
 }
 

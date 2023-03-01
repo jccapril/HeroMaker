@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		09656BBD29AF27C400940FB5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656BBC29AF27C400940FB5 /* SettingViewController.swift */; };
+		09656C6A29AF4C6B00940FB5 /* SettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C6929AF4C6B00940FB5 /* SettingSection.swift */; };
+		09656C6C29AF4D2000940FB5 /* SettingItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C6B29AF4D2000940FB5 /* SettingItemViewModel.swift */; };
+		09656C6E29AF4EBA00940FB5 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C6D29AF4EBA00940FB5 /* SettingCollectionViewCell.swift */; };
+		09656C7029AF4EC900940FB5 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C6F29AF4EC900940FB5 /* SettingViewModel.swift */; };
+		09656C7229AF4EDB00940FB5 /* SettingCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C7129AF4EDB00940FB5 /* SettingCollectionHeaderView.swift */; };
+		09656C7429AF4EE800940FB5 /* SettingCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C7329AF4EE800940FB5 /* SettingCollectionFooterView.swift */; };
+		09656C7629AF520500940FB5 /* SettingCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C7529AF520500940FB5 /* SettingCollectionViewDataSource.swift */; };
+		09656C7829AF529200940FB5 /* SettingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C7729AF529200940FB5 /* SettingCollectionViewLayout.swift */; };
+		09656C7A29AF52D600940FB5 /* SettingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C7929AF52D600940FB5 /* SettingContentView.swift */; };
 		09CD21D1294DC11100708290 /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CD21D0294DC11100708290 /* Exported.swift */; };
 		09CD21D4294DC13200708290 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CD21D3294DC13200708290 /* Service.framework */; };
 		09CD21D6294DC13900708290 /* Center.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CD21D5294DC13900708290 /* Center.framework */; };
@@ -35,6 +44,15 @@
 
 /* Begin PBXFileReference section */
 		09656BBC29AF27C400940FB5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		09656C6929AF4C6B00940FB5 /* SettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSection.swift; sourceTree = "<group>"; };
+		09656C6B29AF4D2000940FB5 /* SettingItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemViewModel.swift; sourceTree = "<group>"; };
+		09656C6D29AF4EBA00940FB5 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
+		09656C6F29AF4EC900940FB5 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		09656C7129AF4EDB00940FB5 /* SettingCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionHeaderView.swift; sourceTree = "<group>"; };
+		09656C7329AF4EE800940FB5 /* SettingCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionFooterView.swift; sourceTree = "<group>"; };
+		09656C7529AF520500940FB5 /* SettingCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		09656C7729AF529200940FB5 /* SettingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewLayout.swift; sourceTree = "<group>"; };
+		09656C7929AF52D600940FB5 /* SettingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentView.swift; sourceTree = "<group>"; };
 		09CD21B6294DC0BA00708290 /* libAppBind.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAppBind.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CD21CC294DC0E500708290 /* AppBind.Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppBind.Release.xcconfig; sourceTree = "<group>"; };
 		09CD21CD294DC0E500708290 /* AppBind.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppBind.xcconfig; sourceTree = "<group>"; };
@@ -70,6 +88,15 @@
 			isa = PBXGroup;
 			children = (
 				09656BBC29AF27C400940FB5 /* SettingViewController.swift */,
+				09656C7929AF52D600940FB5 /* SettingContentView.swift */,
+				09656C6929AF4C6B00940FB5 /* SettingSection.swift */,
+				09656C6B29AF4D2000940FB5 /* SettingItemViewModel.swift */,
+				09656C6D29AF4EBA00940FB5 /* SettingCollectionViewCell.swift */,
+				09656C6F29AF4EC900940FB5 /* SettingViewModel.swift */,
+				09656C7129AF4EDB00940FB5 /* SettingCollectionHeaderView.swift */,
+				09656C7329AF4EE800940FB5 /* SettingCollectionFooterView.swift */,
+				09656C7529AF520500940FB5 /* SettingCollectionViewDataSource.swift */,
+				09656C7729AF529200940FB5 /* SettingCollectionViewLayout.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -195,14 +222,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09656C7629AF520500940FB5 /* SettingCollectionViewDataSource.swift in Sources */,
+				09656C7229AF4EDB00940FB5 /* SettingCollectionHeaderView.swift in Sources */,
 				09D0D51329ADB3C90097C6F4 /* BindDialog.swift in Sources */,
 				09CD21DB294DC15900708290 /* BindModule.swift in Sources */,
 				09D0D51129AD99CB0097C6F4 /* BindViewModel.swift in Sources */,
+				09656C7029AF4EC900940FB5 /* SettingViewModel.swift in Sources */,
 				09CD21E4294DC1AE00708290 /* BindProvider.swift in Sources */,
+				09656C6A29AF4C6B00940FB5 /* SettingSection.swift in Sources */,
 				09CD21DE294DC18500708290 /* BindViewController.swift in Sources */,
+				09656C7A29AF52D600940FB5 /* SettingContentView.swift in Sources */,
 				09656BBD29AF27C400940FB5 /* SettingViewController.swift in Sources */,
+				09656C7829AF529200940FB5 /* SettingCollectionViewLayout.swift in Sources */,
+				09656C6E29AF4EBA00940FB5 /* SettingCollectionViewCell.swift in Sources */,
+				09656C7429AF4EE800940FB5 /* SettingCollectionFooterView.swift in Sources */,
 				09CD21E0294DC19A00708290 /* BindNavigationController.swift in Sources */,
 				09CD21E2294DC1A500708290 /* BindContentView.swift in Sources */,
+				09656C6C29AF4D2000940FB5 /* SettingItemViewModel.swift in Sources */,
 				09CD21D1294DC11100708290 /* Exported.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

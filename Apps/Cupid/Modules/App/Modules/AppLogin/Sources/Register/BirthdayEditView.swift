@@ -44,7 +44,7 @@ class BirthdayEditView: View {
         .corners(radius: 25)
         .setTitle("返回", for: .normal)
         .setTitleColor(.systemWhite, for: .normal)
-        .setBackgroundImage(UIImage(color: LoginModule.color(name: "Gender.Unselected")), for: .normal)
+        .setBackgroundImage(UIImage(color: LoginModule.color(name: "Gender.Default")), for: .normal)
         .instance
     
     override init(frame: CGRect = .zero) {

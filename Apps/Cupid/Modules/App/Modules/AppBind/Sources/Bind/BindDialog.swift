@@ -23,7 +23,7 @@ class BindDialog: UIViewController {
     
     private lazy var avatarView = UIImageView(frame: .zero)
         .x
-        .backgroundColor(BindModule.color(name: "Avatar.Unbind"))
+        .backgroundColor(BindModule.color(name: "Avatar.Default"))
         .corners(radius: 40)
         .instance
     
@@ -44,7 +44,7 @@ class BindDialog: UIViewController {
     private lazy var cancelButton = UIButton(type: .custom)
         .x
         .setTitle("取消", for: .normal)
-        .setBackgroundImage(UIImage(color: BindModule.color(name: "Bind.Cancel")), for: .normal)
+        .setBackgroundImage(UIImage(color: BindModule.color(name: "Button.Cancel")), for: .normal)
         .setTitleColor(.systemBlack, for: .normal)
         .corners(radius: 25)
         .instance

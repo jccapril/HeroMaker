@@ -27,7 +27,7 @@ class GenderEditView: View {
     private lazy var femaleButton = UIButton(type: .custom)
         .x
         .setImage(LoginModule.image(name: "Gender.Female"), for: .normal)
-        .setBackgroundImage(UIImage(color: LoginModule.color(name: "Gender.Unselected")), for: .normal)
+        .setBackgroundImage(UIImage(color: LoginModule.color(name: "Gender.Default")), for: .normal)
         .setBackgroundImage(UIImage(color: LoginModule.color(name: "Gender.Female")), for: .selected)
         .corners(radius: 8)
         .instance
@@ -35,7 +35,7 @@ class GenderEditView: View {
     private lazy var maleButton = UIButton(type: .custom)
         .x
         .setImage(LoginModule.image(name: "Gender.Male"), for: .normal)
-        .setBackgroundImage(UIImage(color: LoginModule.color(name: "Gender.Unselected")), for: .normal)
+        .setBackgroundImage(UIImage(color: LoginModule.color(name: "Gender.Default")), for: .normal)
         .setBackgroundImage(UIImage(color: LoginModule.color(name: "Gender.Male")), for: .selected)
         .corners(radius: 8)
         .instance
@@ -53,7 +53,7 @@ class GenderEditView: View {
         .corners(radius: 25)
         .setTitle("返回", for: .normal)
         .setTitleColor(.systemWhite, for: .normal)
-        .setBackgroundImage(UIImage(color: LoginModule.color(name: "Gender.Unselected")), for: .normal)
+        .setBackgroundImage(UIImage(color: LoginModule.color(name: "Gender.Default")), for: .normal)
         .instance
     
     var value: Int? {
