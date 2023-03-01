@@ -16,7 +16,7 @@ class DiscoveryNavigationViewController: NavigationController {
 
 private extension DiscoveryNavigationViewController {
     func setup() {
-        tabBarItem = .init(title: "发现", image: .init(systemName: "house"), selectedImage: .init(systemName: "house.fill"))
+        tabBarItem = .init(title: "发现", image: .init(systemSymbol: .house), selectedImage: .init(systemSymbol: .houseFill))
         navigationBar.tintColor = .systemBlack
     }
 }

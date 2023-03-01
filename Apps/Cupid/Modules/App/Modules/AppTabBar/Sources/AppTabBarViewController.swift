@@ -19,7 +19,8 @@ extension AppTabBarViewController {
 private extension AppTabBarViewController {
     func setup() {
         tabBar.tintColor = .systemBlack
-        tabBar.isTranslucent = false
+        tabBar.backgroundColor = TabBarModule.color(name: "Tabbar.BackgoundColor")
+        tabBar.isTranslucent = true
         delegate = self
     }
 }

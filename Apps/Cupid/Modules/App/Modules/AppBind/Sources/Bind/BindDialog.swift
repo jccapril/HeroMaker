@@ -78,6 +78,7 @@ extension BindDialog {
 extension BindDialog {
     
     func reload(userInfo: UserInfo?) {
+
         guard let userInfo = userInfo else { return }
         nameLabel.text = userInfo.name
         let mobile = userInfo.mobile
@@ -126,7 +127,7 @@ private extension BindDialog {
         
         confirmButton.pin.below(of: mobileLabel).marginTop(16).left(to: view.edge.hCenter).marginLeft(10).height(50).width(120)
         
-        self.view.bottomAnchor.constraint(equalTo: cancelButton.bottomAnchor, constant: 10).isActive = true
+        self.view.bottomAnchor.constraint(equalTo: cancelButton.bottomAnchor, constant: 16).isActive = true
     }
     
 

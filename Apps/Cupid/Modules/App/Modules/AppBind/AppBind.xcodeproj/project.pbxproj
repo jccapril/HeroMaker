@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09656BBD29AF27C400940FB5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656BBC29AF27C400940FB5 /* SettingViewController.swift */; };
 		09CD21D1294DC11100708290 /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CD21D0294DC11100708290 /* Exported.swift */; };
 		09CD21D4294DC13200708290 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CD21D3294DC13200708290 /* Service.framework */; };
 		09CD21D6294DC13900708290 /* Center.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CD21D5294DC13900708290 /* Center.framework */; };
@@ -33,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09656BBC29AF27C400940FB5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		09CD21B6294DC0BA00708290 /* libAppBind.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAppBind.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CD21CC294DC0E500708290 /* AppBind.Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppBind.Release.xcconfig; sourceTree = "<group>"; };
 		09CD21CD294DC0E500708290 /* AppBind.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppBind.xcconfig; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09656BBB29AF27B300940FB5 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				09656BBC29AF27C400940FB5 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		09CD21AD294DC0BA00708290 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 				09CD21D0294DC11100708290 /* Exported.swift */,
 				09CD21DA294DC15900708290 /* BindModule.swift */,
 				09CD21DC294DC17300708290 /* Bind */,
+				09656BBB29AF27B300940FB5 /* Setting */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -189,6 +200,7 @@
 				09D0D51129AD99CB0097C6F4 /* BindViewModel.swift in Sources */,
 				09CD21E4294DC1AE00708290 /* BindProvider.swift in Sources */,
 				09CD21DE294DC18500708290 /* BindViewController.swift in Sources */,
+				09656BBD29AF27C400940FB5 /* SettingViewController.swift in Sources */,
 				09CD21E0294DC19A00708290 /* BindNavigationController.swift in Sources */,
 				09CD21E2294DC1A500708290 /* BindContentView.swift in Sources */,
 				09CD21D1294DC11100708290 /* Exported.swift in Sources */,

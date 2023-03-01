@@ -92,6 +92,8 @@ private extension Application {
             AppDiscovery.routableViewControllers +
             AppLogin.routableViewControllers +
             AppBind.routableViewControllers +
+            AppMine.routableViewControllers +
+            AppOurs.routableViewControllers +
             AppWebBrowser.routableViewControllers
         routableList.forEach {
             Router.register(routeName: $0.routeName, factory: $0.initialize)
@@ -100,6 +102,8 @@ private extension Application {
         let actionList = AppTabBar.actions +
             AppDiscovery.actions +
             AppBind.actions +
+            AppMine.actions +
+            AppOurs.actions +
             AppLogin.actions
         actionList.forEach {
             Router.register(actName: $0.actName, action: $0.act)
@@ -125,15 +129,13 @@ private extension Application {
 
     @discardableResult
     static func enterUI() -> Self.Type {
-        if(!UserCenter.isLogined) {
-            window.rootViewController = AppLogin.loginNavigationControllerType.init()
-        }else {
-            
+        if(UserCenter.isLogined) {
             if(UserCenter.isFinishUserInfo) {
                 if(UserCenter.hasCouple) {
                     window.rootViewController = AppTabBar.appTabBarViewControllerType.init(viewControllers: [
+                        AppOurs.oursNavigationControllerType.init(),
                         AppDiscovery.discoveryNavigationControllerType.init(),
-                        AppDiscovery.discoveryNavigationControllerType.init(),
+                        AppMine.mineNavigationControllerType.init(),
                     ])
                 }else {
                     window.rootViewController =  AppBind.bindNavigationControllerType.init()
@@ -141,7 +143,8 @@ private extension Application {
             }else {
                 window.rootViewController = AppLogin.registerNavigationControllerType.init()
             }
-            
+        }else {
+            window.rootViewController = AppLogin.loginNavigationControllerType.init()
         }
         return self
     }

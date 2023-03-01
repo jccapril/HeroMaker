@@ -45,6 +45,18 @@ private extension BindViewController {
     
     func setupNavigationBar() {
         title = "绑定情侣"
+        let barButtonItem = UIBarButtonItem(
+            image: BindModule.image(name: "GearShape1"),
+            style: .plain,
+            target: self,
+            action: #selector(infoPage)
+        )
+        navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    @objc
+    func infoPage() {
+        Router.push(to: "Bind/SettingViewController")
     }
     
     func bind() {
