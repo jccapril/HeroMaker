@@ -30,6 +30,15 @@ public struct UserInfo: Codable, Storable {
         return Self.dateFormatter.date(from: birthday)
     }
 
+    public var getFormatBirthday: String? {
+        guard let date = getBirthday else {
+            return nil
+        }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: date)
+    }
+    
 //    enum CodingKeys: String, CodingKey {
 //        case guid = "guid"
 //        case name = "name"

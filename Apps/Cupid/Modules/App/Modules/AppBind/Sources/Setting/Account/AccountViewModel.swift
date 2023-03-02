@@ -34,7 +34,7 @@ extension AccountViewModel {
             SettingItemViewModel(sectionID: 1, itemID: 0, title: "头像", corners: [.topLeft, .topRight]),
             SettingItemViewModel(sectionID: 1, itemID: 1, title: "昵称", detailText: user.name),
             SettingItemViewModel(sectionID: 1, itemID: 2, title: "性别", detailText: gender),
-            SettingItemViewModel(sectionID: 1, itemID: 3, title: "生日", detailText: user.birthday, separator: false, corners: [.bottomLeft, .bottomRight]),
+            SettingItemViewModel(sectionID: 1, itemID: 3, title: "生日", detailText: user.getFormatBirthday, separator: false, corners: [.bottomLeft, .bottomRight]),
         ]
         
         items[AccountSection.bind] = [

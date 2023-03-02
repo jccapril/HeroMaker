@@ -62,13 +62,31 @@ private extension AccountViewController {
                 guard let refresher = refresher else { return }
                 await self.loadData()
                 refresher.endRefreshing()
-                self.contentView.reloadData(viewModel: self.viewModel)
+//                self.contentView.reloadData(viewModel: self.viewModel)
             }
         }
         contentView.didSelectedItemDelegator.delegate(on: self) { `self`, indexPath in
             switch (indexPath.section, indexPath.row) {
-            case (3,0):
+            case (1, 2):
+                let actionSheet = UIAlertController(title: "选择性别", message: nil, preferredStyle: .actionSheet)
+                actionSheet.addAction(UIAlertAction(title: "男", style: .default, handler: { _ in
+                    Task {[weak self] in
+                        guard let self = self else { return }
+                        await self.changeGender(gender: 1)
+                    }
+                }))
+                actionSheet.addAction(UIAlertAction(title: "女", style: .default, handler: { _ in
+                    Task {[weak self] in
+                        guard let self = self else { return }
+                        await self.changeGender(gender: 2)
+                    }
+                }))
                 
+                actionSheet.addAction(UIAlertAction(title: "取消", style: .cancel))
+                
+                self.present(actionSheet, animated: true)
+                
+            case (3, 0):
                 let overlayAppearance = PopupDialogOverlayView.appearance()
                 overlayAppearance.color           = .clear
                 overlayAppearance.blurEnabled     = false
@@ -81,7 +99,6 @@ private extension AccountViewController {
                 }
                 dialog.addButtons([cancelButton, confirmButton])
                 self.present(dialog, animated: true)
-                
             default:
                 logger.debug("section:\(indexPath.section), row:\(indexPath.row)")
                 return
@@ -106,6 +123,19 @@ private extension AccountViewController {
             logger.error("\(error)")
         }
     }
+    
+    func changeGender(gender: Int) async {
+        do {
+            try await self.provider.updateUserInfo(gender: gender)
+            Toast.text("修改成功").show()
+            FeedbackGenerator.notification.shared.notificationOccurred(.success)
+        }catch {
+            logger.error("\(error)")
+            Toast.text("Error", subtitle: "修改失败").show()
+            FeedbackGenerator.notification.shared.notificationOccurred(.error)
+        }
+    }
+    
 }
 
 extension AccountViewController: UserInfoChangeProtocol {
