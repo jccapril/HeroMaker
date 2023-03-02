@@ -15,6 +15,11 @@ class SettingCollectionHeaderView: CollectionReusableView {
         .font(.preferredFont(forTextStyle: .caption1))
         .textColor(.systemBlack)
         .instance
+    
+    private lazy var seperator: UIView = .init(frame: .zero)
+        .x
+        .backgroundColor(.systemGray5)
+        .instance
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,18 +39,20 @@ extension SettingCollectionHeaderView {
 
 private extension SettingCollectionHeaderView {
     func setup() {
-        backgroundColor = .systemGray6
+        backgroundColor = UIColor(hex: 0xFFF5F5)
         titleLabel.x.add(to: self)
+        seperator.x.add(to: self)
     }
 
     func layout() {
-        titleLabel.pin.all(8)
+        titleLabel.pin.all(12)
+        seperator.pin.left().right().bottom().height(1)
     }
 }
 
 extension SettingCollectionHeaderView {
-    func config(section: SettingSection) {
-        titleLabel.text = section.localizedTitle
+    func config(section: Section) {
+        titleLabel.text = section.title
     }
 }
 

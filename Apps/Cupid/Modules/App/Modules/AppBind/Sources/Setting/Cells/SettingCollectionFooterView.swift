@@ -28,13 +28,13 @@ extension SettingCollectionFooterView {
 
 private extension SettingCollectionFooterView {
     func setup() {
-        backgroundColor = .systemGray6
+        backgroundColor = UIColor(hex: 0xFFF5F5)
     }
 
     func layout() {}
 }
 
 extension SettingCollectionFooterView {
-    func config(section: SettingSection) {}
+    func config(section: Section) {}
 }
 

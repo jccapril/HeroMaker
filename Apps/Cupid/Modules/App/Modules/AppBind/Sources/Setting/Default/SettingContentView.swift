@@ -45,6 +45,7 @@ extension SettingContentView {
 
 private extension SettingContentView {
     func setup() {
+        backgroundColor = BindModule.color(name: "App.BackgourndColor.Main")
         collectionView.x.add(to: self)
     }
 

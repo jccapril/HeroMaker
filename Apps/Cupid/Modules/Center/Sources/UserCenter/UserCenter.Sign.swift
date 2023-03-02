@@ -25,4 +25,8 @@ public extension UserCenter.Sign {
         try await UserCenter.bootstrap()
     }
     
+    
+    static func signout() {
+        APICenter.resetToken()
+    }
 }

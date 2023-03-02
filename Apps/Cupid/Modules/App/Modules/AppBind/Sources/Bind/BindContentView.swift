@@ -53,7 +53,7 @@ extension BindContentView {
 
 private extension BindContentView {
     func setup() {
-        backgroundColor = .systemWhite
+        backgroundColor = BindModule.color(name: "App.BackgourndColor.Main")
         // add subview
         scrollView.x.add(to: self)
         container.x.add(to: scrollView)

@@ -25,12 +25,12 @@ class SettingCollectionViewCell: CollectionViewCell {
     private lazy var chevronIcon: UIImageView = .init(frame: .zero)
         .x
         .image(UIImage(systemSymbol: .chevronRight))
-        .tintColor(.systemGray4)
+        .tintColor(.systemGray3)
         .instance
     
     private lazy var seperator: UIView = .init(frame: .zero)
         .x
-        .backgroundColor(.systemGray6)
+        .backgroundColor(BindModule.color(name: "Separator"))
         .instance
     
     override init(frame: CGRect) {
@@ -53,7 +53,7 @@ extension SettingCollectionViewCell {
 
 private extension SettingCollectionViewCell {
     func setup() {
-        contentView.backgroundColor = .systemWhite
+        contentView.backgroundColor = BindModule.color(name: "Cell.BackgroundColor.Main")
         titleLabel.x.add(to: contentView)
         detailLabel.x.add(to: contentView)
         chevronIcon.x.add(to: contentView)
@@ -61,10 +61,10 @@ private extension SettingCollectionViewCell {
     }
 
     func layout() {
-        titleLabel.pin.vCenter().left(10).sizeToFit()
-        chevronIcon.pin.vCenter().right(10).height(18).aspectRatio(1)
-        detailLabel.pin.before(of: chevronIcon).vCenter().sizeToFit()
-        seperator.pin.left(20).right(20).bottom().height(1)
+        titleLabel.pin.vCenter().left(20).sizeToFit()
+        chevronIcon.pin.vCenter().right(20).height(14).aspectRatio(1)
+        detailLabel.pin.before(of: chevronIcon).marginRight(10).vCenter().sizeToFit()
+        seperator.pin.left(20).right(20).bottom().height(0.5)
     }
 }
 
@@ -75,6 +75,13 @@ extension SettingCollectionViewCell {
         detailLabel.text = viewModel.detailText
         chevronIcon.isHidden = !viewModel.chevron
         seperator.isHidden = !viewModel.separator
+        if let corners = viewModel.corners {
+            contentView.x.corners(corners, radius: 10)
+        }else {
+            contentView.x.corners(.allCorners, radius: 0)
+        }
+        setNeedsLayout()
+        
     }
 }
 

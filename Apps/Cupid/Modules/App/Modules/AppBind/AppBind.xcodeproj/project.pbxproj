@@ -17,6 +17,13 @@
 		09656C7629AF520500940FB5 /* SettingCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C7529AF520500940FB5 /* SettingCollectionViewDataSource.swift */; };
 		09656C7829AF529200940FB5 /* SettingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C7729AF529200940FB5 /* SettingCollectionViewLayout.swift */; };
 		09656C7A29AF52D600940FB5 /* SettingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C7929AF52D600940FB5 /* SettingContentView.swift */; };
+		09656C8029B046BD00940FB5 /* AccountSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C7F29B046BD00940FB5 /* AccountSection.swift */; };
+		09656C8229B047D300940FB5 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C8129B047D300940FB5 /* AccountViewModel.swift */; };
+		09656C8429B0495D00940FB5 /* AccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C8329B0495D00940FB5 /* AccountProvider.swift */; };
+		09656C8629B049C700940FB5 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C8529B049C700940FB5 /* AccountViewController.swift */; };
+		09656C8829B04EAC00940FB5 /* AccountContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C8729B04EAC00940FB5 /* AccountContentView.swift */; };
+		09656C8C29B04F5B00940FB5 /* AccountCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C8B29B04F5B00940FB5 /* AccountCollectionViewDataSource.swift */; };
+		09656C8E29B08BAF00940FB5 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09656C8D29B08BAF00940FB5 /* Section.swift */; };
 		09CD21D1294DC11100708290 /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CD21D0294DC11100708290 /* Exported.swift */; };
 		09CD21D4294DC13200708290 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CD21D3294DC13200708290 /* Service.framework */; };
 		09CD21D6294DC13900708290 /* Center.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CD21D5294DC13900708290 /* Center.framework */; };
@@ -53,6 +60,13 @@
 		09656C7529AF520500940FB5 /* SettingCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		09656C7729AF529200940FB5 /* SettingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		09656C7929AF52D600940FB5 /* SettingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentView.swift; sourceTree = "<group>"; };
+		09656C7F29B046BD00940FB5 /* AccountSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSection.swift; sourceTree = "<group>"; };
+		09656C8129B047D300940FB5 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		09656C8329B0495D00940FB5 /* AccountProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProvider.swift; sourceTree = "<group>"; };
+		09656C8529B049C700940FB5 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		09656C8729B04EAC00940FB5 /* AccountContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountContentView.swift; sourceTree = "<group>"; };
+		09656C8B29B04F5B00940FB5 /* AccountCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		09656C8D29B08BAF00940FB5 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		09CD21B6294DC0BA00708290 /* libAppBind.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAppBind.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CD21CC294DC0E500708290 /* AppBind.Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppBind.Release.xcconfig; sourceTree = "<group>"; };
 		09CD21CD294DC0E500708290 /* AppBind.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppBind.xcconfig; sourceTree = "<group>"; };
@@ -87,18 +101,49 @@
 		09656BBB29AF27B300940FB5 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				09656BBC29AF27C400940FB5 /* SettingViewController.swift */,
-				09656C7929AF52D600940FB5 /* SettingContentView.swift */,
-				09656C6929AF4C6B00940FB5 /* SettingSection.swift */,
-				09656C6B29AF4D2000940FB5 /* SettingItemViewModel.swift */,
-				09656C6D29AF4EBA00940FB5 /* SettingCollectionViewCell.swift */,
-				09656C6F29AF4EC900940FB5 /* SettingViewModel.swift */,
-				09656C7129AF4EDB00940FB5 /* SettingCollectionHeaderView.swift */,
-				09656C7329AF4EE800940FB5 /* SettingCollectionFooterView.swift */,
-				09656C7529AF520500940FB5 /* SettingCollectionViewDataSource.swift */,
-				09656C7729AF529200940FB5 /* SettingCollectionViewLayout.swift */,
+				09656C7C29B044F300940FB5 /* Cells */,
+				09656C7D29B0458100940FB5 /* Default */,
+				09656C7E29B0467D00940FB5 /* Account */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		09656C7C29B044F300940FB5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				09656C6B29AF4D2000940FB5 /* SettingItemViewModel.swift */,
+				09656C6D29AF4EBA00940FB5 /* SettingCollectionViewCell.swift */,
+				09656C7129AF4EDB00940FB5 /* SettingCollectionHeaderView.swift */,
+				09656C7329AF4EE800940FB5 /* SettingCollectionFooterView.swift */,
+				09656C7729AF529200940FB5 /* SettingCollectionViewLayout.swift */,
+				09656C8D29B08BAF00940FB5 /* Section.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		09656C7D29B0458100940FB5 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				09656BBC29AF27C400940FB5 /* SettingViewController.swift */,
+				09656C7929AF52D600940FB5 /* SettingContentView.swift */,
+				09656C6F29AF4EC900940FB5 /* SettingViewModel.swift */,
+				09656C6929AF4C6B00940FB5 /* SettingSection.swift */,
+				09656C7529AF520500940FB5 /* SettingCollectionViewDataSource.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		09656C7E29B0467D00940FB5 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				09656C8529B049C700940FB5 /* AccountViewController.swift */,
+				09656C8729B04EAC00940FB5 /* AccountContentView.swift */,
+				09656C8329B0495D00940FB5 /* AccountProvider.swift */,
+				09656C8129B047D300940FB5 /* AccountViewModel.swift */,
+				09656C7F29B046BD00940FB5 /* AccountSection.swift */,
+				09656C8B29B04F5B00940FB5 /* AccountCollectionViewDataSource.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		09CD21AD294DC0BA00708290 = {
@@ -228,13 +273,20 @@
 				09CD21DB294DC15900708290 /* BindModule.swift in Sources */,
 				09D0D51129AD99CB0097C6F4 /* BindViewModel.swift in Sources */,
 				09656C7029AF4EC900940FB5 /* SettingViewModel.swift in Sources */,
+				09656C8229B047D300940FB5 /* AccountViewModel.swift in Sources */,
+				09656C8E29B08BAF00940FB5 /* Section.swift in Sources */,
 				09CD21E4294DC1AE00708290 /* BindProvider.swift in Sources */,
 				09656C6A29AF4C6B00940FB5 /* SettingSection.swift in Sources */,
 				09CD21DE294DC18500708290 /* BindViewController.swift in Sources */,
+				09656C8629B049C700940FB5 /* AccountViewController.swift in Sources */,
+				09656C8829B04EAC00940FB5 /* AccountContentView.swift in Sources */,
+				09656C8429B0495D00940FB5 /* AccountProvider.swift in Sources */,
+				09656C8029B046BD00940FB5 /* AccountSection.swift in Sources */,
 				09656C7A29AF52D600940FB5 /* SettingContentView.swift in Sources */,
 				09656BBD29AF27C400940FB5 /* SettingViewController.swift in Sources */,
 				09656C7829AF529200940FB5 /* SettingCollectionViewLayout.swift in Sources */,
 				09656C6E29AF4EBA00940FB5 /* SettingCollectionViewCell.swift in Sources */,
+				09656C8C29B04F5B00940FB5 /* AccountCollectionViewDataSource.swift in Sources */,
 				09656C7429AF4EE800940FB5 /* SettingCollectionFooterView.swift in Sources */,
 				09CD21E0294DC19A00708290 /* BindNavigationController.swift in Sources */,
 				09CD21E2294DC1A500708290 /* BindContentView.swift in Sources */,

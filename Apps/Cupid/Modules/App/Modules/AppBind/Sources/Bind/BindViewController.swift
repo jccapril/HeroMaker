@@ -23,13 +23,15 @@ class BindViewController: ViewController {
 extension BindViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         setup()
+        bind()
         
     }
     
     override open func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        contentView.pin.all(view.pin.safeArea)
+        contentView.pin.all(view.pin.safeAreaWithoutBottom)
     }
 }
 
@@ -37,9 +39,9 @@ extension BindViewController {
 
 private extension BindViewController {
     func setup() {
-        setupNavigationBar()
+        
         contentView.x.add(to: view)
-        bind()
+        
         contentView.beginHeaderRefresh()
     }
     

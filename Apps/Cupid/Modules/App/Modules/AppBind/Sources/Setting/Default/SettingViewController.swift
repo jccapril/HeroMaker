@@ -35,14 +35,13 @@ extension SettingViewController {
 
 private extension SettingViewController {
     func setup() {
-        view.backgroundColor = .systemGray6
         contentView.x.add(to: view)
         Task { @MainActor in
             contentView.reloadData(viewModel: viewModel)
         }
     }
     func layout() {
-        contentView.pin.all(view.pin.safeArea)
+        contentView.pin.all(view.pin.safeAreaWithoutBottom)
     }
     
     func setupNavigationBar() {
@@ -52,7 +51,8 @@ private extension SettingViewController {
     func bind() {
         contentView.didSelectedItemDelegator.delegate(on: self) { _, indexPath in
             switch (indexPath.section, indexPath.row) {
-            
+            case (0,0):
+                Router.push(to: "Bind/AccountViewController")
             default:
                 logger.debug("section:\(indexPath.section), row:\(indexPath.row)")
                 return

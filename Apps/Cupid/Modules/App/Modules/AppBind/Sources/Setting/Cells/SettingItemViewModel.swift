@@ -14,13 +14,15 @@ class SettingItemViewModel: ViewModel {
     let detailText: String?
     let separator: Bool
     let chevron: Bool
-    init(sectionID: Int, itemID: Int, title: String, detailText: String? = nil, separator: Bool = true, chevron: Bool = true) {
+    let corners: UIRectCorner?
+    init(sectionID: Int, itemID: Int, title: String, detailText: String? = nil, separator: Bool = true, chevron: Bool = true, corners: UIRectCorner? = nil) {
         self.sectionID = sectionID
         self.itemID = itemID
         self.title = title
         self.detailText = detailText
         self.separator = separator
         self.chevron = chevron
+        self.corners = corners
         super.init()
     }
 }

@@ -13,6 +13,7 @@ public let bindNavigationControllerType: NavigationController.Type = BindNavigat
 public let routableViewControllers: [Routable.Type] = [
     BindViewController.self,
     SettingViewController.self,
+    AccountViewController.self,
 ]
 
 public let actions: [Actable.Type] = []
