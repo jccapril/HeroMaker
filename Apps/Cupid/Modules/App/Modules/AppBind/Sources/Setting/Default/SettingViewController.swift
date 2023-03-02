@@ -14,9 +14,6 @@ class SettingViewController: ViewController {
     private lazy var viewModel = SettingViewModel()
     private lazy var contentView = SettingContentView()
     
-    deinit {
-        logger.debug("11")
-    }
 }
 
 

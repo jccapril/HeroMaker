@@ -66,27 +66,43 @@ private extension AccountViewController {
             }
         }
         contentView.didSelectedItemDelegator.delegate(on: self) { `self`, indexPath in
+            
             switch (indexPath.section, indexPath.row) {
-            case (1, 2):
+            
+            case (1, 1): // 昵称
+                let alert = UIAlertController(title: "修改昵称", message: nil, preferredStyle: .alert)
+                alert.addTextField {
+                    $0.text = UserCenter.userInfo?.name
+                    $0.placeholder = "输入你的昵称"
+                }
+                alert.addAction(UIAlertAction(title: "取消", style: .cancel))
+                alert.addAction(UIAlertAction(title: "确定", style: .default, handler: { [weak self] _ in
+                    guard let self = self else { return }
+                    let name = alert.textFields?.first?.text
+                    Task {
+                        await self.changeUserInfo(name: name)
+                    }
+                }))
+                
+                self.present(alert, animated: true)
+            case (1, 2): // 性别
                 let actionSheet = UIAlertController(title: "选择性别", message: nil, preferredStyle: .actionSheet)
-                actionSheet.addAction(UIAlertAction(title: "男", style: .default, handler: { _ in
-                    Task {[weak self] in
-                        guard let self = self else { return }
-                        await self.changeGender(gender: 1)
+                actionSheet.addAction(UIAlertAction(title: "男", style: .default, handler: { [weak self] _ in
+                    guard let self = self else { return }
+                    Task {
+                        await self.changeUserInfo(gender: 1)
                     }
                 }))
-                actionSheet.addAction(UIAlertAction(title: "女", style: .default, handler: { _ in
-                    Task {[weak self] in
-                        guard let self = self else { return }
-                        await self.changeGender(gender: 2)
+                actionSheet.addAction(UIAlertAction(title: "女", style: .default, handler: { [weak self] _ in
+                    guard let self = self else { return }
+                    Task {
+                        await self.changeUserInfo(gender: 2)
                     }
                 }))
-                
                 actionSheet.addAction(UIAlertAction(title: "取消", style: .cancel))
-                
                 self.present(actionSheet, animated: true)
                 
-            case (3, 0):
+            case (3, 0): // 退出登录
                 let overlayAppearance = PopupDialogOverlayView.appearance()
                 overlayAppearance.color           = .clear
                 overlayAppearance.blurEnabled     = false
@@ -124,9 +140,9 @@ private extension AccountViewController {
         }
     }
     
-    func changeGender(gender: Int) async {
+    func changeUserInfo(gender: Int? = nil, name: String? = nil) async {
         do {
-            try await self.provider.updateUserInfo(gender: gender)
+            try await self.provider.updateUserInfo(name: name, gender: gender)
             Toast.text("修改成功").show()
             FeedbackGenerator.notification.shared.notificationOccurred(.success)
         }catch {
@@ -135,6 +151,8 @@ private extension AccountViewController {
             FeedbackGenerator.notification.shared.notificationOccurred(.error)
         }
     }
+    
+
     
 }
 
