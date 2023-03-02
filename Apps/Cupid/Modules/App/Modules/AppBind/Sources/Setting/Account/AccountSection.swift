@@ -14,6 +14,15 @@ enum AccountSection: CaseIterable, Section {
 
 extension AccountSection {
     var title: String {
-        return ""
+        switch self {
+        case .mobile:
+            return "手机"
+        case .info:
+            return "用户信息"
+        case .bind:
+            return "绑定"
+        case .action:
+            return ""
+        }
     }
 }

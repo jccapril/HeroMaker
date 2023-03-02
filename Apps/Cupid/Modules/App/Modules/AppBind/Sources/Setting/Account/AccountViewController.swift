@@ -16,7 +16,9 @@ class AccountViewController: ViewController {
     private lazy var contentView = AccountContentView()
     private lazy var provider = AccountProvider()
     private lazy var viewModel = AccountViewModel()
-//    private var task: Task<Void, Never>? = .none
+    deinit {
+        UserCenter.removeUserInfoChangeHandler(handler: self)
+    }
 }
 
 
@@ -33,6 +35,8 @@ extension AccountViewController {
         super.viewWillLayoutSubviews()
         layout()
     }
+    
+
 }
 
 // MARK: - Private
@@ -51,6 +55,7 @@ private extension AccountViewController {
     }
     
     func bind() {
+        UserCenter.appendUserInfoChangeHandler(handler: self)
         contentView.headerRefreshDelegator.delegate(on: self) { (`self`, refresher: Refresher) in
             Task { [weak refresher, weak self] in
                 guard let self = self else { return }
@@ -60,7 +65,7 @@ private extension AccountViewController {
                 self.contentView.reloadData(viewModel: self.viewModel)
             }
         }
-        contentView.didSelectedItemDelegator.delegate(on: self) { _, indexPath in
+        contentView.didSelectedItemDelegator.delegate(on: self) { `self`, indexPath in
             switch (indexPath.section, indexPath.row) {
             case (3,0):
                 
@@ -70,10 +75,7 @@ private extension AccountViewController {
                 let containerAppearance = PopupDialogContainerView.appearance()
                 containerAppearance.cornerRadius = 20
                 let dialog = PopupDialog(title: "确定退出登录吗？", message: "", buttonAlignment: .horizontal, transitionStyle: .zoomIn)
-                // Create buttons
-                let cancelButton = CancelButton(title: "取消") {
-                    logger.debug("cancel signout")
-                }
+                let cancelButton = CancelButton(title: "取消", action: nil)
                 let confirmButton = DefaultButton(title: "确定", dismissOnTap: false) {
                     UserCenter.Sign.signout()
                 }
@@ -99,15 +101,17 @@ private extension AccountViewController {
     
     func loadData() async {
         do {
-            guard let user = try await provider.loadUserInfo() else {
-                Toast.text("Error", subtitle: "用户信息不存在").show()
-                FeedbackGenerator.notification.shared.notificationOccurred(.error)
-                return
-            }
-            viewModel.update(user: user)
+            try await provider.loadUserInfo()
         } catch {
             logger.error("\(error)")
         }
+    }
+}
+
+extension AccountViewController: UserInfoChangeProtocol {
+    
+    func userInfoDidChange() {
+        loadLocalData()
     }
 }
 

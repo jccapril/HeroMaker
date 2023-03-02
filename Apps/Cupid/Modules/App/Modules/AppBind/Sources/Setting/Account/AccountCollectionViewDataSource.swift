@@ -10,7 +10,6 @@ import UIKit
 class AccountCollectionViewDataSource: UICollectionViewDiffableDataSource<AccountSection, SettingItemViewModel> {
     init(collectionView: UICollectionView) {
         super.init(collectionView: collectionView, cellProvider: Self.cellProvider)
-//        supplementaryViewProvider = Self.supplementaryViewProvider
     }
 }
 

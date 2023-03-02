@@ -13,6 +13,10 @@ import Service
 class SettingViewController: ViewController {
     private lazy var viewModel = SettingViewModel()
     private lazy var contentView = SettingContentView()
+    
+    deinit {
+        logger.debug("11")
+    }
 }
 
 
@@ -62,27 +66,6 @@ private extension SettingViewController {
 }
 
 
-// MARK: - Internal
-
-extension SettingViewController {
-    
-//    func action() {
-//        task.run { $0.cancel() }
-//        let rtask = Task { @MainActor in
-//            do {
-//
-//                Toast.text("Success").show()
-//                FeedbackGenerator.notification.shared.notificationOccurred(.success)
-//            } catch {
-//                Toast.text("Error", subtitle: "\(error)").show()
-//                FeedbackGenerator.notification.shared.notificationOccurred(.error)
-//                logger.error("\(error)")
-//            }
-//        }
-//        task = rtask
-//    }
-    
-}
 
 extension SettingViewController: TypeNameable {}
 

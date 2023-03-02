@@ -19,6 +19,7 @@ private extension UserCenter {
             fatalError("\(error)")
         }
     }()
+    static var userInfoChangeHandlers: [WeakUserInfoChangeHandler] = []
 }
 
  extension UserCenter {
@@ -68,6 +69,7 @@ public extension UserCenter {
     private(set) static var userInfo: UserInfo? 
     {
         didSet {
+            callUserInfoChangeHandlers()
             do {
                 switch userInfo {
                 case .none:
@@ -101,8 +103,13 @@ public extension UserCenter {
 }
 
 extension UserCenter {
-    static func updateToken(token: String) {
-        APICenter.setToken(token)
+    static func updateToken(token: String?) {
+        if let token = token {
+            APICenter.setToken(token)
+        }else {
+            APICenter.resetToken()
+        }
+        
     }
     
     static func updateUserInfo(userInfo: UserInfo?) {
@@ -144,4 +151,36 @@ public extension UserCenter {
 }
 
 
+/// 用户信息修改需要处理时，实现该协议
+public protocol UserInfoChangeProtocol: AnyObject {
+    func userInfoDidChange()
+}
 
+// MARK: - Handle User ProfileChange
+
+public extension UserCenter {
+    class WeakUserInfoChangeHandler {
+        weak var handler: UserInfoChangeProtocol?
+
+        init(_ handler: UserInfoChangeProtocol? = nil) {
+            self.handler = handler
+        }
+    }
+
+    // 若需要在用户登出后执行清理操作，需要实现 UserCenterLogoutProtocol 协议，并调用此方法
+    static func appendUserInfoChangeHandler(handler: UserInfoChangeProtocol) {
+        userInfoChangeHandlers.append(WeakUserInfoChangeHandler(handler))
+    }
+
+    static func removeUserInfoChangeHandler(handler: UserInfoChangeProtocol) {
+        if let index = userInfoChangeHandlers.firstIndex(where: { $0.handler === handler }) {
+            userInfoChangeHandlers.remove(at: index)
+        }
+    }
+
+    internal static func callUserInfoChangeHandlers() {
+        userInfoChangeHandlers.forEach { handler in
+            handler.handler?.userInfoDidChange()
+        }
+    }
+}

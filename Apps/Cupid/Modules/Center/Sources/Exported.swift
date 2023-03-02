@@ -9,5 +9,5 @@
 @_exported import CenterWebServer
 
 
-public typealias EnterAppCallback = () -> Void
-public var enterAppCallback: EnterAppCallback?
+//public typealias EnterAppCallback = () -> Void
+//public var enterAppCallback: EnterAppCallback?

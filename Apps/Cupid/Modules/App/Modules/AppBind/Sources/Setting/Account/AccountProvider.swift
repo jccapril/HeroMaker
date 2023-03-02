@@ -12,8 +12,14 @@ import UICore
 class AccountProvider: Provider {}
 
 extension AccountProvider {
+    @discardableResult
     func loadUserInfo() async throws -> UserInfo? {
         return try await UserCenter.getUserInfo()
+    }
+    
+    @discardableResult
+    func updateUserInfo(name: String? = nil, gender: Int? = nil) async throws -> UserInfo?{
+        try await UserCenter.updateUserInfo(name: name, gender: gender)
     }
 }
 

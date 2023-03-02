@@ -13,7 +13,14 @@ enum SettingSection: CaseIterable, Section {
 
 extension SettingSection {
     var title: String {
-        return ""
+        switch self {
+        case .account:
+            return "账户信息"
+        case .privacy:
+            return "隐私"
+        case .app:
+            return "app"
+        }
     }
 }
 

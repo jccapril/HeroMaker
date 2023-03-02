@@ -25,8 +25,9 @@ public extension UserCenter.Sign {
         try await UserCenter.bootstrap()
     }
     
-    
     static func signout() {
-        APICenter.resetToken()
+        UserCenter.updateToken(token: nil)
+        UserCenter.updateUserInfo(userInfo: nil)
+        UserCenter.updateCoupleInfo(coupleInfo: nil)
     }
 }
