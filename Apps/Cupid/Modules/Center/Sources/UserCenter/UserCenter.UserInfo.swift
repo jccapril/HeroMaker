@@ -69,12 +69,12 @@ public extension UserCenter {
     private(set) static var userInfo: UserInfo? 
     {
         didSet {
-            callUserInfoChangeHandlers()
             do {
                 switch userInfo {
                 case .none:
                     try store.sync.delete(key: UserInfo.key)
                 case .some(let userInfo):
+                    callUserInfoChangeHandlers()
                     try store.sync.put(storableObject: userInfo)
                 }
             } catch {
