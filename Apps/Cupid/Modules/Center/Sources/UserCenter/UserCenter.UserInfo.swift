@@ -131,8 +131,8 @@ public extension UserCenter {
     }
     
     @discardableResult
-    static func updateUserInfo(name: String? = nil, gender: Int? = nil, birthday: String? = nil, avatar: String? = nil) async throws -> UserInfo? {
-        let userInfo = try await APICenter.User.updateUserInfo(name: name, gender: gender, birthday: birthday, avatar: avatar)
+    static func updateUserInfo(name: String? = nil, gender: Int? = nil, birthday: Date? = nil, avatar: String? = nil) async throws -> UserInfo? {
+        let userInfo = try await APICenter.User.updateUserInfo(name: name, gender: gender, birthday: birthday?.format(), avatar: avatar)
         updateUserInfo(userInfo: userInfo)
         return userInfo
     }

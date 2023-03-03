@@ -12,6 +12,7 @@ import Service
 
 class OursViewController: ViewController {
     private lazy var contentView = OursContentView(frame: .zero)
+    private lazy var viewModel = OursViewModel()
     private lazy var provider = OursProvider()
     private var task: Task<Void, Never>? = .none
 }
@@ -21,8 +22,9 @@ class OursViewController: ViewController {
 extension OursViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         setup()
-        
+        bind()
     }
     
     override open func viewWillLayoutSubviews() {
@@ -35,20 +37,18 @@ extension OursViewController {
 
 private extension OursViewController {
     func setup() {
-        setupNavigationBar()
         contentView.x.add(to: view)
-        bind()
     }
     func layout() {
-        
+        contentView.pin.all()
     }
     
     func setupNavigationBar() {
-//        title = ""
+        navigationItem.title = "Cupid"
     }
     
     func bind() {
-        
+        contentView.reloadData(viewModel: viewModel)
     }
 }
 

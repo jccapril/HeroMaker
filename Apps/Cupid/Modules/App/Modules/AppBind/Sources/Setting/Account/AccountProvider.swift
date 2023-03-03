@@ -18,8 +18,9 @@ extension AccountProvider {
     }
     
     @discardableResult
-    func updateUserInfo(name: String? = nil, gender: Int? = nil) async throws -> UserInfo?{
-        try await UserCenter.updateUserInfo(name: name, gender: gender)
+    func updateUserInfo(name: String? = nil, gender: Int? = nil, birthday: Date? = nil) async throws -> UserInfo?{
+
+        try await UserCenter.updateUserInfo(name: name, gender: gender, birthday: birthday)
     }
 }
 

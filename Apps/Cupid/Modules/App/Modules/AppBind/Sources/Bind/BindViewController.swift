@@ -143,13 +143,6 @@ extension BindViewController {
     }
     
     func popupDialog(user: UserInfo?, confirm: @escaping (()->Void) ) {
-        let overlayAppearance = PopupDialogOverlayView.appearance()
-        overlayAppearance.color           = .clear
-        overlayAppearance.blurEnabled     = false
-        
-        let containerAppearance = PopupDialogContainerView.appearance()
-        containerAppearance.cornerRadius = 20
-        
         let vc = BindDialog()
         vc.reload(userInfo: user)
         // Create the dialog

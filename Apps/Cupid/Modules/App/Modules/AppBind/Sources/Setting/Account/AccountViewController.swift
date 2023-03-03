@@ -102,12 +102,25 @@ private extension AccountViewController {
                 actionSheet.addAction(UIAlertAction(title: "取消", style: .cancel))
                 self.present(actionSheet, animated: true)
                 
+            case (1, 3): // 生日
+                
+                let datePicker = DatePicker()
+                datePicker.defaultDate = UserCenter.userInfo?.getBirthday
+                let popup = PopupDialog(viewController: datePicker, buttonAlignment: .horizontal, transitionStyle: .bounceUp)
+                let cancelButton = CancelButton(title: "取消") {
+                    
+                }
+                let confirmButton = DefaultButton(title: "确定") {  [weak self] in
+                    guard let self = self else { return }
+                    Task {
+                        await self.changeUserInfo(birthday: datePicker.date)
+                    }
+                }
+                popup.addButtons([cancelButton, confirmButton])
+                self.present(popup, animated: true)
+            
+
             case (3, 0): // 退出登录
-                let overlayAppearance = PopupDialogOverlayView.appearance()
-                overlayAppearance.color           = .clear
-                overlayAppearance.blurEnabled     = false
-                let containerAppearance = PopupDialogContainerView.appearance()
-                containerAppearance.cornerRadius = 20
                 let dialog = PopupDialog(title: "确定退出登录吗？", message: "", buttonAlignment: .horizontal, transitionStyle: .zoomIn)
                 let cancelButton = CancelButton(title: "取消", action: nil)
                 let confirmButton = DefaultButton(title: "确定", dismissOnTap: false) {
@@ -140,9 +153,9 @@ private extension AccountViewController {
         }
     }
     
-    func changeUserInfo(gender: Int? = nil, name: String? = nil) async {
+    func changeUserInfo(gender: Int? = nil, name: String? = nil, birthday: Date? = nil) async {
         do {
-            try await self.provider.updateUserInfo(name: name, gender: gender)
+            try await self.provider.updateUserInfo(name: name, gender: gender, birthday: birthday)
             Toast.text("修改成功").show()
             FeedbackGenerator.notification.shared.notificationOccurred(.success)
         }catch {
