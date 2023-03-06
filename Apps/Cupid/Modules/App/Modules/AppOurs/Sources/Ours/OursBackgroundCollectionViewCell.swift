@@ -14,12 +14,14 @@ class OursBackgroundCollectionViewCell: CollectionViewCell {
     private lazy var subscriptions = Set<AnyCancellable>()
     private lazy var titleLabel = UILabel(frame: .zero)
         .x
+        .textAlignment(.center)
         .font(.preferredFont(forTextStyle: .headline))
         .textColor(.systemWhite)
         .instance
     
     private lazy var countdownLabel = UILabel(frame: .zero)
         .x
+        .textAlignment(.center)
         .font(.preferredFont(forTextStyle: .headline))
 //        .text("第 170 天 14 小时 03 分 03 秒")
         .textColor(.systemWhite)
@@ -60,8 +62,8 @@ private extension OursBackgroundCollectionViewCell {
     }
     
     func layout() {
-        titleLabel.pin.center().marginBottom(20).sizeToFit()
-        countdownLabel.pin.center().marginTop(20).sizeToFit()
+        titleLabel.pin.left().right().vCenter().marginBottom(20).sizeToFit(.width)
+        countdownLabel.pin.left().right().vCenter().marginTop(20).sizeToFit(.width)
     }
     
     func bind() {
@@ -104,7 +106,6 @@ extension OursBackgroundCollectionViewCell {
         interval -= leftMinute * minute
         let leftSecond = interval
         countdownLabel.text =  String(format: "第 %d 天 %02d 小时 %02d 分 %02d 秒", leftDay, leftHour, leftMinute, leftSecond)
-        setNeedsLayout()
     }
     
 }
