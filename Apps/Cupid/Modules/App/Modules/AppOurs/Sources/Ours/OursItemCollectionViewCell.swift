@@ -11,6 +11,8 @@ import UIKit
 
 class OursItemCollectionViewCell: CollectionViewCell {
     
+    
+    
     private lazy var imageView = UIImageView(frame: .zero)
         .x
         .instance
@@ -50,7 +52,7 @@ private extension OursItemCollectionViewCell {
     
     func layout() {
         titleLabel.pin.bottom().left().right().margin(10).sizeToFit(.width)
-        imageView.pin.above(of: titleLabel, aligned: .center).top().aspectRatio(1.0)
+        imageView.pin.above(of: titleLabel, aligned: .center).top().marginVertical(10).aspectRatio(1.0)
     }
     
 }
@@ -58,6 +60,7 @@ private extension OursItemCollectionViewCell {
 extension OursItemCollectionViewCell {
     func config(viewModel: OursItemViewModel) {
         titleLabel.text = viewModel.title
+        imageView.image = viewModel.image
         if let corners = viewModel.corners {
             contentView.x.corners(corners, radius: 20)
         }else {

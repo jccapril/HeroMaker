@@ -18,6 +18,7 @@ private extension OursCollectionViewDataSource {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OursBackgroundCollectionViewCell.cellID, for: indexPath)
                 as? OursBackgroundCollectionViewCell
+            cell?.config(coupleInfo: itemIdentifier.coupleInfo)
             return cell
         }else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OursItemCollectionViewCell.cellID, for: indexPath)

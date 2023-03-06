@@ -14,7 +14,16 @@ public struct CoupleInfo: Codable, Storable {
     public static let key: String = "CoupleINFO_KEY"
     public let name: String?
     public let status: Int?
+    public let startedAt: String? // 开始时间
     public let partner: UserInfo?
+    
+    enum CodingKeys: String, CodingKey {
+        case startedAt = "started_at"
+        case name
+        case status
+        case partner
+    }
+
 }
 
 

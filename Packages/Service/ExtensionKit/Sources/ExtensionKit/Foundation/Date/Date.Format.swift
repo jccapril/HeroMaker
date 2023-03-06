@@ -17,7 +17,8 @@ public extension Date {
         return Self.dateFormatter.string(from: self)
     }
     
-    static func from(_ from: String, dateFormat: String? = "yyyy-MM-dd'T'HH:mm:ssXXX") -> Date? {
+    static func from(_ from: String?, dateFormat: String? = "yyyy-MM-dd'T'HH:mm:ss.SSXXX") -> Date? {
+        guard let from = from else { return nil }
         Self.dateFormatter.dateFormat = dateFormat
         return Self.dateFormatter.date(from: from)
     }

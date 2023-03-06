@@ -6,6 +6,7 @@
 //
 
 import UICore
+import Center
 
 class OursItemViewModel: ViewModel {
     let sectionID: Int
@@ -15,12 +16,14 @@ class OursItemViewModel: ViewModel {
     let detailText: String?
     let corners: UIRectCorner?
     let backgroundColor: UIColor?
-    init(sectionID: Int, itemID: Int, title: String, image: UIImage? = nil, detailText: String? = nil,  corners: UIRectCorner? = nil, backgroundColor: UIColor? = OursModule.color(name: "Cell.BackgroundColor.Main")) {
+    let coupleInfo: CoupleInfo?
+    init(sectionID: Int, itemID: Int, title: String, image: UIImage? = nil, detailText: String? = nil, coupleInfo: CoupleInfo? = nil, corners: UIRectCorner? = nil, backgroundColor: UIColor? = OursModule.color(name: "Cell.BackgroundColor.Main")) {
         self.sectionID = sectionID
         self.itemID = itemID
         self.title = title
         self.image = image
         self.detailText = detailText
+        self.coupleInfo = coupleInfo
         self.corners = corners
         self.backgroundColor = backgroundColor
         super.init()
