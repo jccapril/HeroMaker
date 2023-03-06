@@ -51,9 +51,7 @@ public struct UserInfo: Codable, Storable {
     private static let dateFormatter: DateFormatter = Self.createDateFormatter()
     private static func createDateFormatter() -> DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX"
-        formatter.timeZone   = TimeZone(secondsFromGMT: 8)
-        formatter.locale     = Locale(identifier: "zh_Hans_CN")
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter
     }
 }

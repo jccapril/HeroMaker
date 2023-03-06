@@ -69,7 +69,7 @@ private extension OursBackgroundCollectionViewCell {
     func bind() {
         timer.receive(on: DispatchQueue.main).sink {[weak self] _ in
             guard let self = self else { return }
-            guard let startedAt = Date.from(self.coupleInfo?.startedAt, dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSXXX") else { return }
+            guard let startedAt = Date.from(self.coupleInfo?.startedAt) else { return }
             self.showCountDown(startedAt: startedAt)
         }
         .store(in: &subscriptions)
@@ -86,7 +86,7 @@ extension OursBackgroundCollectionViewCell {
         guard let coupleInfo = coupleInfo else { return }
         guard let selfName = UserCenter.userInfo?.name, let partnerName = coupleInfo.partner?.name else { return }
         titleLabel.text = "\(selfName) 💗 \(partnerName)"
-        guard let startedAt = Date.from(coupleInfo.startedAt, dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSXXX") else { return }
+        guard let startedAt = Date.from(coupleInfo.startedAt) else { return }
         showCountDown(startedAt: startedAt)
         
         setNeedsLayout()
