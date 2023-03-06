@@ -12,7 +12,8 @@ import WeakDelegate
 
 class OursContentView: View {
     private lazy var subscriptions = Set<AnyCancellable>()
-    
+    let didScrollDelegator = Delegator<CGFloat, Void>()
+    let didSelectedDelegator = Delegator<IndexPath, Void>()
     private lazy var collectionView: CollectionView = .init(frame: .zero, collectionViewLayout: OursCollectionViewLayout())
         .x
         .backgroundColor(.clear)
@@ -51,12 +52,14 @@ private extension OursContentView {
         collectionView.x.add(to: self)
         
         collectionView.didScrollPublisher.receive(on: DispatchQueue.main).sink {[weak self] in
-            
+            guard let self = self else { return }
+            self.didScrollDelegator(self.collectionView.contentOffset.y)
         }
         .store(in: &subscriptions)
         
         collectionView.didSelectItemPublisher.receive(on: DispatchQueue.main).sink { [weak self] indexPath in
-            
+            guard let self = self else { return }
+            self.didSelectedDelegator(indexPath)
         }
         .store(in: &subscriptions)
     }

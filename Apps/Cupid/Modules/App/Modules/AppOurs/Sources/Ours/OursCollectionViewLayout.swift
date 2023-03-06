@@ -10,8 +10,6 @@ import UIKit
 class OursCollectionViewLayout: UICollectionViewCompositionalLayout {
     convenience init() {
         self.init(sectionProvider: Self.sectionProvider)
-        
-//        self.init(section: section)
     }
 }
 
@@ -24,7 +22,8 @@ private extension OursCollectionViewLayout {
         var group: NSCollectionLayoutGroup
         var layoutSection: NSCollectionLayoutSection
         
-        if section == 0 {
+        switch section {
+        case 0:
             itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
             item = NSCollectionLayoutItem(layoutSize: itemSize)
             groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.6))
@@ -34,7 +33,7 @@ private extension OursCollectionViewLayout {
                 count: 1
             )
             layoutSection = NSCollectionLayoutSection(group: group)
-        }else if section == 1 {
+        case 1:
             itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
             item = NSCollectionLayoutItem(layoutSize: itemSize)
             groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(100))
@@ -45,7 +44,7 @@ private extension OursCollectionViewLayout {
             )
             layoutSection = NSCollectionLayoutSection(group: group)
             layoutSection.contentInsets = .init(top: -40, leading: 10, bottom: 10, trailing: 10)
-        }else if section == 2 {
+        case 2:
             itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
             item = NSCollectionLayoutItem(layoutSize: itemSize)
             item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
@@ -57,7 +56,7 @@ private extension OursCollectionViewLayout {
             )
             layoutSection = NSCollectionLayoutSection(group: group)
             layoutSection.contentInsets = .init(top: 10, leading: 0, bottom: 10, trailing: 0)
-        }else {
+        case 3:
             itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1.0))
             item = NSCollectionLayoutItem(layoutSize: itemSize)
             groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(100))
@@ -67,8 +66,9 @@ private extension OursCollectionViewLayout {
                 count: 4
             )
             layoutSection = NSCollectionLayoutSection(group: group)
+        default:
+            fatalError("首页只有4组样式")
         }
-        
         return layoutSection
     }
 }

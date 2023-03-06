@@ -36,6 +36,9 @@ extension OursViewController {
 // MARK: - Private
 
 private extension OursViewController {
+    
+    
+    
     func setup() {
         contentView.x.add(to: view)
     }
@@ -45,10 +48,40 @@ private extension OursViewController {
     
     func setupNavigationBar() {
         navigationItem.title = "Cupid"
+        setupNavigationBar(theme: .translucent)
+    }
+    
+    private enum NavigationBarTheme {
+        case white // 导航栏呈白色，字体呈黑色
+        case translucent// 导航栏透明，显示底部背景色，字体呈白色
+    }
+    
+    private func setupNavigationBar(theme: NavigationBarTheme) {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = theme == .white ? .systemWhite : .clear
+        navBarAppearance.shadowColor = .clear
+        navBarAppearance.titleTextAttributes = [.foregroundColor: theme == .white ? UIColor.systemBlack : UIColor.systemWhite]
+        self.navigationItem.standardAppearance = navBarAppearance
+        self.navigationItem.scrollEdgeAppearance = navBarAppearance
+        self.navigationController?.navigationBar.tintColor = theme == .white ? UIColor.systemBlack : UIColor.systemWhite
     }
     
     func bind() {
         contentView.reloadData(viewModel: viewModel)
+        
+        contentView.didSelectedDelegator.delegate(on: self) { `self`, indexPath in
+            logger.debug("indexPath: (\(indexPath.section),\(indexPath.item))")
+        }
+        
+        contentView.didScrollDelegator.delegate(on: self) { `self`, offsetY in
+            if offsetY > 100 {
+                self.setupNavigationBar(theme: .white)
+            }else {
+                self.setupNavigationBar(theme: .translucent)
+            }
+        }
+        
     }
 }
 
