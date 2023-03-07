@@ -37,10 +37,22 @@ extension BaseRequestable {
     public var method: HTTPMethod { .GET }
 
     public var headers: HTTPHeaders {
-        switch APICenter.token {
-        case .none: return [:]
-        case let .some(token): return [.authorization(bearerToken: token)]
+        let bundleID = Bundle.main.bundleIdentifier ?? ""
+        let version = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? ""
+        let build = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? ""
+        let language = Bundle.main.preferredLocalizations.first ?? ""
+        let regionCode = Locale.current.regionCode ?? ""
+        var defaultHeaders = [
+            ("X-CUPID-BID", bundleID),
+            ("X-CUPID-VERSION", version),
+            ("X-CUPID-BUILD", build),
+            ("X-CUPID-LANGUAGE", language),
+            ("X-CUPID-REGIONCODE", regionCode),
+        ]
+        if let token = APICenter.token {
+            defaultHeaders.append(("Authorization", "Bearer \(token)"))
         }
+        return HTTPHeaders(defaultHeaders)
     }
 
     public var body: [UInt8]? { nil }

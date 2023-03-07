@@ -44,6 +44,7 @@ extension APICenter {
 
 extension APICenter {
     static func execute<T: Codable>(_ request: BaseRequestable) async throws -> T? {
+        
         guard let response = try? await client.execute(request: request) else {
             throw HTTPBizError.serve
         }

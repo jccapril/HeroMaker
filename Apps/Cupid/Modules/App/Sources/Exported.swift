@@ -11,5 +11,6 @@
 @_exported import AppLogin
 @_exported import AppBind
 @_exported import AppOurs
+@_exported import AppDiary
 @_exported import AppMine
 @_exported import AppWebBrowser

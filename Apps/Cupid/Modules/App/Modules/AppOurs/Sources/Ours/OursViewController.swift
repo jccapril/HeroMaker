@@ -48,8 +48,15 @@ private extension OursViewController {
     
     func setupNavigationBar() {
         navigationItem.title = "Cupid"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAction))
         setupNavigationBar(theme: .translucent)
     }
+    
+    @objc
+    func addAction() {
+        
+    }
+    
     
     private enum NavigationBarTheme {
         case white // 导航栏呈白色，字体呈黑色
@@ -71,7 +78,13 @@ private extension OursViewController {
         contentView.reloadData(viewModel: viewModel)
         
         contentView.didSelectedDelegator.delegate(on: self) { `self`, indexPath in
-            logger.debug("indexPath: (\(indexPath.section),\(indexPath.item))")
+            switch (indexPath.section, indexPath.row) {
+            case (1, 0):
+                Router.push(to: "DiaryViewController")
+            default:
+                break
+            }
+            
         }
         
         contentView.didScrollDelegator.delegate(on: self) { `self`, offsetY in
@@ -83,6 +96,8 @@ private extension OursViewController {
         }
         
     }
+    
+    
 }
 
 
@@ -105,6 +120,8 @@ extension OursViewController {
         }
         task = rtask
     }
+    
+    
     
 }
 

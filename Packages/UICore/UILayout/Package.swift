@@ -12,10 +12,12 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/layoutBox/PinLayout.git", from: "1.10.3"),
+        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.0.0"),
     ],
     targets: [
         .target(name: "UILayout", dependencies: [
             .product(name: "PinLayout", package: "PinLayout"),
+            .product(name: "SnapKit", package: "SnapKit"),
         ]),
         .testTarget(
             name: "UILayoutTests",

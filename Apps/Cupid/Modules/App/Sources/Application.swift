@@ -94,6 +94,7 @@ private extension Application {
             AppBind.routableViewControllers +
             AppMine.routableViewControllers +
             AppOurs.routableViewControllers +
+            AppDiary.routableViewControllers +
             AppWebBrowser.routableViewControllers
         routableList.forEach {
             Router.register(routeName: $0.routeName, factory: $0.initialize)
@@ -104,6 +105,7 @@ private extension Application {
             AppBind.actions +
             AppMine.actions +
             AppOurs.actions +
+            AppDiary.actions +
             AppLogin.actions
         actionList.forEach {
             Router.register(actName: $0.actName, action: $0.act)
