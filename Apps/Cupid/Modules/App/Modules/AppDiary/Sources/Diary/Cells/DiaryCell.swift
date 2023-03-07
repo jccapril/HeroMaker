@@ -32,6 +32,14 @@ class DiaryCell: CollectionViewCell {
         .textColor(.systemBlack)
         .instance
     
+    private lazy var seperatorLayer: CAShapeLayer = {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.strokeColor = DiaryModule.color(name: "Separator").cgColor
+        shapeLayer.lineWidth = 1
+        shapeLayer.lineDashPattern = [2, 2] // 每 2 个点画一次，再跳过 2 个点
+        return shapeLayer
+    }()
+    
     private let margin: CGFloat = 10
     
     override init(frame: CGRect) {
@@ -62,18 +70,40 @@ private extension DiaryCell {
     
     func setup() {
         contentView.backgroundColor = DiaryModule.color(name: "Cell.BackgroundColor.Main")
-        avatarView.x.add(to: contentView)
-        timeLabel.x.add(to: contentView)
-        contentLabel.x.add(to: contentView)
+        avatarView.x.add(to: contentView).snp.makeConstraints {
+            $0.width.equalTo(40)
+            $0.height.equalTo(40)
+            $0.top.equalTo(margin)
+            $0.left.equalTo(margin)
+        }
+        timeLabel.x.add(to: contentView).snp.makeConstraints {
+            $0.left.equalTo(avatarView.snp.right).offset(margin)
+            $0.centerY.equalTo(avatarView)
+        }
+        contentLabel.x.add(to: contentView).snp.makeConstraints { make in
+            make.top.equalTo(avatarView.snp.bottom).offset(margin)
+            make.left.equalTo(margin)
+            make.right.equalTo(-margin)
+            make.bottom.equalTo(-margin)
+            
+        }
+        contentView.layer.addSublayer(seperatorLayer)
+        
+        
     }
     
     func layout() {
         
-        avatarView.pin.width(40).height(40).top(margin).left(margin)
+//        avatarView.pin.width(40).height(40).top(margin).left(margin)
+//
+//        timeLabel.pin.after(of: avatarView, aligned: .center).marginLeft(margin).sizeToFit()
+//
+//        contentLabel.pin.below(of: avatarView).marginTop(margin).left(margin).sizeToFit()
         
-        timeLabel.pin.after(of: avatarView, aligned: .center).marginLeft(margin).sizeToFit()
-        
-        contentLabel.pin.below(of: avatarView).marginTop(margin).left(margin).sizeToFit()
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0, y: contentView.bounds.height -  1))
+        path.addLine(to: CGPoint(x: contentView.bounds.width, y: contentView.bounds.height -  1))
+        seperatorLayer.path = path.cgPath
         
     }
     
@@ -84,6 +114,6 @@ extension DiaryCell {
     func config(viewModel: DiaryItemViewModel) {
         avatarView.kf.setImage(with: viewModel.avatar)
         contentLabel.text = viewModel.content
-        setNeedsLayout()
+//        setNeedsLayout()
     }
 }

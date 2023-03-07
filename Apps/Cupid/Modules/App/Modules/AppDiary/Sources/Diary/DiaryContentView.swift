@@ -94,8 +94,8 @@ extension DiaryContentView {
     func reloadData(viewModel: DiaryViewModel) {
         var snapshot = NSDiffableDataSourceSnapshot<String, DiaryItemViewModel>()
         snapshot.appendSections(["info","100","99","98"])
-        let item1 = DiaryItemViewModel(id: "101", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-        let item2 = DiaryItemViewModel(id: "102", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
+        let item1 = DiaryItemViewModel(id: "101", content: "测试测试测试测试测试测试测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
+        let item2 = DiaryItemViewModel(id: "102", content: "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
         let item3 = DiaryItemViewModel(id: "103", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
         let item4 = DiaryItemViewModel(id: "104", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
         let item5 = DiaryItemViewModel(id: "105", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")

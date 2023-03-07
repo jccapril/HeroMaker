@@ -32,9 +32,9 @@ private extension DiaryCollectionViewLayout {
             section.contentInsets = .init(top: 0, leading: 0, bottom: 10, trailing: 0)
             return section
         default:
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(300))
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(400))
     
             let group = NSCollectionLayoutGroup.horizontal(
                 layoutSize: groupSize,
