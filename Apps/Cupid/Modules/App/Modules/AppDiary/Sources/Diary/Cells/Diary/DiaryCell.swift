@@ -39,7 +39,6 @@ class DiaryCell: CollectionViewCell {
                 $0.top.equalTo(contentLabel.snp.bottom)
                 $0.left.equalToSuperview()
                 $0.right.equalToSuperview()
-                $0.bottom.equalTo(-margin)
                 if images.count == 0 {
                     $0.height.equalTo(collectionView.snp.width).multipliedBy(0.0)
                 }else if images.count <= 3 {
@@ -81,6 +80,11 @@ class DiaryCell: CollectionViewCell {
         return collectionView
         
     }()
+    
+    private lazy var commentButton = UIButton(type: .custom)
+        .x
+        .setImage(DiaryModule.image(name: "Diary.Comment"), for: .normal)
+        .instance
     
     private lazy var seperatorLayer: CAShapeLayer = {
         let shapeLayer = CAShapeLayer()
@@ -142,8 +146,14 @@ private extension DiaryCell {
             $0.left.equalToSuperview()
             $0.right.equalToSuperview()
             $0.height.equalTo(collectionView.snp.width).multipliedBy(0)
-            $0.bottom.equalTo(-margin)
+        }
         
+        commentButton.x.add(to: contentView).snp.makeConstraints {
+            $0.right.equalTo(-margin)
+            $0.bottom.equalTo(-margin)
+            $0.width.equalTo(18)
+            $0.height.equalTo(18)
+            $0.top.equalTo(collectionView.snp.bottom).offset(margin)
         }
         
         contentView.layer.addSublayer(seperatorLayer)
