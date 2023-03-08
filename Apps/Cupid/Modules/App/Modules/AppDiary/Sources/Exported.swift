@@ -12,6 +12,7 @@ public let diaryNavigationControllerType: NavigationController.Type = DiaryNavig
 
 public let routableViewControllers: [Routable.Type] = [
     DiaryViewController.self,
+    DiaryWriteViewController.self,
 ]
 
 public let actions: [Actable.Type] = []

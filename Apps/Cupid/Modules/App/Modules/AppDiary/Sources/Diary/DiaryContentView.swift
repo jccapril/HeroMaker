@@ -15,7 +15,9 @@ class DiaryContentView: View {
     let headerRefreshDelegator = Delegator<Refresher, Void>()
     let footerRefreshDelegator = Delegator<Refresher, Void>()
     let didSelectedDelegator = Delegator<IndexPath, Void>()
-
+    let writeDelegator = Delegator<Void, Void>()
+    
+    
     private lazy var collectionView: CollectionView = .init(frame: .zero, collectionViewLayout: DiaryCollectionViewLayout())
         .x
         .backgroundColor(.clear)
@@ -40,9 +42,19 @@ class DiaryContentView: View {
         .instance
     
     private lazy var dataSource = DiaryCollectionViewDataSource(collectionView: collectionView)
+    
+    lazy var writeButton = UIButton(type: .custom)
+        .x
+        .setBackgroundImage(UIImage(color: DiaryModule.color(name: "Primary--")), for: .normal)
+        .setImage(DiaryModule.image(name: "Button.Diary.Wirte"), for: .normal)
+        .corners(radius: 30)
+        .instance
+    
+    
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         setup()
+        bind()
     }
     
     @available(*, unavailable)
@@ -66,11 +78,24 @@ private extension DiaryContentView {
         backgroundColor = DiaryModule.color(name: "App.BackgourndColor.Main")
         // add subview
         collectionView.x.add(to: self)
+        writeButton.x.add(to: self)
+        
+        
+        
+    }
+    
+    func bind() {
+        writeButton.tapPublisher.receive(on: DispatchQueue.main).sink { [weak self] in
+            guard let self = self else { return }
+            self.writeDelegator()
+        }
+        .store(in: &subscriptions)
     }
     
     func layout() {
         // pinlayout
         collectionView.pin.all(UIEdgeInsets(top: -safeAreaInsets.top, left: 0, bottom: 0, right: 0))
+        writeButton.pin.right(10).width(60).height(60).bottom(120)
     }
 }
 

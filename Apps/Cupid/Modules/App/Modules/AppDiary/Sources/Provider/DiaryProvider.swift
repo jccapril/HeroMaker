@@ -13,6 +13,9 @@ class DiaryProvider: Provider {}
 
 
 extension DiaryProvider {
+    func publish(text: String? = nil, pictures: [String]? = nil) async throws {
+        try await APICenter.Diary.publish(text: text, pictures: pictures)
+    }
     
 }
 

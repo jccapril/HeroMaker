@@ -12,7 +12,8 @@ import UICore
 class DiaryItemViewModel: ViewModel {
     let id: String
     let content: String?
-    var avatar: URL? = nil
+    var avatar: URL?
+    var images: [String]?
 
     init(id: String, content: String? = nil, avatar: String? = nil) {
         self.id = id

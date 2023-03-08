@@ -48,6 +48,11 @@ extension APICenter {
         guard let response = try? await client.execute(request: request) else {
             throw HTTPBizError.serve
         }
+        
+        guard response.status == HTTPResponseStatus.ok else {
+            throw HTTPBizError.response
+        }
+        
         if response.headers.contains(name: "new-token") {
             guard let token = response.headers.first(name: "new-token") else {
                 resetToken()
@@ -60,9 +65,7 @@ extension APICenter {
             throw HTTPBizError.parse
         }
 
-        guard response.status == HTTPResponseStatus.ok else {
-            throw HTTPBizError(code: result.errorCode, message: result.message)
-        }
+        
         guard result.errorCode == 0  else {
             // jwt 错误
             if result.errorCode/10000 == 103 {

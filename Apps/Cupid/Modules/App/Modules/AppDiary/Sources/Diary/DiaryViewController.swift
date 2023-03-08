@@ -52,6 +52,11 @@ private extension DiaryViewController {
     }
     
     func bind() {
+        
+        contentView.writeDelegator.delegate(on: self) { _ , _ in
+            Router.push(to: "DiaryWriteViewController")
+        }
+        
         contentView.headerRefreshDelegator.delegate(on: self) { (`self`, refresher: Refresher) in
             Task { [weak refresher, weak self] in
                 guard let self = self else { return }
@@ -88,21 +93,21 @@ private extension DiaryViewController {
 
 extension DiaryViewController {
     
-    func action() {
-        task.run { $0.cancel() }
-        let rtask = Task { @MainActor in
-            do {
-                
-                Toast.text("Success").show()
-                FeedbackGenerator.notification.shared.notificationOccurred(.success)
-            } catch {
-                Toast.text("Error", subtitle: "\(error)").show()
-                FeedbackGenerator.notification.shared.notificationOccurred(.error)
-                logger.error("\(error)")
-            }
-        }
-        task = rtask
-    }
+//    func action() {
+//        task.run { $0.cancel() }
+//        let rtask = Task { @MainActor in
+//            do {
+//                
+//                Toast.text("Success").show()
+//                FeedbackGenerator.notification.shared.notificationOccurred(.success)
+//            } catch {
+//                Toast.text("Error", subtitle: "\(error)").show()
+//                FeedbackGenerator.notification.shared.notificationOccurred(.error)
+//                logger.error("\(error)")
+//            }
+//        }
+//        task = rtask
+//    }
     
 }
 

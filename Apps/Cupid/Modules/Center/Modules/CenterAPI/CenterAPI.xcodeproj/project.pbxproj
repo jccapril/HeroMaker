@@ -22,6 +22,8 @@
 		09D0D50B29AD97A70097C6F4 /* APICenter.User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0D50A29AD97A70097C6F4 /* APICenter.User.swift */; };
 		09D0D50D29AD97C10097C6F4 /* APICenter.Couple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0D50C29AD97C10097C6F4 /* APICenter.Couple.swift */; };
 		09D0D50F29AD98310097C6F4 /* APICenter.Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0D50E29AD98310097C6F4 /* APICenter.Login.swift */; };
+		09DCC6F229B85D0E0078E2F9 /* APICenter.Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCC6F129B85D0E0078E2F9 /* APICenter.Diary.swift */; };
+		09DCC6F429B85D680078E2F9 /* DiaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCC6F329B85D680078E2F9 /* DiaryRequest.swift */; };
 		09E4FB7629B6D2A40077FFFD /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4FB7529B6D2A40077FFFD /* APIService.swift */; };
 		09E4FB7929B6D34C0077FFFD /* CupidAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4FB7829B6D34C0077FFFD /* CupidAPIService.swift */; };
 		09E4FB7B29B6D3920077FFFD /* CupidAPIServiceContextual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4FB7A29B6D3920077FFFD /* CupidAPIServiceContextual.swift */; };
@@ -64,6 +66,8 @@
 		09D0D50A29AD97A70097C6F4 /* APICenter.User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenter.User.swift; sourceTree = "<group>"; };
 		09D0D50C29AD97C10097C6F4 /* APICenter.Couple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenter.Couple.swift; sourceTree = "<group>"; };
 		09D0D50E29AD98310097C6F4 /* APICenter.Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenter.Login.swift; sourceTree = "<group>"; };
+		09DCC6F129B85D0E0078E2F9 /* APICenter.Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenter.Diary.swift; sourceTree = "<group>"; };
+		09DCC6F329B85D680078E2F9 /* DiaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryRequest.swift; sourceTree = "<group>"; };
 		09E4FB7529B6D2A40077FFFD /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		09E4FB7829B6D34C0077FFFD /* CupidAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupidAPIService.swift; sourceTree = "<group>"; };
 		09E4FB7A29B6D3920077FFFD /* CupidAPIServiceContextual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupidAPIServiceContextual.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				09D0D50A29AD97A70097C6F4 /* APICenter.User.swift */,
 				09D0D50C29AD97C10097C6F4 /* APICenter.Couple.swift */,
 				09D0D50E29AD98310097C6F4 /* APICenter.Login.swift */,
+				09DCC6F129B85D0E0078E2F9 /* APICenter.Diary.swift */,
 			);
 			path = APICenter;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				0955CB99294B12D10025FE8F /* UserRequest.swift */,
 				09F67B9229A8AD2D004550FF /* LoginRequest.swift */,
 				09F67BEE29ACC6F4004550FF /* CoupleRequest.swift */,
+				09DCC6F329B85D680078E2F9 /* DiaryRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 				09E4FB7B29B6D3920077FFFD /* CupidAPIServiceContextual.swift in Sources */,
 				0955CB9A294B12D10025FE8F /* UserRequest.swift in Sources */,
 				09F67BED29ACC674004550FF /* CoupleInfo.swift in Sources */,
+				09DCC6F429B85D680078E2F9 /* DiaryRequest.swift in Sources */,
 				0973EA8D29372CBA00B96163 /* APICenterModule.swift in Sources */,
 				0955CB96294AF1250025FE8F /* Exported.swift in Sources */,
 				0973EAB929373AF200B96163 /* BaseRequestable.swift in Sources */,
@@ -294,6 +301,7 @@
 				09D0D50B29AD97A70097C6F4 /* APICenter.User.swift in Sources */,
 				09D0D50F29AD98310097C6F4 /* APICenter.Login.swift in Sources */,
 				0955CB98294B11CF0025FE8F /* UserInfo.swift in Sources */,
+				09DCC6F229B85D0E0078E2F9 /* APICenter.Diary.swift in Sources */,
 				0973EA9D29372D6E00B96163 /* APICenter.swift in Sources */,
 				09F67BEF29ACC6F4004550FF /* CoupleRequest.swift in Sources */,
 			);

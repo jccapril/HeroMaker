@@ -66,7 +66,6 @@ extension DiaryFooterView {
         }else {
             titleLabel.text = nil
         }
-//        setNeedsLayout()
     }
 }
 

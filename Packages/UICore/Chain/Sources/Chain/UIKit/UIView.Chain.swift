@@ -54,10 +54,32 @@ public extension Box where T: UIView {
     }
 
     @discardableResult
+    func contentMode(_ mode: UIView.ContentMode) -> Box {
+        subject.contentMode = mode
+        return subject.x
+    }
+    
+    
+    
+    @discardableResult
+    func masksToBounds(_ masksToBounds: Bool) -> Box {
+        subject.layer.masksToBounds = masksToBounds
+        return subject.x
+    }
+    
+    @discardableResult
+    func backgroundColor(_ color: UIColor) -> Box {
+        subject.backgroundColor = color
+        return subject.x
+    }
+    
+    @discardableResult
     func add(to supperView: UIView) -> T {
         supperView.addSubview(subject)
         return subject
     }
+    
+    
 }
 
 #endif

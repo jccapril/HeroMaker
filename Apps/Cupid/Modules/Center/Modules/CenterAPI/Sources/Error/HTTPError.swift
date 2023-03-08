@@ -45,4 +45,5 @@ extension HTTPBizError {
     static let serve = HTTPBizError(code: 10001, message: "服务器连接错误")
     static let parse = HTTPBizError(code: 10002, message: "数据解析错误")
     static let token = HTTPBizError(code: 10003, message: "设置token发生错误")
+    static let response = HTTPBizError(code: 10004, message: "服务器响应错误")
 }
