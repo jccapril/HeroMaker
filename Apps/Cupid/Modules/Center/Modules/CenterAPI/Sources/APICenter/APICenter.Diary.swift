@@ -20,5 +20,11 @@ public extension APICenter.Diary {
         let _: NullResponse? = try await APICenter.execute(request)
     }
     
+    // 获取日记列表
+    static func getDiaryList() async throws -> [Diary]? {
+        let request = GetDiaryListRequest()
+        return try await APICenter.execute(request)
+    }
+    
 }
 

@@ -117,21 +117,13 @@ extension DiaryContentView: UICollectionViewDelegate, UICollectionViewDelegateFl
 
 extension DiaryContentView {
     func reloadData(viewModel: DiaryViewModel) {
-        var snapshot = NSDiffableDataSourceSnapshot<String, DiaryItemViewModel>()
-        snapshot.appendSections(["info","100","99","98"])
-        let item1 = DiaryItemViewModel(id: "101", content: "测试测试测试测试测试测试测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-        let item2 = DiaryItemViewModel(id: "102", content: "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-        let item3 = DiaryItemViewModel(id: "103", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-        let item4 = DiaryItemViewModel(id: "104", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-        let item5 = DiaryItemViewModel(id: "105", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-        let item6 = DiaryItemViewModel(id: "106", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-        let item7 = DiaryItemViewModel(id: "107", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-        let item8 = DiaryItemViewModel(id: "108", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-        snapshot.appendItems([item1], toSection: "info")
-        snapshot.appendItems([item2, item3, item4], toSection: "100")
-        snapshot.appendItems([item5, item6], toSection: "99")
-        snapshot.appendItems([item7, item8], toSection: "98")
-        
+        var snapshot = NSDiffableDataSourceSnapshot<Int, DiaryItemViewModel>()
+        let keys = viewModel.keys
+        snapshot.appendSections(keys)
+        keys.forEach {
+            guard let itemViewModels = viewModel.diaryListViewModels[$0] else { return }
+            snapshot.appendItems(itemViewModels, toSection: $0)
+        }
         dataSource.apply(snapshot, animatingDifferences: false)
     }
     

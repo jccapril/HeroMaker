@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DiaryCollectionViewDataSource: UICollectionViewDiffableDataSource<String, DiaryItemViewModel> {
+class DiaryCollectionViewDataSource: UICollectionViewDiffableDataSource<Int, DiaryItemViewModel> {
     init(collectionView: UICollectionView) {
         super.init(collectionView: collectionView, cellProvider: Self.cellProvider)
         supplementaryViewProvider = self.customSupplementaryViewProvider

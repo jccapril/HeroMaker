@@ -65,7 +65,7 @@ private extension DiaryHeaderView {
 }
 
 extension DiaryHeaderView {
-    func config(day: String) {
+    func config(day: Int) {
         titleLabel.text = "恋爱第\(day)天"
     }
 }

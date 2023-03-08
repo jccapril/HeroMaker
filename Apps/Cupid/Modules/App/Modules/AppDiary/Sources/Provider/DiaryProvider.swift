@@ -17,6 +17,11 @@ extension DiaryProvider {
         try await APICenter.Diary.publish(text: text, pictures: pictures)
     }
     
+    @discardableResult
+    func getDiaryList() async throws -> [Diary]? {
+        try await APICenter.Diary.getDiaryList()
+    }
+    
 }
 
 

@@ -39,8 +39,11 @@ private extension DiaryViewController {
     func setup() {
         
         contentView.x.add(to: view)
+       
+        loadDefaultData()
         
-        contentView.beginHeaderRefresh()
+        
+        
         
     }
     func layout() {
@@ -70,20 +73,34 @@ private extension DiaryViewController {
             Task { [weak refresher, weak self] in
                 guard let self = self else { return }
                 guard let refresher = refresher else { return }
-                await self.loadData(isRefresh: false)
+//                await self.loadData(isRefresh: false)
                 refresher.endRefreshing()
                 self.contentView.reloadData(viewModel: self.viewModel)
             }
         }
     }
     
+    func loadDefaultData() {
+        contentView.reloadData(viewModel: self.viewModel)
+        Task { @MainActor [weak self] in
+            guard let self = self else { return }
+            ProgressHUD.show()
+            await self.loadData(isRefresh: true)
+            self.contentView.reloadData(viewModel: self.viewModel)
+            ProgressHUD.dismiss()
+        }
+    }
     
     func loadData(isRefresh: Bool) async {
-        let item = DiaryItemViewModel(id: "101", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-        let item1 = DiaryItemViewModel(id: "102", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-        let item2 = DiaryItemViewModel(id: "103", content: "测试测试", avatar: "https://www.baidu.com/img/pcdoodle_2a77789e1a67227122be09c5be16fe46.png")
-       
-        viewModel.update(items: [item, item1, item2])
+        do {
+            guard let diaryList = try await provider.getDiaryList() else { return }
+            viewModel.update(response: diaryList, isRefresh: isRefresh)
+        } catch {
+            Toast.text("Error", subtitle: "\(error)").show()
+            FeedbackGenerator.notification.shared.notificationOccurred(.error)
+            logger.error("\(error)")
+        }
+        
 
     }
 }

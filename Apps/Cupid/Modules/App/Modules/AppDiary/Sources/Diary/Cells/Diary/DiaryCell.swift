@@ -172,9 +172,16 @@ private extension DiaryCell {
 extension DiaryCell {
     func config(viewModel: DiaryItemViewModel) {
         avatarView.kf.setImage(with: viewModel.avatar)
-        contentLabel.text = viewModel.content
+        contentLabel.text = viewModel.text
         if let images = viewModel.images {
             self.images = images
+        }
+        if viewModel.isLast {
+            seperatorLayer.isHidden = true
+            contentView.x.corners([.bottomLeft, .bottomRight] ,radius: 20)
+        }else {
+            seperatorLayer.isHidden = false
+            contentView.x.corners(.allCorners ,radius: 0)
         }
     }
 }

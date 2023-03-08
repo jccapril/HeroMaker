@@ -77,8 +77,9 @@ extension DiaryWriteViewController {
         let task = Task { @MainActor in
             do {
                 try await provider.publish(text: text)
-                Toast.text("Success").show()
+                Toast.text("发布成功").show()
                 FeedbackGenerator.notification.shared.notificationOccurred(.success)
+                back()
             } catch {
                 Toast.text("Error", subtitle: "\(error)").show()
                 FeedbackGenerator.notification.shared.notificationOccurred(.error)

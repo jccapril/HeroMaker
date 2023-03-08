@@ -9,6 +9,13 @@ import Foundation
 import RestfulClient
 import Coder
 
+
+/// 发布日记
+class GetDiaryListRequest: BaseRequestable {
+    let path: String = "/api/v1/diary/list"
+    let method: HTTPMethod = .GET
+}
+
 /// 发布日记
 class PublishDiaryRequest: BaseRequestable {
     let path: String = "/api/v1/diary/publish"

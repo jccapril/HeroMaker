@@ -10,18 +10,34 @@ import Foundation
 import UICore
 
 class DiaryItemViewModel: ViewModel {
-    let id: String
-    let content: String?
+    let id: Int
+    var text: String?
     var avatar: URL?
     var images: [String]?
-
-    init(id: String, content: String? = nil, avatar: String? = nil) {
-        self.id = id
-        self.content = content
-        if let avatar = avatar {
-            self.avatar = URL(string: avatar)
-        }
+    var guid: String?
+    var createdAt: Date?
+    var day: Int?
+    var coupleInfo: CoupleInfo?
+    
+    var isLast: Bool = false
+    
+    init(coupleInfo:CoupleInfo?) {
+        self.id = 1
+        self.coupleInfo = coupleInfo
     }
+    
+    init(diary: Diary) {
+        self.id = diary.id
+        self.text = diary.text
+        self.guid = diary.createdBy
+        self.createdAt = Date.from(diary.createdAt)
+        
+        guard let startedAt = Date.from(UserCenter.coupleInfo?.startedAt) else { return }
+        guard let createdAt = self.createdAt else { return }
+        let seconds =  Int(createdAt.timeIntervalSince1970 - startedAt.timeIntervalSince1970)
+        self.day = seconds/(60*60*24) + 1
+    }
+    
 }
 
 extension DiaryItemViewModel: Hashable {
