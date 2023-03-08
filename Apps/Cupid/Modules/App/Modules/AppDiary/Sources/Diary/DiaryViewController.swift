@@ -42,9 +42,6 @@ private extension DiaryViewController {
        
         loadDefaultData()
         
-        
-        
-        
     }
     func layout() {
         contentView.pin.all()
@@ -82,7 +79,7 @@ private extension DiaryViewController {
     
     func loadDefaultData() {
         contentView.reloadData(viewModel: self.viewModel)
-        Task { @MainActor [weak self] in
+        Task { [weak self] in
             guard let self = self else { return }
             ProgressHUD.show()
             await self.loadData(isRefresh: true)

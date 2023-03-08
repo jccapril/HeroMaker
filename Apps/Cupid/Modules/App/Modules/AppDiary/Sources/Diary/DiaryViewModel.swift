@@ -12,9 +12,11 @@ import OrderedCollections
 
 class DiaryViewModel: ViewModel {
    
-    private(set) lazy var keys: [Int] = [-101]
+    private static let infoKey = -101
+    
+    private(set) lazy var keys: [Int] = [Self.infoKey]
     private(set) lazy var diaryListViewModels: OrderedDictionary<Int, [DiaryItemViewModel]> = [
-        -101: [DiaryItemViewModel(coupleInfo: UserCenter.coupleInfo)]
+        Self.infoKey: [DiaryItemViewModel(id: Self.infoKey, coupleInfo: UserCenter.coupleInfo)]
     ]
     private(set) var index: UInt = 1
 }
@@ -26,8 +28,8 @@ extension DiaryViewModel {
         if isRefresh {
             self.diaryListViewModels.removeAll()
             self.keys.removeAll()
-            keys.append(-101)
-            self.diaryListViewModels[-101] = [DiaryItemViewModel(coupleInfo: UserCenter.coupleInfo)]
+            keys.append(Self.infoKey)
+            self.diaryListViewModels[Self.infoKey] = [DiaryItemViewModel(id: Self.infoKey, coupleInfo: UserCenter.coupleInfo)]
         }
         var diaryListViewModels = response.map {
             DiaryItemViewModel(diary: $0)
@@ -43,7 +45,7 @@ extension DiaryViewModel {
                 self.diaryListViewModels[day] = list
             } else {
                 self.diaryListViewModels[day] = [$0]
-                keys.append(day)
+                self.keys.append(day)
             }
         }
         

@@ -21,8 +21,8 @@ class DiaryItemViewModel: ViewModel {
     
     var isLast: Bool = false
     
-    init(coupleInfo:CoupleInfo?) {
-        self.id = 1
+    init(id:Int, coupleInfo:CoupleInfo?) {
+        self.id = id
         self.coupleInfo = coupleInfo
     }
     
@@ -35,7 +35,7 @@ class DiaryItemViewModel: ViewModel {
         guard let startedAt = Date.from(UserCenter.coupleInfo?.startedAt) else { return }
         guard let createdAt = self.createdAt else { return }
         let seconds =  Int(createdAt.timeIntervalSince1970 - startedAt.timeIntervalSince1970)
-        self.day = seconds/(60*60*24) + 1
+        self.day = seconds/(60*60*24)
     }
     
 }
