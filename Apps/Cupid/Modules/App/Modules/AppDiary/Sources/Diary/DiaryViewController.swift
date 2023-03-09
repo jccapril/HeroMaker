@@ -11,6 +11,18 @@ import WeakDelegate
 import Service
 
 class DiaryViewController: ViewController {
+    
+    private enum NavigationBarTheme {
+        case white // 导航栏呈白色，字体呈黑色
+        case translucent// 导航栏透明，显示底部背景色，字体呈白色
+    }
+    
+    private var navigationBarTheme: NavigationBarTheme = .translucent {
+        didSet {
+            setupNavigationBar(theme: navigationBarTheme)
+        }
+    }
+
     private lazy var contentView = DiaryContentView()
     private lazy var provider = DiaryProvider()
     private lazy var viewModel = DiaryViewModel()
@@ -27,10 +39,20 @@ extension DiaryViewController {
         bind()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar(theme: navigationBarTheme)
+    }
+    
     override open func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         layout()
     }
+    
+    override var itemTintColor: UIColor? {
+        return navigationBarTheme == .white ? .systemBlack : .systemWhite
+    }
+    
 }
 
 // MARK: - Private
@@ -49,30 +71,25 @@ private extension DiaryViewController {
     
     func setupNavigationBar() {
         title = "日记"
-//        setupNavigationBar(theme: .translucent)
+        navigationBarTheme = .translucent
     }
-    
-    
-    private enum NavigationBarTheme {
-        case white // 导航栏呈白色，字体呈黑色
-        case translucent// 导航栏透明，显示底部背景色，字体呈白色
-    }
+
     
     private func setupNavigationBar(theme: NavigationBarTheme) {
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = theme == .white ? .systemWhite : .clear
-        navBarAppearance.shadowColor = .clear
-        navBarAppearance.titleTextAttributes = [.foregroundColor: theme == .white ? UIColor.systemBlack : UIColor.systemWhite]
-        self.navigationItem.standardAppearance = navBarAppearance
-        self.navigationItem.scrollEdgeAppearance = navBarAppearance
-        self.navigationController?.navigationBar.tintColor = theme == .white ? .systemBlack : .systemWhite
-        self.navigationItem.backBarButtonItem?.tintColor = theme == .white ? .systemBlack : .systemWhite
-        self.navigationItem.leftBarButtonItem?.tintColor = theme == .white ? .systemBlack : .systemWhite
-        self.navigationItem.rightBarButtonItem?.tintColor = theme == .white ? .systemBlack : .systemWhite
+        setNavigationBarBackgroundImage(image:  theme == NavigationBarTheme.white ? UIImage(color: .systemWhite) : UIImage())
+        setNavigationBarTintColor(tintColor: theme == NavigationBarTheme.white ? .systemBlack : .systemWhite)
     }
     
     func bind() {
+    
+        
+        contentView.didScrollDelegator.delegate(on: self) { `self`, offsetY in
+            if offsetY > -44 {
+                self.navigationBarTheme = .white
+            }else {
+                self.navigationBarTheme = .translucent
+            }
+        }
         
         contentView.writeDelegator.delegate(on: self) { _ , _ in
             Router.push(to: "DiaryWriteViewController")

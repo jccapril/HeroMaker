@@ -18,3 +18,5 @@
 @_exported import ProxyServer
 @_exported import SwiftKit
 @_exported import SwiftAsyncKit
+@_exported import Monitor
+

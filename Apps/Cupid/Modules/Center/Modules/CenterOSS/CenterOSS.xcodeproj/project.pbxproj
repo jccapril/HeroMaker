@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09CC10AE29B9B40200DB200B /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CC10AD29B9B40200DB200B /* Exported.swift */; };
+		09CC10B029B9B41500DB200B /* OSSCenterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CC10AF29B9B41500DB200B /* OSSCenterModule.swift */; };
+		09CC10B329B9B43300DB200B /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CC10B229B9B43300DB200B /* Service.framework */; };
+		09CC10B629B9B45C00DB200B /* TencentCOSCenterContextual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CC10B529B9B45C00DB200B /* TencentCOSCenterContextual.swift */; };
+		09CC10B829B9B47100DB200B /* COSUploadConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CC10B729B9B47100DB200B /* COSUploadConfiguration.swift */; };
+		09CC10BA29B9B4B200DB200B /* COSConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CC10B929B9B4B200DB200B /* COSConfigurationProvider.swift */; };
+		09CC10BC29B9B4D900DB200B /* TencentCOSCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CC10BB29B9B4D900DB200B /* TencentCOSCenter.swift */; };
+		09CC10BE29B9B94700DB200B /* COSSignatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CC10BD29B9B94700DB200B /* COSSignatureProvider.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		09CC109529B9B39400DB200B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		09CC109729B9B39400DB200B /* libCenterOSS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCenterOSS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		09CC10AA29B9B3D700DB200B /* CenterOSS.Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CenterOSS.Release.xcconfig; sourceTree = "<group>"; };
+		09CC10AB29B9B3D700DB200B /* CenterOSS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CenterOSS.xcconfig; sourceTree = "<group>"; };
+		09CC10AC29B9B3D700DB200B /* CenterOSS.Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CenterOSS.Debug.xcconfig; sourceTree = "<group>"; };
+		09CC10AD29B9B40200DB200B /* Exported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exported.swift; sourceTree = "<group>"; };
+		09CC10AF29B9B41500DB200B /* OSSCenterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSSCenterModule.swift; sourceTree = "<group>"; };
+		09CC10B229B9B43300DB200B /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09CC10B529B9B45C00DB200B /* TencentCOSCenterContextual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentCOSCenterContextual.swift; sourceTree = "<group>"; };
+		09CC10B729B9B47100DB200B /* COSUploadConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSUploadConfiguration.swift; sourceTree = "<group>"; };
+		09CC10B929B9B4B200DB200B /* COSConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSConfigurationProvider.swift; sourceTree = "<group>"; };
+		09CC10BB29B9B4D900DB200B /* TencentCOSCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentCOSCenter.swift; sourceTree = "<group>"; };
+		09CC10BD29B9B94700DB200B /* COSSignatureProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSSignatureProvider.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09CC109429B9B39400DB200B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09CC10B329B9B43300DB200B /* Service.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09CC108E29B9B39400DB200B = {
+			isa = PBXGroup;
+			children = (
+				09CC109929B9B39400DB200B /* Sources */,
+				09CC10A929B9B3AA00DB200B /* XCConfig */,
+				09CC109829B9B39400DB200B /* Products */,
+				09CC10B129B9B43300DB200B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		09CC109829B9B39400DB200B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09CC109729B9B39400DB200B /* libCenterOSS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		09CC109929B9B39400DB200B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				09CC10AD29B9B40200DB200B /* Exported.swift */,
+				09CC10AF29B9B41500DB200B /* OSSCenterModule.swift */,
+				09CC10B429B9B44800DB200B /* COSCenter */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		09CC10A929B9B3AA00DB200B /* XCConfig */ = {
+			isa = PBXGroup;
+			children = (
+				09CC10AC29B9B3D700DB200B /* CenterOSS.Debug.xcconfig */,
+				09CC10AA29B9B3D700DB200B /* CenterOSS.Release.xcconfig */,
+				09CC10AB29B9B3D700DB200B /* CenterOSS.xcconfig */,
+			);
+			path = XCConfig;
+			sourceTree = "<group>";
+		};
+		09CC10B129B9B43300DB200B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09CC10B229B9B43300DB200B /* Service.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09CC10B429B9B44800DB200B /* COSCenter */ = {
+			isa = PBXGroup;
+			children = (
+				09CC10BB29B9B4D900DB200B /* TencentCOSCenter.swift */,
+				09CC10B729B9B47100DB200B /* COSUploadConfiguration.swift */,
+				09CC10BD29B9B94700DB200B /* COSSignatureProvider.swift */,
+				09CC10B929B9B4B200DB200B /* COSConfigurationProvider.swift */,
+				09CC10B529B9B45C00DB200B /* TencentCOSCenterContextual.swift */,
+			);
+			path = COSCenter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09CC109629B9B39400DB200B /* CenterOSS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09CC109E29B9B39400DB200B /* Build configuration list for PBXNativeTarget "CenterOSS" */;
+			buildPhases = (
+				09CC109329B9B39400DB200B /* Sources */,
+				09CC109429B9B39400DB200B /* Frameworks */,
+				09CC109529B9B39400DB200B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CenterOSS;
+			productName = CenterOSS;
+			productReference = 09CC109729B9B39400DB200B /* libCenterOSS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		09CC108F29B9B39400DB200B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					09CC109629B9B39400DB200B = {
+						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
+					};
+				};
+			};
+			buildConfigurationList = 09CC109229B9B39400DB200B /* Build configuration list for PBXProject "CenterOSS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 09CC108E29B9B39400DB200B;
+			productRefGroup = 09CC109829B9B39400DB200B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				09CC109629B9B39400DB200B /* CenterOSS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		09CC109329B9B39400DB200B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09CC10BC29B9B4D900DB200B /* TencentCOSCenter.swift in Sources */,
+				09CC10B029B9B41500DB200B /* OSSCenterModule.swift in Sources */,
+				09CC10BA29B9B4B200DB200B /* COSConfigurationProvider.swift in Sources */,
+				09CC10B829B9B47100DB200B /* COSUploadConfiguration.swift in Sources */,
+				09CC10B629B9B45C00DB200B /* TencentCOSCenterContextual.swift in Sources */,
+				09CC10BE29B9B94700DB200B /* COSSignatureProvider.swift in Sources */,
+				09CC10AE29B9B40200DB200B /* Exported.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		09CC109C29B9B39400DB200B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		09CC109D29B9B39400DB200B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		09CC109F29B9B39400DB200B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09CC10AC29B9B3D700DB200B /* CenterOSS.Debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		09CC10A029B9B39400DB200B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09CC10AA29B9B3D700DB200B /* CenterOSS.Release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09CC109229B9B39400DB200B /* Build configuration list for PBXProject "CenterOSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09CC109C29B9B39400DB200B /* Debug */,
+				09CC109D29B9B39400DB200B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09CC109E29B9B39400DB200B /* Build configuration list for PBXNativeTarget "CenterOSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09CC109F29B9B39400DB200B /* Debug */,
+				09CC10A029B9B39400DB200B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 09CC108F29B9B39400DB200B /* Project object */;
+}

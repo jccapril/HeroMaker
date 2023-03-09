@@ -45,7 +45,7 @@ private extension DiaryWriteViewController {
     func setupNavigationBar() {
         let current = Date()
         title = "\(current.format("M月d日") ?? "写日记")"
-        
+        setTitleAttributes(titleColor: .systemBlack)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: DiaryModule.image(name: "Diary.Submit"), style: .plain, target: self, action: #selector(submit))
         navigationItem.rightBarButtonItem?.tintColor = DiaryModule.color(name: "Primary--")
     }

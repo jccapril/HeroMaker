@@ -7,6 +7,7 @@
 
 import Service
 
+
 public enum CenterModule {}
 
 private extension CenterModule {
@@ -18,6 +19,7 @@ public extension CenterModule {
         APICenter.bootstrap()
         UserCenter.bootstrap()
         WebServerCenter.bootstrap()
+        TencentCOSCenter.register(context: TencentCOSContext())
     }
 }
 

@@ -7,7 +7,7 @@
 
 @_exported import CenterAPI
 @_exported import CenterWebServer
-
+@_exported import CenterOSS
 
 //public typealias EnterAppCallback = () -> Void
 //public var enterAppCallback: EnterAppCallback?

@@ -31,6 +31,11 @@ public extension ViewController {
         navigationItem.leftBarButtonItem = barButtonItem
     }
 
+    
+    func setNavigationBarBackgroundImage(image: UIImage) {
+        navigationController?.navigationBar.setBackgroundImage(image, for: .any, barMetrics: .default)
+    }
+   
     /**
      设置头部元素的颜色，包括title,leftBarButtonItem,rightBarButtonItem
      - parameter tintColor: 色值
@@ -38,6 +43,8 @@ public extension ViewController {
     func setNavigationBarTintColor(tintColor: UIColor) {
         navigationController?.navigationBar.tintColor = tintColor
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: tintColor]
+        navigationItem.leftBarButtonItem?.tintColor = tintColor
+        navigationItem.rightBarButtonItem?.tintColor = tintColor
     }
 
     /**

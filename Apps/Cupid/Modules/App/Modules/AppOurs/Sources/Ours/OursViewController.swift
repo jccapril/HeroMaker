@@ -11,6 +11,19 @@ import WeakDelegate
 import Service
 
 class OursViewController: ViewController {
+    
+    private enum NavigationBarTheme {
+        case white // 导航栏呈白色，字体呈黑色
+        case translucent// 导航栏透明，显示底部背景色，字体呈白色
+    }
+    
+    private var navigationBarTheme: NavigationBarTheme = .translucent {
+        didSet {
+            setupNavigationBar(theme: navigationBarTheme)
+        }
+    }
+
+    
     private lazy var contentView = OursContentView(frame: .zero)
     private lazy var viewModel = OursViewModel()
     private lazy var provider = OursProvider()
@@ -26,6 +39,12 @@ extension OursViewController {
         setup()
         bind()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar(theme: navigationBarTheme)
+    }
+    
     
     override open func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -49,7 +68,6 @@ private extension OursViewController {
     func setupNavigationBar() {
         navigationItem.title = "Cupid"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAction))
-        setupNavigationBar(theme: .translucent)
     }
     
     @objc
@@ -58,20 +76,9 @@ private extension OursViewController {
     }
     
     
-    private enum NavigationBarTheme {
-        case white // 导航栏呈白色，字体呈黑色
-        case translucent// 导航栏透明，显示底部背景色，字体呈白色
-    }
-    
     private func setupNavigationBar(theme: NavigationBarTheme) {
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = theme == .white ? .systemWhite : .clear
-        navBarAppearance.shadowColor = .clear
-        navBarAppearance.titleTextAttributes = [.foregroundColor: theme == .white ? UIColor.systemBlack : UIColor.systemWhite]
-        self.navigationItem.standardAppearance = navBarAppearance
-        self.navigationItem.scrollEdgeAppearance = navBarAppearance
-        self.navigationController?.navigationBar.tintColor = theme == .white ? UIColor.systemBlack : UIColor.systemWhite
+        setNavigationBarBackgroundImage(image:  theme == .white ? UIImage(color: .systemWhite) : UIImage())
+        setNavigationBarTintColor(tintColor: theme == .white ? .systemBlack : .systemWhite)
     }
     
     func bind() {
@@ -88,10 +95,11 @@ private extension OursViewController {
         }
         
         contentView.didScrollDelegator.delegate(on: self) { `self`, offsetY in
-            if offsetY > 100 {
-                self.setupNavigationBar(theme: .white)
+
+            if offsetY > 80 {
+                self.navigationBarTheme = .white
             }else {
-                self.setupNavigationBar(theme: .translucent)
+                self.navigationBarTheme = .translucent
             }
         }
         

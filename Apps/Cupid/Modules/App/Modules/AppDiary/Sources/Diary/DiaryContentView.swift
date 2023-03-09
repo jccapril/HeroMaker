@@ -14,6 +14,7 @@ class DiaryContentView: View {
     private lazy var subscriptions = Set<AnyCancellable>()
     let headerRefreshDelegator = Delegator<Refresher, Void>()
     let footerRefreshDelegator = Delegator<Refresher, Void>()
+    let didScrollDelegator = Delegator<CGFloat, Void>()
     let didSelectedDelegator = Delegator<IndexPath, Void>()
     let writeDelegator = Delegator<Void, Void>()
     
@@ -80,14 +81,25 @@ private extension DiaryContentView {
         collectionView.x.add(to: self)
         writeButton.x.add(to: self)
         
-        
-        
+
     }
     
     func bind() {
         writeButton.tapPublisher.receive(on: DispatchQueue.main).sink { [weak self] in
             guard let self = self else { return }
             self.writeDelegator()
+        }
+        .store(in: &subscriptions)
+        
+        collectionView.didScrollPublisher.receive(on: DispatchQueue.main).sink {[weak self] in
+            guard let self = self else { return }
+            self.didScrollDelegator(self.collectionView.contentOffset.y)
+        }
+        .store(in: &subscriptions)
+        
+        collectionView.didSelectItemPublisher.receive(on: DispatchQueue.main).sink { [weak self] indexPath in
+            guard let self = self else { return }
+            self.didSelectedDelegator(indexPath)
         }
         .store(in: &subscriptions)
     }

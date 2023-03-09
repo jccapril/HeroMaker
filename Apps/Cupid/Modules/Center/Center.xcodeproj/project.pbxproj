@@ -16,6 +16,8 @@
 		0973EA9129372CD800B96163 /* Service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA8F29372CD800B96163 /* Service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0973EA9329372CDD00B96163 /* libCenterAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0973EA8629372BE600B96163 /* libCenterAPI.a */; };
 		0973EAA729372F2300B96163 /* CenterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973EAA629372F2300B96163 /* CenterModule.swift */; };
+		09CC10C129B9BD5700DB200B /* TencentCosContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CC10C029B9BD5700DB200B /* TencentCosContext.swift */; };
+		09CC10C229B9BD7700DB200B /* libCenterOSS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CC10A729B9B39500DB200B /* libCenterOSS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 0973EA7729372BE500B96163;
 			remoteInfo = CenterAPI;
+		};
+		09CC10A629B9B39500DB200B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09CC10A129B9B39400DB200B /* CenterOSS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 09CC109729B9B39400DB200B;
+			remoteInfo = CenterOSS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -62,6 +71,8 @@
 		0973EA8129372BE500B96163 /* CenterAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CenterAPI.xcodeproj; path = CenterAPI/CenterAPI.xcodeproj; sourceTree = "<group>"; };
 		0973EA8F29372CD800B96163 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0973EAA629372F2300B96163 /* CenterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterModule.swift; sourceTree = "<group>"; };
+		09CC10A129B9B39400DB200B /* CenterOSS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CenterOSS.xcodeproj; path = CenterOSS/CenterOSS.xcodeproj; sourceTree = "<group>"; };
+		09CC10C029B9BD5700DB200B /* TencentCosContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentCosContext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +82,7 @@
 			files = (
 				0973EA9029372CD800B96163 /* Service.framework in Frameworks */,
 				0973EA9329372CDD00B96163 /* libCenterAPI.a in Frameworks */,
+				09CC10C229B9BD7700DB200B /* libCenterOSS.a in Frameworks */,
 				09095BE52988E1C00026C382 /* libCenterWebServer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +133,7 @@
 				0973EA5929372BAA00B96163 /* Exported.swift */,
 				0973EAA629372F2300B96163 /* CenterModule.swift */,
 				0909133329418D480068E6F0 /* UserCenter */,
+				09CC10BF29B9BD4600DB200B /* Contextual */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -128,6 +141,7 @@
 		0973EA14293728A000B96163 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				09CC10A129B9B39400DB200B /* CenterOSS.xcodeproj */,
 				09095BDF2988E1A20026C382 /* CenterWebServer.xcodeproj */,
 				0973EA8129372BE500B96163 /* CenterAPI.xcodeproj */,
 			);
@@ -158,6 +172,22 @@
 				0973EA8F29372CD800B96163 /* Service.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09CC10A229B9B39400DB200B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09CC10A729B9B39500DB200B /* libCenterOSS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		09CC10BF29B9BD4600DB200B /* Contextual */ = {
+			isa = PBXGroup;
+			children = (
+				09CC10C029B9BD5700DB200B /* TencentCosContext.swift */,
+			);
+			path = Contextual;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +254,10 @@
 					ProjectRef = 0973EA8129372BE500B96163 /* CenterAPI.xcodeproj */;
 				},
 				{
+					ProductGroup = 09CC10A229B9B39400DB200B /* Products */;
+					ProjectRef = 09CC10A129B9B39400DB200B /* CenterOSS.xcodeproj */;
+				},
+				{
 					ProductGroup = 09095BE02988E1A20026C382 /* Products */;
 					ProjectRef = 09095BDF2988E1A20026C382 /* CenterWebServer.xcodeproj */;
 				},
@@ -250,6 +284,13 @@
 			remoteRef = 0973EA8529372BE600B96163 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		09CC10A729B9B39500DB200B /* libCenterOSS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCenterOSS.a;
+			remoteRef = 09CC10A629B9B39500DB200B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -268,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0973EAA729372F2300B96163 /* CenterModule.swift in Sources */,
+				09CC10C129B9BD5700DB200B /* TencentCosContext.swift in Sources */,
 				0973EA5A29372BAA00B96163 /* Exported.swift in Sources */,
 				0909133F2941AE900068E6F0 /* UserCenter.UserInfo.swift in Sources */,
 				0909133729418D680068E6F0 /* UserCenter.swift in Sources */,
