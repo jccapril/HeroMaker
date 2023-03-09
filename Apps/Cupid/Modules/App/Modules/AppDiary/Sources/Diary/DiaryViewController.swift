@@ -49,6 +49,27 @@ private extension DiaryViewController {
     
     func setupNavigationBar() {
         title = "日记"
+//        setupNavigationBar(theme: .translucent)
+    }
+    
+    
+    private enum NavigationBarTheme {
+        case white // 导航栏呈白色，字体呈黑色
+        case translucent// 导航栏透明，显示底部背景色，字体呈白色
+    }
+    
+    private func setupNavigationBar(theme: NavigationBarTheme) {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = theme == .white ? .systemWhite : .clear
+        navBarAppearance.shadowColor = .clear
+        navBarAppearance.titleTextAttributes = [.foregroundColor: theme == .white ? UIColor.systemBlack : UIColor.systemWhite]
+        self.navigationItem.standardAppearance = navBarAppearance
+        self.navigationItem.scrollEdgeAppearance = navBarAppearance
+        self.navigationController?.navigationBar.tintColor = theme == .white ? .systemBlack : .systemWhite
+        self.navigationItem.backBarButtonItem?.tintColor = theme == .white ? .systemBlack : .systemWhite
+        self.navigationItem.leftBarButtonItem?.tintColor = theme == .white ? .systemBlack : .systemWhite
+        self.navigationItem.rightBarButtonItem?.tintColor = theme == .white ? .systemBlack : .systemWhite
     }
     
     func bind() {

@@ -20,7 +20,6 @@ class DiaryCell: CollectionViewCell {
     private lazy var timeLabel = UILabel(frame: .zero)
         .x
         .font(.preferredFont(forTextStyle: .caption1))
-        .text("今天")
         .textColor(DiaryModule.color(name: "Text.Gray"))
         .instance
         
@@ -183,6 +182,7 @@ extension DiaryCell {
     func config(viewModel: DiaryItemViewModel) {
         avatarView.kf.setImage(with: viewModel.avatar)
         contentLabel.text = viewModel.text
+        timeLabel.text = viewModel.createdAt?.getFriendlyDateString()
         if let images = viewModel.images {
             self.images = images
         }

@@ -28,4 +28,26 @@ public extension Date {
     }
     
     
+    func getFriendlyDateString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let calendar = Calendar.current
+        if calendar.isDateInTomorrow(self) {
+            // 如果日期是今天，则返回当前时间
+            dateFormatter.dateFormat = "HH:mm"
+            return "明天 " + dateFormatter.string(from: self)
+        } else if calendar.isDateInToday(self) {
+            // 如果日期是今天，则返回当前时间
+            dateFormatter.dateFormat = "HH:mm"
+            return "今天 " + dateFormatter.string(from: self)
+        } else if calendar.isDateInYesterday(self) {
+            // 如果日期是昨天，则返回“昨天”和日期
+            dateFormatter.dateFormat = "HH:mm"
+            return "昨天 " + dateFormatter.string(from: self)
+        }else {
+            // 如果日期是其他日期，则只返回日期
+            return dateFormatter.string(from: self)
+        }
+    }
+    
 }

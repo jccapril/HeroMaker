@@ -19,7 +19,8 @@ private extension DiaryCollectionViewDataSource {
         
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CoupleInfoCell.cellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CoupleInfoCell.cellID, for: indexPath) as? CoupleInfoCell
+            cell?.config(couple: itemIdentifier.coupleInfo)
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DiaryCell.cellID, for: indexPath)

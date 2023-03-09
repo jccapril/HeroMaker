@@ -16,7 +16,7 @@ public struct Diary: Codable {
     public let createdBy: String
     public let coupleID: Int
     public let text: String?
-    public let pictures: [String]?
+    public let pictures: String?
     public let createdAt: String
     public let updatedAt: String
     enum CodingKeys: String, CodingKey {
