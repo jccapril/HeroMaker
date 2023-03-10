@@ -58,16 +58,16 @@ extension COSSignatureProvider: QCloudCredentailFenceQueueDelegate {
         // ...
         let credential = QCloudCredential()
         // 临时密钥 SecretId
-        credential.secretID = config.secretID
+        credential.secretID = config.tmpSecretID
         // 临时密钥 SecretKey
-        credential.secretKey = config.secretKey
+        credential.secretKey = config.tmpSecretKey
         // 临时密钥 Token
         credential.token = config.token
         // 强烈建议返回服务器时间作为签名的开始时间
         // 用来避免由于用户手机本地时间偏差过大导致的签名不正确
-        credential.startDate = Date.from(config.startDate)
+        credential.startDate = Date.from(config.tokenStartedAt)
         // 这里返回的时间单位是秒
-        credential.expirationDate =  Date.from(config.expirationDate)
+        credential.expirationDate = Date.from(config.tokenExpiredAt)
         let auth = QCloudAuthentationV5Creator(credential: credential)
         continueBlock?(auth, nil)
     }

@@ -5,36 +5,34 @@
 //  Created by jcc on 2023/3/9.
 //
 
-import Foundation
 import Coder
+import DataConvert
+import Foundation
 
-public enum DataType: Int, Codable {
-    case pic = 1
-    case video = 2
-    case audio = 3
+public enum DataType: String, Codable {
+    case pic = "pic"
+    case video = "video"
+    case audio = "audio"
 }
 
 public struct COSUploadConfiguration: Codable {
-    public let secretID: String
-    public let secretKey: String
+    public let tmpSecretID: String
+    public let tmpSecretKey: String
     public let token: String
-    public let startDate: String
-    public let expirationDate: String
-    public let regionName: String
     public let bucket: String
-    public let prefix: String
-    public let paths: [DataType: String]
-
-    public init(secretID: String, secretKey: String, token: String, startDate: String, expirationDate: String, regionName: String, bucket: String, prefix: String, paths: [DataType: String]) {
-        self.secretID = secretID
-        self.secretKey = secretKey
-        self.token = token
-        self.startDate = startDate
-        self.expirationDate = expirationDate
-        self.regionName = regionName
-        self.bucket = bucket
-        self.prefix = prefix
-        self.paths = paths
-    }
+    public let region: String
+    public let path: String?
+    public let prefix: String?
+    public let tokenStartedAt: String
+    public let tokenExpiredAt: String
 }
 
+extension COSUploadConfiguration: DataConvertible {
+    public func toData() throws -> Data {
+        try JSONCoder.encode(object: self)
+    }
+
+    public init(data: Data) throws {
+        self = try JSONCoder.decode(data: data)
+    }
+}

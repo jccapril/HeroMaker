@@ -8,7 +8,7 @@
 import Foundation
 
 class TencentCOSContext: TencentCOSCenterContextual {
-    func getUploadToken(type: Int) async throws -> CenterOSS.COSUploadConfiguration? {
+    func getUploadToken(type: Int) async throws -> COSUploadConfiguration? {
         try await APICenter.Upload.getUploadToken(type: type)
     }
 }

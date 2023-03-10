@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0909133B29418FBD0068E6F0 /* TokenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909133A29418FBD0068E6F0 /* TokenInfo.swift */; };
 		090913432941CCC60068E6F0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090913422941CCC60068E6F0 /* Response.swift */; };
+		09345A5029B9E3CF007166B5 /* UploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09345A4F29B9E3CF007166B5 /* UploadRequest.swift */; };
 		0955CB96294AF1250025FE8F /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CB95294AF1250025FE8F /* Exported.swift */; };
 		0955CB98294B11CF0025FE8F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CB97294B11CF0025FE8F /* UserInfo.swift */; };
 		0955CB9A294B12D10025FE8F /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CB99294B12D10025FE8F /* UserRequest.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		0909133A29418FBD0068E6F0 /* TokenInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInfo.swift; sourceTree = "<group>"; };
 		090913422941CCC60068E6F0 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		09345A4F29B9E3CF007166B5 /* UploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadRequest.swift; sourceTree = "<group>"; };
 		0955CB95294AF1250025FE8F /* Exported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exported.swift; sourceTree = "<group>"; };
 		0955CB97294B11CF0025FE8F /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		0955CB99294B12D10025FE8F /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				09F67B9229A8AD2D004550FF /* LoginRequest.swift */,
 				09F67BEE29ACC6F4004550FF /* CoupleRequest.swift */,
 				09DCC6F329B85D680078E2F9 /* DiaryRequest.swift */,
+				09345A4F29B9E3CF007166B5 /* UploadRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				09F67B8C29A89E90004550FF /* NullResponse.swift in Sources */,
 				0973EAA129372D9B00B96163 /* APICenter.Token.swift in Sources */,
 				0973EABB29373B3D00B96163 /* HTTPError.swift in Sources */,
+				09345A5029B9E3CF007166B5 /* UploadRequest.swift in Sources */,
 				09D0D50D29AD97C10097C6F4 /* APICenter.Couple.swift in Sources */,
 				0955CBA9294C205E0025FE8F /* Coder.Date.swift in Sources */,
 				0909133B29418FBD0068E6F0 /* TokenInfo.swift in Sources */,

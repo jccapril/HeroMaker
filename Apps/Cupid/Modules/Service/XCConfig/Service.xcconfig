@@ -136,3 +136,5 @@ SWIFT_VERSION = 5.0
 // User-Defined
 
 MTL_FAST_MATH = YES
+
+OTHER_LDFLAGS = $(inherited) -ObjC -all_load

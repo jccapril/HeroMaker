@@ -14,7 +14,7 @@ import AppModular
 public enum TencentCOSCenter {}
 
 public enum BusinessType: Int64 {
-    case image = 0
+    case image = 1
 
     var extName: String {
         switch self {
@@ -57,7 +57,7 @@ private extension TencentCOSCenter {
                 throw UploadError.invalidData
             }
             provider.signatureConfigration = configuration
-            self.registerCOSConfig(regionName: configuration.regionName, provider: provider)
+            self.registerCOSConfig(regionName: configuration.region, provider: provider)
             return configuration
         }
         return configuration
@@ -117,7 +117,7 @@ public extension TencentCOSCenter {
         Task {
             do {
                 let config = try await asyncGetService()
-                let path = "\(config.paths[.pic] ?? "")\(data.sha256)\(BusinessType.image.extName)"
+                let path = "\(config.path ?? "")\(data.sha256)\(BusinessType.image.extName)"
                 upload(body: data as AnyObject, bucket: config.bucket, path: path, process: process, complete: complete)
             } catch{
                 mainQueue.async { complete(.failure(.error(error))) }

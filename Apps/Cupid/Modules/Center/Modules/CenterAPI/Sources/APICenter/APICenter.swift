@@ -60,6 +60,11 @@ extension APICenter {
             }
             setToken(token)
         }
+        do {
+            let result = try Response<T>.init(data: response.body)
+        }catch{
+            logger.error("error:\(error)")
+        }
         
         guard let result = try? Response<T>.init(data: response.body) else {
             throw HTTPBizError.parse

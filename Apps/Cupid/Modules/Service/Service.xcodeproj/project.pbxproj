@@ -23,10 +23,13 @@
 		098BAEA82939A4C600702111 /* Crypto in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEA72939A4C600702111 /* Crypto */; };
 		098BAEEA2939C88800702111 /* SwiftKit in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEE92939C88800702111 /* SwiftKit */; };
 		098BAEEC2939C8FD00702111 /* SwiftAsyncKit in Frameworks */ = {isa = PBXBuildFile; productRef = 098BAEEB2939C8FD00702111 /* SwiftAsyncKit */; };
-		09CC107029B9AF6B00DB200B /* BeaconAPI_Base.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CC106C29B9AF6700DB200B /* BeaconAPI_Base.xcframework */; };
-		09CC107129B9AF6B00DB200B /* QCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CC106D29B9AF6800DB200B /* QCloudCore.xcframework */; };
-		09CC107229B9AF6B00DB200B /* QimeiSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CC106E29B9AF6900DB200B /* QimeiSDK.xcframework */; };
-		09CC107329B9AF6B00DB200B /* QCloudCOSXML.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CC106F29B9AF6A00DB200B /* QCloudCOSXML.xcframework */; };
+		0997E9FC29BAE0DD006AFF29 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0997E9FB29BAE0DD006AFF29 /* CoreTelephony.framework */; };
+		0997E9FE29BAE0E5006AFF29 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0997E9FD29BAE0E5006AFF29 /* SystemConfiguration.framework */; };
+		0997EA0129BAE0F9006AFF29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0997EA0029BAE0F9006AFF29 /* Foundation.framework */; };
+		0997EA0E29BAF6AB006AFF29 /* QCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0997EA0A29BAF6A7006AFF29 /* QCloudCore.xcframework */; };
+		0997EA0F29BAF6AC006AFF29 /* QCloudCOSXML.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0997EA0B29BAF6AA006AFF29 /* QCloudCOSXML.xcframework */; };
+		0997EA1029BAF6AC006AFF29 /* BeaconAPI_Base.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0997EA0C29BAF6AB006AFF29 /* BeaconAPI_Base.xcframework */; };
+		0997EA1129BAF6AD006AFF29 /* QimeiSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0997EA0D29BAF6AB006AFF29 /* QimeiSDK.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +40,14 @@
 		0973EA4E29372AFC00B96163 /* Service.Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Service.Debug.xcconfig; sourceTree = "<group>"; };
 		0973EA4F29372AFC00B96163 /* Service.Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Service.Release.xcconfig; sourceTree = "<group>"; };
 		0973EA5029372AFC00B96163 /* Service.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Service.xcconfig; sourceTree = "<group>"; };
-		09CC106C29B9AF6700DB200B /* BeaconAPI_Base.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BeaconAPI_Base.xcframework; sourceTree = "<group>"; };
-		09CC106D29B9AF6800DB200B /* QCloudCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = QCloudCore.xcframework; sourceTree = "<group>"; };
-		09CC106E29B9AF6900DB200B /* QimeiSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = QimeiSDK.xcframework; sourceTree = "<group>"; };
-		09CC106F29B9AF6A00DB200B /* QCloudCOSXML.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = QCloudCOSXML.xcframework; sourceTree = "<group>"; };
+		0997E9FB29BAE0DD006AFF29 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		0997E9FD29BAE0E5006AFF29 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		0997E9FF29BAE0EA006AFF29 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
+		0997EA0029BAE0F9006AFF29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		0997EA0A29BAF6A7006AFF29 /* QCloudCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = QCloudCore.xcframework; sourceTree = "<group>"; };
+		0997EA0B29BAF6AA006AFF29 /* QCloudCOSXML.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = QCloudCOSXML.xcframework; sourceTree = "<group>"; };
+		0997EA0C29BAF6AB006AFF29 /* BeaconAPI_Base.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BeaconAPI_Base.xcframework; sourceTree = "<group>"; };
+		0997EA0D29BAF6AB006AFF29 /* QimeiSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = QimeiSDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,20 +57,23 @@
 			files = (
 				0973EA4329372A9600B96163 /* KeyValueStore in Frameworks */,
 				0973EA3F29372A8800B96163 /* Coder in Frameworks */,
-				09CC107229B9AF6B00DB200B /* QimeiSDK.xcframework in Frameworks */,
 				0973EA4729372AA100B96163 /* LoggerPool in Frameworks */,
-				09CC107329B9AF6B00DB200B /* QCloudCOSXML.xcframework in Frameworks */,
+				0997EA0129BAE0F9006AFF29 /* Foundation.framework in Frameworks */,
+				0997E9FE29BAE0E5006AFF29 /* SystemConfiguration.framework in Frameworks */,
 				098BAEEC2939C8FD00702111 /* SwiftAsyncKit in Frameworks */,
 				0973EA4529372A9B00B96163 /* Locks in Frameworks */,
 				098BAEA82939A4C600702111 /* Crypto in Frameworks */,
+				0997EA0F29BAF6AC006AFF29 /* QCloudCOSXML.xcframework in Frameworks */,
+				0997EA0E29BAF6AB006AFF29 /* QCloudCore.xcframework in Frameworks */,
 				098BAEEA2939C88800702111 /* SwiftKit in Frameworks */,
 				09345A4E29B9D5D2007166B5 /* Monitor in Frameworks */,
 				0973EA3D29372A8200B96163 /* AppModular in Frameworks */,
 				0973EA4129372A9000B96163 /* ExtensionKit in Frameworks */,
-				09CC107029B9AF6B00DB200B /* BeaconAPI_Base.xcframework in Frameworks */,
+				0997E9FC29BAE0DD006AFF29 /* CoreTelephony.framework in Frameworks */,
+				0997EA1129BAF6AD006AFF29 /* QimeiSDK.xcframework in Frameworks */,
 				098BAEA42939A16100702111 /* ProxyServer in Frameworks */,
-				09CC107129B9AF6B00DB200B /* QCloudCore.xcframework in Frameworks */,
 				0973EB842938898500B96163 /* PropertyWrappers in Frameworks */,
+				0997EA1029BAF6AC006AFF29 /* BeaconAPI_Base.xcframework in Frameworks */,
 				0973EA4929372AA900B96163 /* RestfulClient in Frameworks */,
 				0973EAA529372E3300B96163 /* WeakDelegate in Frameworks */,
 			);
@@ -113,6 +123,10 @@
 		0973EA3B29372A8200B96163 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0997EA0029BAE0F9006AFF29 /* Foundation.framework */,
+				0997E9FF29BAE0EA006AFF29 /* libc++.tbd */,
+				0997E9FD29BAE0E5006AFF29 /* SystemConfiguration.framework */,
+				0997E9FB29BAE0DD006AFF29 /* CoreTelephony.framework */,
 				09345A3B29B9D58C007166B5 /* Package.swift */,
 			);
 			name = Frameworks;
@@ -121,10 +135,10 @@
 		09CC106B29B9AF5500DB200B /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				09CC106C29B9AF6700DB200B /* BeaconAPI_Base.xcframework */,
-				09CC106D29B9AF6800DB200B /* QCloudCore.xcframework */,
-				09CC106F29B9AF6A00DB200B /* QCloudCOSXML.xcframework */,
-				09CC106E29B9AF6900DB200B /* QimeiSDK.xcframework */,
+				0997EA0C29BAF6AB006AFF29 /* BeaconAPI_Base.xcframework */,
+				0997EA0A29BAF6A7006AFF29 /* QCloudCore.xcframework */,
+				0997EA0B29BAF6AA006AFF29 /* QCloudCOSXML.xcframework */,
+				0997EA0D29BAF6AB006AFF29 /* QimeiSDK.xcframework */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -363,6 +377,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -393,6 +411,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

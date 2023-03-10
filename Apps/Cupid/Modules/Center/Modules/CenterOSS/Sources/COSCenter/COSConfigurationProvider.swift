@@ -15,7 +15,7 @@ extension COSConfigurationProvider {
 
 extension COSConfigurationProvider {
     static func asyncGetConfiguration(byType type: BusinessType = .image) async throws {
-        if configuration != nil {
+        if self.configuration != nil {
             return
         }
         configuration = try await TencentCOSCenter.context?.getUploadToken(type: Int(type.rawValue))
