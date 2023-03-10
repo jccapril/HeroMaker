@@ -15,8 +15,8 @@ public extension APICenter {
 
 public extension APICenter.Upload {
     // 获取OSS上传token
-    static func getUploadToken<T: Codable>(type: Int) async throws -> T? {
-        let request = GetUploadTokenRequest()
+    static func getUploadToken(type: Int) async throws -> UploadTokenResponse? {
+        let request = GetUploadTokenRequest(type: "\(type)")
         return try await APICenter.execute(request)
     }
 }
