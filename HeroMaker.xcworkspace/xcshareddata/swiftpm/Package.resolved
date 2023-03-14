@@ -325,6 +325,15 @@
       }
     },
     {
+      "identity" : "tzimagepickercontroller",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jccapril/TZImagePickerController.git",
+      "state" : {
+        "revision" : "795438d822ee619f1d5059bc13becaab74753c0b",
+        "version" : "2.0.1"
+      }
+    },
+    {
       "identity" : "urlroute",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jccapril/URLRoute",

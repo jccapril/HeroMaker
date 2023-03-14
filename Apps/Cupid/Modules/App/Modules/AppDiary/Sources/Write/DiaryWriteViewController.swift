@@ -9,9 +9,12 @@ import CenterAPI
 import UICore
 import WeakDelegate
 import Service
+import Photos
+
 
 class DiaryWriteViewController: ViewController {
     private lazy var contentView = DiaryWriteContentView()
+    private lazy var viewModel = DiaryWriteViewModel()
     private lazy var provider = DiaryProvider()
     private var publishTask: Task<Void, Never>? = .none
 }
@@ -37,6 +40,7 @@ extension DiaryWriteViewController {
 private extension DiaryWriteViewController {
     func setup() {
         contentView.x.add(to: view)
+        contentView.reloadViewModel(viewModel)
     }
     func layout() {
         contentView.pin.all(view.pin.safeAreaWithoutBottom)
@@ -51,12 +55,42 @@ private extension DiaryWriteViewController {
     }
     
     func bind() {
+        contentView.albumDelegator.delegate(on: self) { `self`, _ in
+            self.openAlbum()
+        }
         
+        contentView.deleteDelegator.delegate(on: self) { `self`, index in
+            self.viewModel.remove(index: index)
+            self.contentView.reloadViewModel(self.viewModel)
+        }
     }
     
     @objc
     func submit() {
         publishAction(text: contentView.text)
+    }
+    
+    
+    func openAlbum() {
+        
+        guard let imagePickerVc = TZImagePickerController(maxImagesCount: 9, delegate: self) else {
+            Toast.text("Error", subtitle: "请先授权我对相册的权限").show()
+            FeedbackGenerator.notification.shared.notificationOccurred(.error)
+            return
+        }
+        let items = viewModel.realItems.map {
+            $0.asset
+        }      
+        imagePickerVc.selectedAssets = NSMutableArray(array: items as [Any])
+        imagePickerVc.navigationBar.tintColor = .systemWhite
+        imagePickerVc.allowPickingVideo = false
+        imagePickerVc.allowTakePicture = true
+        imagePickerVc.allowPickingOriginalPhoto = false
+        imagePickerVc.showSelectedIndex = true
+        imagePickerVc.modalPresentationStyle = .fullScreen
+        present(imagePickerVc, animated: true)
+
+        
     }
 }
 
@@ -87,6 +121,17 @@ extension DiaryWriteViewController {
             }
         }
         publishTask = task
+    }
+    
+}
+
+
+extension DiaryWriteViewController: TZImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
+        guard let assets = assets as? [PHAsset] else { return }
+        viewModel.update(assets: assets, images: photos)
+        contentView.reloadViewModel(viewModel)
     }
     
 }

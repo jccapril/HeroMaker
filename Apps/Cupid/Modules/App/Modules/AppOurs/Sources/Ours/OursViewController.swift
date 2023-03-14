@@ -61,7 +61,7 @@ private extension OursViewController {
     func setup() {
         contentView.x.add(to: view)
         
-        provider.testUpload()
+
         
     }
     func layout() {

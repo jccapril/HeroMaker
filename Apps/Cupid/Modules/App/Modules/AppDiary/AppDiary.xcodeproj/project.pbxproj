@@ -24,6 +24,8 @@
 		091184EE29B70A8800B317C1 /* DiaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091184ED29B70A8800B317C1 /* DiaryHeaderView.swift */; };
 		091184F029B70A9800B317C1 /* DiaryFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091184EF29B70A9800B317C1 /* DiaryFooterView.swift */; };
 		091184F229B71FA000B317C1 /* CoupleInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091184F129B71FA000B317C1 /* CoupleInfoCell.swift */; };
+		092DE3B029BF1335001DEF5A /* DiaryWritePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DE3AF29BF1335001DEF5A /* DiaryWritePictureCell.swift */; };
+		092DE3B229BF1BE8001DEF5A /* DiaryWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DE3B129BF1BE8001DEF5A /* DiaryWriteViewModel.swift */; };
 		09DCC6EA29B821260078E2F9 /* DiaryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCC6E929B821260078E2F9 /* DiaryImageCell.swift */; };
 		09DCC6ED29B837EB0078E2F9 /* DiaryWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCC6EC29B837EB0078E2F9 /* DiaryWriteViewController.swift */; };
 		09DCC6EF29B837FE0078E2F9 /* DiaryWriteContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCC6EE29B837FE0078E2F9 /* DiaryWriteContentView.swift */; };
@@ -63,6 +65,8 @@
 		091184ED29B70A8800B317C1 /* DiaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryHeaderView.swift; sourceTree = "<group>"; };
 		091184EF29B70A9800B317C1 /* DiaryFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryFooterView.swift; sourceTree = "<group>"; };
 		091184F129B71FA000B317C1 /* CoupleInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleInfoCell.swift; sourceTree = "<group>"; };
+		092DE3AF29BF1335001DEF5A /* DiaryWritePictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWritePictureCell.swift; sourceTree = "<group>"; };
+		092DE3B129BF1BE8001DEF5A /* DiaryWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewModel.swift; sourceTree = "<group>"; };
 		09DCC6E929B821260078E2F9 /* DiaryImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryImageCell.swift; sourceTree = "<group>"; };
 		09DCC6EC29B837EB0078E2F9 /* DiaryWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteViewController.swift; sourceTree = "<group>"; };
 		09DCC6EE29B837FE0078E2F9 /* DiaryWriteContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWriteContentView.swift; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 			children = (
 				09DCC6EC29B837EB0078E2F9 /* DiaryWriteViewController.swift */,
 				09DCC6EE29B837FE0078E2F9 /* DiaryWriteContentView.swift */,
+				092DE3AF29BF1335001DEF5A /* DiaryWritePictureCell.swift */,
+				092DE3B129BF1BE8001DEF5A /* DiaryWriteViewModel.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -251,8 +257,10 @@
 				091184E129B6E49300B317C1 /* DiaryProvider.swift in Sources */,
 				091184E629B6EB4D00B317C1 /* DiaryCell.swift in Sources */,
 				091184EE29B70A8800B317C1 /* DiaryHeaderView.swift in Sources */,
+				092DE3B029BF1335001DEF5A /* DiaryWritePictureCell.swift in Sources */,
 				091184D029B6E40B00B317C1 /* DiaryModule.swift in Sources */,
 				09DCC6EA29B821260078E2F9 /* DiaryImageCell.swift in Sources */,
+				092DE3B229BF1BE8001DEF5A /* DiaryWriteViewModel.swift in Sources */,
 				091184F029B70A9800B317C1 /* DiaryFooterView.swift in Sources */,
 				09DCC6ED29B837EB0078E2F9 /* DiaryWriteViewController.swift in Sources */,
 				091184DF29B6E48900B317C1 /* DiaryContentView.swift in Sources */,

@@ -1,0 +1,20 @@
+/* 
+  InfoPlist.strings
+  Cupid
+
+  Created by jcc on 2023/3/13.
+  
+*/
+
+// Bundle
+"CFBundleDisplayName" = "Cupid";
+
+
+
+// Privacy
+"NSCameraUsageDescription" = "";
+
+"NSPhotoLibraryAddUsageDescription" = "";
+
+"NSPhotoLibraryUsageDescription" = "";
+

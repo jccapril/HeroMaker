@@ -13,10 +13,12 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Orderella/PopupDialog.git", branch: "master"),
+        .package(url: "https://github.com/jccapril/TZImagePickerController.git", from: "2.0.1")
     ],
     targets: [
         .target(name: "UIDialog", dependencies: [
             .product(name: "PopupDialog", package: "PopupDialog"),
+            .product(name: "TZImagePickerController", package: "TZImagePickerController")
         ]),
         .testTarget(
             name: "UIDialogTests",
