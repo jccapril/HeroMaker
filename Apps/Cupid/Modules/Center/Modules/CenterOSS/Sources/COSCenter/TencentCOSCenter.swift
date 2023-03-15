@@ -98,7 +98,12 @@ private extension TencentCOSCenter {
         }
         // 监听上传进度
         put.sendProcessBlock = { _, totalBytesSent, totalBytesExpectedToSend in
-            process?(Float(totalBytesSent / totalBytesExpectedToSend))
+            if totalBytesExpectedToSend == 0 {
+                process?(0)
+            }else {
+                process?(Float(totalBytesSent / totalBytesExpectedToSend))
+            }
+           
         }
         QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put)
     }

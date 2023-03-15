@@ -16,6 +16,8 @@ class DiaryWriteContentView: View {
     
     lazy var deleteDelegator = Delegator<Int, Void>()
     
+    lazy var uploadDelegator = Delegator<(Int, String), Void>()
+    
     private lazy var subscriptions = Set<AnyCancellable>()
     private let margin: CGFloat = 10
     
@@ -171,6 +173,9 @@ extension DiaryWriteContentView: UICollectionViewDataSource {
             cell.config(item: dataSource[indexPath.row])
             cell.deleteAction = {
                 self.deleteDelegator(indexPath.row)
+            }
+            cell.uploadAction = {
+                self.uploadDelegator((indexPath.row, $0))
             }
             return cell
         })

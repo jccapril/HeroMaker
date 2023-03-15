@@ -9,6 +9,7 @@ import Foundation
 import UICore
 import UIKit
 import Photos
+import Center
 
 class DiaryWritePictureCell: CollectionViewCell {
     private lazy var subscriptions = Set<AnyCancellable>()
@@ -20,18 +21,30 @@ class DiaryWritePictureCell: CollectionViewCell {
     
     private lazy var deleteButton = UIButton(type: .custom)
         .x
-//        .corners(radius: 10)
         .setImage(DiaryModule.image(name: "Picture.Delete"), for: .normal)
-//        .backgroundColor(DiaryModule.color(name: "Picture.Delete"))
         .instance
     
+    
+    private lazy var progressLayer = {
+        let layer = CAShapeLayer()
+        let width = contentView.frame.size.width
+        let path = UIBezierPath(arcCenter: contentView.center, radius: width/2, startAngle: -.pi/2.0, endAngle: .pi*3.0/2.0, clockwise: true)
+        layer.fillColor = UIColor.clear.cgColor
+        layer.strokeColor = DiaryModule.color(name: "Picture.Upload.Progress").cgColor
+        layer.lineWidth = width;
+        layer.strokeStart = 0;
+        layer.strokeEnd = 1.0;
+        layer.path = path.cgPath
+        return layer
+    }()
+    
     var deleteAction: (()->Void)?
+    var uploadAction: ((String) ->Void)?
 
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+        
     }
 
     @available(*, unavailable)
@@ -58,12 +71,14 @@ private extension DiaryWritePictureCell {
         imageView.x.add(to: contentView)
         deleteButton.x.add(to: contentView)
         
+        contentView.layer.masksToBounds = true
+        
         deleteButton.tapPublisher.receive(on: DispatchQueue.main).sink { [weak self] _ in
             guard let self = self else { return }
             self.deleteAction?()
         }
         .store(in: &subscriptions)
-
+        
     }
     
     func layout() {
@@ -80,15 +95,44 @@ extension DiaryWritePictureCell {
     func config(item: DiaryWritePictureItemViewModel) {
         if let image = item.picture {
             imageView.image = image
+            if item.url == nil {
+                upload(image: image)
+            }
         }else {
             if let asset = item.asset {
                 TZImageManager().getPhotoWith(asset) { image, _, _ in
                     if let image = image {
                         self.imageView.image = image
+                        if item.url == nil {
+                            self.upload(image: image)
+                        }
                     }
                 }
             }
         }
+    }
+    
+    func upload(image: UIImage) {
+        
+        contentView.layer.addSublayer(progressLayer)
+        progressLayer.strokeStart = 0.0
+        TencentCOSCenter.upload(imageData: image.pngData()) { presenting in
+            CATransaction.begin()
+            CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn))
+            CATransaction.setAnimationDuration(0.5)
+            self.progressLayer.strokeStart = CGFloat(presenting)
+            CATransaction.commit()
+        } complete: { result in
+            self.progressLayer.removeFromSuperlayer()
+            switch result {
+            case .success(let url):
+                self.uploadAction?(url)
+            case .failure(let err):
+                self.upload(image: image)
+                logger.error("上传失败：\(err)")
+            }
+        }
+
     }
     
 }

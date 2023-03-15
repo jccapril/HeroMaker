@@ -15,6 +15,8 @@ class DiaryWriteViewModel: ViewModel {
     
     private(set) lazy var items: [DiaryWritePictureItemViewModel] = [Self.defaultItem]
     
+    private(set) lazy var urlMap: [String: String] = [:]
+    
     var realItems: [DiaryWritePictureItemViewModel] {
         get {
             items.filter {
@@ -39,13 +41,18 @@ class DiaryWriteViewModel: ViewModel {
         for index in 0...(count - 1) {
             guard let asset = assets[safe:index] as? PHAsset, let image = images[safe:index] as? UIImage else { return }
             let item = DiaryWritePictureItemViewModel(pictureType: .OnlyShow, picture: image, asset: asset)
-            if !self.items.contains(item) {
-                items.append(item)
+            if let identifier = item.identifier {
+                item.url = self.urlMap[identifier]
             }
+            items.append(item)
         }
         self.items.insert(contentsOf: items, at: 0)
-       
-       
+    }
+    
+    func uploadSuccess(index: Int, url: String) {
+        guard let identifier = self.items[index].identifier else { return }
+        self.urlMap[identifier] = url
+        self.items[index].url = url
     }
     
 }
@@ -56,14 +63,13 @@ class DiaryWritePictureItemViewModel: ViewModel, Equatable {
         case OnlyShow
     }
     var pictureType: PictureType = .OnlyShow
-    var pictureURL: URL?
     var picture: UIImage?
     var asset: PHAsset?
     var identifier: String?
+    var url: String?
     
-    init(pictureType: PictureType, pictureURL: URL? = nil, picture: UIImage? = nil, asset: PHAsset? = nil) {
+    init(pictureType: PictureType, picture: UIImage? = nil, asset: PHAsset? = nil) {
         self.pictureType = pictureType
-        self.pictureURL = pictureURL
         self.picture = picture
         self.asset = asset
         self.identifier = asset?.localIdentifier

@@ -63,6 +63,10 @@ private extension DiaryWriteViewController {
             self.viewModel.remove(index: index)
             self.contentView.reloadViewModel(self.viewModel)
         }
+        
+        contentView.uploadDelegator.delegate(on: self) { `self`, result in
+            self.viewModel.uploadSuccess(index: result.0, url: result.1)
+        }
     }
     
     @objc
